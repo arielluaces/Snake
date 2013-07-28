@@ -28,6 +28,7 @@
 		CFA656C817A5ADDA00148B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CFA656D017A5ADDA00148B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFA656CE17A5ADDA00148B4F /* InfoPlist.strings */; };
 		CFA656D317A5ADDA00148B4F /* SnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA656D217A5ADDA00148B4F /* SnakeTests.m */; };
+		CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		CFA656CF17A5ADDA00148B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFA656D117A5ADDA00148B4F /* SnakeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnakeTests.h; sourceTree = "<group>"; };
 		CFA656D217A5ADDA00148B4F /* SnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeTests.m; sourceTree = "<group>"; };
+		CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLProgram.h; sourceTree = "<group>"; };
+		CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLProgram.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				CFA656BC17A5ADDA00148B4F /* LQSViewController.h */,
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
+				CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */,
+				CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				CFA656A717A5ADDA00148B4F /* main.m in Sources */,
 				CFA656AB17A5ADDA00148B4F /* LQSAppDelegate.m in Sources */,
 				CFA656BE17A5ADDA00148B4F /* LQSViewController.m in Sources */,
+				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
