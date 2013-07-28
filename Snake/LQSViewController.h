@@ -11,4 +11,6 @@
 
 @interface LQSViewController : GLKViewController
 
+@property (nonatomic) IBOutlet GLKView *glkView;
+
 @end
