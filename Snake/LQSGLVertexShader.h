@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LQSGLShader.h"
 
-@interface LQSGLVertexShader : NSObject
+@interface LQSGLVertexShader : LQSGLShader
+
+- (id)initWithContext:(EAGLContext *)context;
+- (id)initWithSharegroup:(EAGLSharegroup *)sharegroup;
 
 @end

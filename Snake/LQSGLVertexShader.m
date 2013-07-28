@@ -10,4 +10,31 @@
 
 @implementation LQSGLVertexShader
 
+- (id)init
+{
+    self = [super initWithType:GL_VERTEX_SHADER];
+    if (self)
+    {
+    }
+    return self;
+}
+
+- (id)initWithContext:(EAGLContext *)context
+{
+    self = [super initWithType:GL_VERTEX_SHADER context:context];
+    if (self)
+    {
+    }
+    return self;
+}
+
+- (id)initWithSharegroup:(EAGLSharegroup *)sharegroup
+{
+    self = [super initWithType:GL_VERTEX_SHADER sharegroup:sharegroup];
+    if (self)
+    {
+    }
+    return self;
+}
+
 @end
