@@ -31,6 +31,7 @@
 		CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */; };
 		CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */; };
 		CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */; };
+		CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLVertexShader.m; sourceTree = "<group>"; };
 		CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFragmentShader.h; sourceTree = "<group>"; };
 		CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFragmentShader.m; sourceTree = "<group>"; };
+		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
+		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */,
 				CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */,
 				CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */,
+				CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */,
+				CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
 				CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */,
 				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
+				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
