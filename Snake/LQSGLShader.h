@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/EAGL.h>
 
 @interface LQSGLShader : NSObject
 
