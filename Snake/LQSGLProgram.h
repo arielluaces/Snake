@@ -10,4 +10,10 @@
 
 @interface LQSGLProgram : NSObject
 
+@property (nonatomic, readonly) GLuint name;
+@property (nonatomic, readonly) EAGLSharegroup *sharegroup;
+
+- (id)initWithContext:(EAGLContext *)context;
+- (id)initWithSharegroup:(EAGLSharegroup *)sharegroup;
+
 @end
