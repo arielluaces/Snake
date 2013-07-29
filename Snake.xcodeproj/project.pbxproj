@@ -80,6 +80,7 @@
 		CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFragmentShader.m; sourceTree = "<group>"; };
 		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
 		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
+		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +161,7 @@
 				CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */,
 				CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */,
 				CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */,
+				CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */,
 			);
 			path = Snake;
 			sourceTree = "<group>";

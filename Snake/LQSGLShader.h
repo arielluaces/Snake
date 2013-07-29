@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <OpenGLES/ES2/gl.h>
+#import "ILQSGLShader.h"
 #import <OpenGLES/EAGL.h>
 
-@interface LQSGLShader : NSObject
+@interface LQSGLShader : NSObject <ILQSGLShader>
 
 @property (nonatomic, readonly) GLuint name;
 @property (nonatomic, readonly) EAGLSharegroup *sharegroup;
