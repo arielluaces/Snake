@@ -7,32 +7,39 @@
 //
 
 #import "LQSGLFragmentShader.h"
+#import "LQSGLShader.h"
 
 @implementation LQSGLFragmentShader
+{
+    LQSGLShader *_shader;
+}
 
 - (id)init
 {
-    self = [super initWithType:GL_FRAGMENT_SHADER];
+    self = [super init];
     if (self)
     {
+        _shader = [[LQSGLShader alloc] initWithType:GL_FRAGMENT_SHADER];
     }
     return self;
 }
 
 - (id)initWithContext:(EAGLContext *)context
 {
-    self = [super initWithType:GL_FRAGMENT_SHADER context:context];
+    self = [super init];
     if (self)
     {
+        _shader = [[LQSGLShader alloc] initWithType:GL_FRAGMENT_SHADER context:context];
     }
     return self;
 }
 
 - (id)initWithSharegroup:(EAGLSharegroup *)sharegroup
 {
-    self = [super initWithType:GL_FRAGMENT_SHADER sharegroup:sharegroup];
+    self = [super init];
     if (self)
     {
+        _shader = [[LQSGLShader alloc] initWithType:GL_FRAGMENT_SHADER sharegroup:sharegroup];
     }
     return self;
 }
