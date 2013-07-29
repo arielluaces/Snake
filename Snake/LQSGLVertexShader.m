@@ -7,11 +7,12 @@
 //
 
 #import "LQSGLVertexShader.h"
+#import "ILQSGLShader.h"
 #import "LQSGLShader.h"
 
 @implementation LQSGLVertexShader
 {
-    LQSGLShader *_shader;
+    NSObject<ILQSGLShader> *_shader;
 }
 
 - (id)init
