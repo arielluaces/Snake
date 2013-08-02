@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <OpenGLES/EAGL.h>
+#import "ILQSGLShader.h"
 
-@interface LQSGLVertexShader : NSObject
+@interface LQSGLVertexShader : NSObject <ILQSGLShader>
 
 - (id)initWithContext:(EAGLContext *)context;
 - (id)initWithSharegroup:(EAGLSharegroup *)sharegroup;

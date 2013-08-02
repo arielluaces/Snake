@@ -44,4 +44,9 @@
     return self;
 }
 
+- (GLuint)name
+{
+    return _shader.name;
+}
+
 @end
