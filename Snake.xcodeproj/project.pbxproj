@@ -113,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B078737417AB71B700438D16 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CFA656BA17A5ADDA00148B4F /* Shader.vsh */,
+				CFA656B817A5ADDA00148B4F /* Shader.fsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
 		CFA6568A17A5ADD900148B4F = {
 			isa = PBXGroup;
 			children = (
@@ -148,12 +157,11 @@
 		CFA656A017A5ADDA00148B4F /* Snake */ = {
 			isa = PBXGroup;
 			children = (
+				B078737417AB71B700438D16 /* Shaders */,
 				CFA656A917A5ADDA00148B4F /* LQSAppDelegate.h */,
 				CFA656AA17A5ADDA00148B4F /* LQSAppDelegate.m */,
 				CFA656B217A5ADDA00148B4F /* MainStoryboard_iPhone.storyboard */,
 				CFA656B517A5ADDA00148B4F /* MainStoryboard_iPad.storyboard */,
-				CFA656B817A5ADDA00148B4F /* Shader.fsh */,
-				CFA656BA17A5ADDA00148B4F /* Shader.vsh */,
 				CFA656BC17A5ADDA00148B4F /* LQSViewController.h */,
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
