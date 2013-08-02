@@ -66,8 +66,8 @@
 		CFA656B017A5ADDA00148B4F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CFA656B317A5ADDA00148B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA656B617A5ADDA00148B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		CFA656B817A5ADDA00148B4F /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		CFA656BA17A5ADDA00148B4F /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		CFA656B817A5ADDA00148B4F /* Shader.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		CFA656BA17A5ADDA00148B4F /* Shader.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		CFA656BC17A5ADDA00148B4F /* LQSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LQSViewController.h; sourceTree = "<group>"; };
 		CFA656BD17A5ADDA00148B4F /* LQSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LQSViewController.m; sourceTree = "<group>"; };
 		CFA656C417A5ADDA00148B4F /* SnakeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
