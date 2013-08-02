@@ -21,6 +21,9 @@
     NSObject<ILQSGLShader> *_fragmentShader;
     NSObject<ILQSGLProgram> *_program;
     EAGLContext *_context;
+    GLuint _aPosition;
+    GLint _uMVPMatrix;
+    GLint _uColor;
 }
 
 - (void)viewDidLoad
@@ -67,6 +70,15 @@
             glLinkProgram(_program.name);
             [LQSGLUtils checkProgramLinkStatus:_program];
         }
+        int aPosition = glGetAttribLocation(_program.name, "aPosition");
+        NSAssert(aPosition >= 0, @"Position attribute not found");
+        int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
+        NSAssert(uMVPMatrix >= 0, @"uMVPMatrix unifrom not found");
+        int uColor = glGetUniformLocation(_program.name, "uColor");
+        NSAssert(uColor >= 0, @"uColor unifrom not found");
+        _aPosition = (GLuint)aPosition;
+        _uMVPMatrix = (GLint)uMVPMatrix;
+        _uColor = (GLint)uColor;
     }
     [EAGLContext setCurrentContext:savedContext];
 }
@@ -87,6 +99,22 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glUseProgram(_program.name);
+    glEnableVertexAttribArray(_aPosition);
+    float vertices[] = {
+        0.0f, 0.0f,
+        0.0f, 1.0f,
+        1.0f, 0.0f,
+        1.0f, 1.0f,
+    };
+    GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
+    MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
+    glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
+    glUniform4f(_uColor, 1.0f, 1.0f, 1.0f, 1.0f);
+    glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertices);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    glUseProgram(0);
 }
 
 @end
