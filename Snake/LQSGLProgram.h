@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/EAGL.h>
+#import "ILQSGLProgram.h"
 
-@interface LQSGLProgram : NSObject
+@interface LQSGLProgram : NSObject <ILQSGLProgram>
 
 @property (nonatomic, readonly) GLuint name;
 @property (nonatomic, readonly) EAGLSharegroup *sharegroup;

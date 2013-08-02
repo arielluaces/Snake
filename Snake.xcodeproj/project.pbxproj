@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B078737017AB48C200438D16 /* ILQSGLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLProgram.h; sourceTree = "<group>"; };
 		CFA6569317A5ADDA00148B4F /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA6569617A5ADDA00148B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFA6569817A5ADDA00148B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +163,7 @@
 				CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */,
 				CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */,
 				CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */,
+				B078737017AB48C200438D16 /* ILQSGLProgram.h */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
