@@ -35,6 +35,7 @@
 		CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */; };
 		CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */; };
 		CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */; };
+		CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
 		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
 		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShader.h; sourceTree = "<group>"; };
+		CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSVertexShader.h; sourceTree = "<group>"; };
+		CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSVertexShader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 				B078737017AB48C200438D16 /* ILQSGLProgram.h */,
 				B078737117AB666300438D16 /* LQSGLUtils.h */,
 				B078737217AB666300438D16 /* LQSGLUtils.m */,
+				CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */,
+				CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
 				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
 				B078737317AB666300438D16 /* LQSGLUtils.m in Sources */,
+				CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
