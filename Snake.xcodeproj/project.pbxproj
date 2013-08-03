@@ -31,6 +31,7 @@
 		CFA656C817A5ADDA00148B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CFA656D017A5ADDA00148B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFA656CE17A5ADDA00148B4F /* InfoPlist.strings */; };
 		CFA656D317A5ADDA00148B4F /* SnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA656D217A5ADDA00148B4F /* SnakeTests.m */; };
+		CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */; };
 		CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */; };
 		CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */; };
 		CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */; };
@@ -81,6 +82,8 @@
 		CFA656CF17A5ADDA00148B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFA656D117A5ADDA00148B4F /* SnakeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnakeTests.h; sourceTree = "<group>"; };
 		CFA656D217A5ADDA00148B4F /* SnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeTests.m; sourceTree = "<group>"; };
+		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFragmentShader.h; sourceTree = "<group>"; };
+		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFragmentShader.m; sourceTree = "<group>"; };
 		CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLProgram.h; sourceTree = "<group>"; };
 		CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLProgram.m; sourceTree = "<group>"; };
 		CFDF4A4017A5D99B0066BE84 /* LQSGLVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLVertexShader.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				B078737217AB666300438D16 /* LQSGLUtils.m */,
 				CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */,
 				CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */,
+				CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */,
+				CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
 				B078737317AB666300438D16 /* LQSGLUtils.m in Sources */,
 				CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */,
+				CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
