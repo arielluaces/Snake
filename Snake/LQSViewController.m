@@ -9,8 +9,8 @@
 #import "LQSViewController.h"
 #import "ILQSGLShader.h"
 #import "ILQSGLProgram.h"
-#import "LQSGLVertexShader.h"
-#import "LQSGLFragmentShader.h"
+#import "LQSVertexShader.h"
+#import "LQSFragmentShader.h"
 #import "LQSGLProgram.h"
 #import "LQSGLUtils.h"
 #import <Foundation/NSBundle.h>
@@ -43,7 +43,6 @@
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
-        _vertexShader = [[LQSGLVertexShader alloc] initWithContext:_context];
         {
             NSStringEncoding *vertexShaderSourceEncoding = nil;
             NSError *vertexShaderError;
@@ -53,11 +52,8 @@
             NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
             const GLchar *source = [vertexShaderSource UTF8String];
             NSLog(@"%s",source);
-            glShaderSource(_vertexShader.name, 1, &source, NULL);
-            glCompileShader(_vertexShader.name);
-            [LQSGLUtils checkShaderCompileStatus:_vertexShader];
+            _vertexShader = [[LQSVertexShader alloc] initWithSource:source context:_context];
         }
-        _fragmentShader = [[LQSGLFragmentShader alloc] initWithContext:_context];
         {
             NSStringEncoding *fragmentShaderSourceEncoding = nil;
             NSError *fragmentShaderError;
@@ -67,9 +63,7 @@
             NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
             const GLchar *source = [fragmentShaderSource UTF8String];
             NSLog(@"%s",source);
-            glShaderSource(_fragmentShader.name, 1, &source, NULL);
-            glCompileShader(_fragmentShader.name);
-            [LQSGLUtils checkShaderCompileStatus:_fragmentShader];
+            _fragmentShader = [[LQSFragmentShader alloc] initWithSource:source context:_context];
         }
         _program = [[LQSGLProgram alloc] initWithContext:_context];
         {
