@@ -45,6 +45,7 @@
         // Create program
         _program = [[LQSGLProgram alloc] initWithContext:_context];
         {
+            const GLchar *vertexShaderSourceC;
             {
                 NSStringEncoding *vertexShaderSourceEncoding = nil;
                 NSError *vertexShaderError;
@@ -52,10 +53,10 @@
                 NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"vsh");
                 NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
                 NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-                const GLchar *source = [vertexShaderSource UTF8String];
-                NSLog(@"%s",source);
-                _vertexShader = [[LQSVertexShader alloc] initWithSource:source context:_context];
+                vertexShaderSourceC = [vertexShaderSource UTF8String];
+                NSLog(@"%s",vertexShaderSourceC);
             }
+            const GLchar *fragmentShaderSourceC;
             {
                 NSStringEncoding *fragmentShaderSourceEncoding = nil;
                 NSError *fragmentShaderError;
@@ -63,10 +64,11 @@
                 NSAssert(fragmentShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"fsh");
                 NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:fragmentShaderFilePath usedEncoding:fragmentShaderSourceEncoding error:&fragmentShaderError];
                 NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-                const GLchar *source = [fragmentShaderSource UTF8String];
-                NSLog(@"%s",source);
-                _fragmentShader = [[LQSFragmentShader alloc] initWithSource:source context:_context];
+                fragmentShaderSourceC = [fragmentShaderSource UTF8String];
+                NSLog(@"%s",fragmentShaderSourceC);
             }
+            _vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
+            _fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
             glAttachShader(_program.name, _vertexShader.name);
             glAttachShader(_program.name, _fragmentShader.name);
             glLinkProgram(_program.name);
