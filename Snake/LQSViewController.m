@@ -43,30 +43,30 @@
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
-        {
-            NSStringEncoding *vertexShaderSourceEncoding = nil;
-            NSError *vertexShaderError;
-            NSString *vertexShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"vsh"];
-            NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"vsh");
-            NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
-            NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-            const GLchar *source = [vertexShaderSource UTF8String];
-            NSLog(@"%s",source);
-            _vertexShader = [[LQSVertexShader alloc] initWithSource:source context:_context];
-        }
-        {
-            NSStringEncoding *fragmentShaderSourceEncoding = nil;
-            NSError *fragmentShaderError;
-            NSString *fragmentShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"fsh"];
-            NSAssert(fragmentShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"fsh");
-            NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:fragmentShaderFilePath usedEncoding:fragmentShaderSourceEncoding error:&fragmentShaderError];
-            NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-            const GLchar *source = [fragmentShaderSource UTF8String];
-            NSLog(@"%s",source);
-            _fragmentShader = [[LQSFragmentShader alloc] initWithSource:source context:_context];
-        }
         _program = [[LQSGLProgram alloc] initWithContext:_context];
         {
+            {
+                NSStringEncoding *vertexShaderSourceEncoding = nil;
+                NSError *vertexShaderError;
+                NSString *vertexShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"vsh"];
+                NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"vsh");
+                NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
+                NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
+                const GLchar *source = [vertexShaderSource UTF8String];
+                NSLog(@"%s",source);
+                _vertexShader = [[LQSVertexShader alloc] initWithSource:source context:_context];
+            }
+            {
+                NSStringEncoding *fragmentShaderSourceEncoding = nil;
+                NSError *fragmentShaderError;
+                NSString *fragmentShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"fsh"];
+                NSAssert(fragmentShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"fsh");
+                NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:fragmentShaderFilePath usedEncoding:fragmentShaderSourceEncoding error:&fragmentShaderError];
+                NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
+                const GLchar *source = [fragmentShaderSource UTF8String];
+                NSLog(@"%s",source);
+                _fragmentShader = [[LQSFragmentShader alloc] initWithSource:source context:_context];
+            }
             glAttachShader(_program.name, _vertexShader.name);
             glAttachShader(_program.name, _fragmentShader.name);
             glLinkProgram(_program.name);
