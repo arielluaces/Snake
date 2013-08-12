@@ -7,12 +7,9 @@
 //
 
 #import "LQSViewController.h"
-#import "ILQSGLShader.h"
-#import "ILQSGLProgram.h"
 #import "LQSVertexShader.h"
 #import "LQSFragmentShader.h"
-#import "LQSGLProgram.h"
-#import "LQSGLUtils.h"
+#import "LQSProgram.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -43,7 +40,6 @@
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
-        _program = [[LQSGLProgram alloc] initWithContext:_context];
         {
             const GLchar *vertexShaderSourceC;
             {
@@ -69,10 +65,7 @@
             }
             _vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
             _fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
-            glAttachShader(_program.name, _vertexShader.name);
-            glAttachShader(_program.name, _fragmentShader.name);
-            glLinkProgram(_program.name);
-            [LQSGLUtils checkProgramLinkStatus:_program];
+            _program = [[LQSProgram alloc] initWithVertexShader:_vertexShader fragmentShader:_fragmentShader context:_context];
         }
         int aPosition = glGetAttribLocation(_program.name, "aPosition");
         NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
