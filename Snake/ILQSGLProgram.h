@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES2/gl.h>
 
 @protocol ILQSGLProgram <NSObject>
 
+- (EAGLSharegroup *)sharegroup;
 - (GLuint)name;
 
 @end

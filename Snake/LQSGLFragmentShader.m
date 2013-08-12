@@ -44,6 +44,11 @@
     return self;
 }
 
+- (EAGLSharegroup *)sharegroup
+{
+    return _shader.sharegroup;
+}
+
 - (GLuint)name
 {
     return _shader.name;
