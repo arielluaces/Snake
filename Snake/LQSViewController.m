@@ -10,6 +10,7 @@
 #import "LQSVertexShader.h"
 #import "LQSFragmentShader.h"
 #import "LQSProgram.h"
+#import "LQSGLFileUtils.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -41,28 +42,8 @@
     {
         // Create program
         {
-            const GLchar *vertexShaderSourceC;
-            {
-                NSStringEncoding *vertexShaderSourceEncoding = nil;
-                NSError *vertexShaderError;
-                NSString *vertexShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"vsh"];
-                NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"vsh");
-                NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
-                NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-                vertexShaderSourceC = [vertexShaderSource UTF8String];
-                NSLog(@"%s",vertexShaderSourceC);
-            }
-            const GLchar *fragmentShaderSourceC;
-            {
-                NSStringEncoding *fragmentShaderSourceEncoding = nil;
-                NSError *fragmentShaderError;
-                NSString *fragmentShaderFilePath = [[NSBundle mainBundle] pathForResource:@"MatrixGrid" ofType:@"fsh"];
-                NSAssert(fragmentShaderFilePath != nil, @"Could not find file %@.%@", @"MatrixGrid", @"fsh");
-                NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:fragmentShaderFilePath usedEncoding:fragmentShaderSourceEncoding error:&fragmentShaderError];
-                NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", @"MatrixGrid", @"vsh");
-                fragmentShaderSourceC = [fragmentShaderSource UTF8String];
-                NSLog(@"%s",fragmentShaderSourceC);
-            }
+            const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
+            const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
             _vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
             _fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
             _program = [[LQSProgram alloc] initWithVertexShader:_vertexShader fragmentShader:_fragmentShader context:_context];
