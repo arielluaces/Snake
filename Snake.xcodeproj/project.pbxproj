@@ -10,6 +10,7 @@
 		B078737317AB666300438D16 /* LQSGLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B078737217AB666300438D16 /* LQSGLUtils.m */; };
 		B078737617AB79AD00438D16 /* MatrixGrid.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B078737517AB79AD00438D16 /* MatrixGrid.vsh */; };
 		B078737817AB79C000438D16 /* MatrixGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B078737717AB79C000438D16 /* MatrixGrid.fsh */; };
+		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CFA6569717A5ADDA00148B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
 		CFA6569917A5ADDA00148B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CFA6569B17A5ADDA00148B4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569A17A5ADDA00148B4F /* CoreGraphics.framework */; };
@@ -56,6 +57,8 @@
 		B078737217AB666300438D16 /* LQSGLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLUtils.m; sourceTree = "<group>"; };
 		B078737517AB79AD00438D16 /* MatrixGrid.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MatrixGrid.vsh; path = Shaders/MatrixGrid.vsh; sourceTree = "<group>"; };
 		B078737717AB79C000438D16 /* MatrixGrid.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MatrixGrid.fsh; path = Shaders/MatrixGrid.fsh; sourceTree = "<group>"; };
+		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
+		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CFA6569317A5ADDA00148B4F /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA6569617A5ADDA00148B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFA6569817A5ADDA00148B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,8 @@
 				CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */,
 				CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */,
 				CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */,
+				CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */,
+				CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */,
 				CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */,
 				CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */,
+				CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
