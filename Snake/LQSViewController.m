@@ -12,6 +12,7 @@
 #import "LQSProgram.h"
 #import "LQSGLFileUtils.h"
 #import <Foundation/NSBundle.h>
+#import "LQSColoredVerticesProgram.h"
 
 @implementation LQSViewController
 {
@@ -24,6 +25,8 @@
     GLint _uExponent;
     
     float _exponent;
+    
+    NSObject<ILQSColoredVerticesProgram> *_program2;
 }
 
 - (void)viewDidLoad
@@ -35,7 +38,6 @@
     self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
-    glEnable(GL_DEPTH_TEST);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
@@ -61,6 +63,10 @@
         _uMVPMatrix = (GLint)uMVPMatrix;
         _uColor = (GLint)uColor;
         _uExponent = (GLint)uExponent;
+        // Create second program
+        {
+            _program2 = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
+        }
     }
     [EAGLContext setCurrentContext:savedContext];
 }
@@ -108,6 +114,22 @@
         glVertexAttribPointer(_aGridValue, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, GridVals);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+        glDisable(GL_BLEND);
+        glUseProgram(0);
+    }
+    {
+        glUseProgram(_program2.name);
+        glEnableVertexAttribArray(_program2.aPosition);
+        float vertexPositions[] = {
+            0.0f, 0.0f,
+            0.0f, 1.0f,
+            1.0f, 0.0f,
+            1.0f, 1.0f,
+        };
+        glUniformMatrix4fv(_program2.uMVPMatrix, 1, GL_FALSE, GLKMatrix4MakeScale(1.0f/16.0f, 1.0f/16.0f, 1.0f/16.0f).m);
+        glVertexAttribPointer(_program2.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertexPositions);
+        glUniform3f(_program2.uColor, 0.6f, 0.2f, 0.95f);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
         glUseProgram(0);
     }
