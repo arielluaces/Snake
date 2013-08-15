@@ -82,34 +82,35 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
-    glUseProgram(_program.name);
-    glEnableVertexAttribArray(_aPosition);
-    glEnableVertexAttribArray(_aGridValue);
-    float vertices[] = {
-        0.0f, 0.0f,
-        0.0f, 1.0f,
-        1.0f, 0.0f,
-        1.0f, 1.0f,
-    };
-    float GridVals[] = {
-        0.0f, 0.0f,
-        0.0f, 32.0f,
-        32.0f, 0.0f,
-        32.0f, 32.0f,
-    };
-    GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
-    MVPMatrix = GLKMatrix4Scale(MVPMatrix, 2.0f, 2.0f, 1.0f);
-    MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
-    glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-    glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
-    glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
-    glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertices);
-    glVertexAttribPointer(_aGridValue, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, GridVals);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    glUseProgram(0);
+    {
+        glUseProgram(_program.name);
+        glEnableVertexAttribArray(_aPosition);
+        glEnableVertexAttribArray(_aGridValue);
+        float vertices[] = {
+            0.0f, 0.0f,
+            0.0f, 1.0f,
+            1.0f, 0.0f,
+            1.0f, 1.0f,
+        };
+        float GridVals[] = {
+            0.0f, 0.0f,
+            0.0f, 32.0f,
+            32.0f, 0.0f,
+            32.0f, 32.0f,
+        };
+        GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
+        MVPMatrix = GLKMatrix4Scale(MVPMatrix, 2.0f, 2.0f, 1.0f);
+        MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
+        glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
+        glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
+        glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
+        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertices);
+        glVertexAttribPointer(_aGridValue, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, GridVals);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+        glUseProgram(0);
+    }
 }
 
 @end
