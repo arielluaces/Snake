@@ -38,6 +38,9 @@
 		CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */; };
 		CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */; };
 		CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */; };
+		CFE15D2C17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */; };
+		CFE15D3017BC84F500ECE1C2 /* ColoredVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */; };
+		CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */; };
 		CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */; };
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
@@ -102,6 +105,11 @@
 		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
 		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
 		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShader.h; sourceTree = "<group>"; };
+		CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColoredVerticesProgram.vsh; path = Shaders/ColoredVerticesProgram.vsh; sourceTree = "<group>"; };
+		CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColoredVerticesProgram.fsh; path = Shaders/ColoredVerticesProgram.fsh; sourceTree = "<group>"; };
+		CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSColoredVerticesProgram.h; sourceTree = "<group>"; };
+		CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSColoredVerticesProgram.h; sourceTree = "<group>"; };
+		CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSColoredVerticesProgram.m; sourceTree = "<group>"; };
 		CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSVertexShader.h; sourceTree = "<group>"; };
 		CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSVertexShader.m; sourceTree = "<group>"; };
 		CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 				B078737717AB79C000438D16 /* MatrixGrid.fsh */,
 				CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */,
 				CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */,
+				CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */,
+				CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -216,6 +226,9 @@
 				CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */,
 				CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */,
 				CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */,
+				CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */,
+				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
+				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -337,6 +350,8 @@
 				B078737817AB79C000438D16 /* MatrixGrid.fsh in Resources */,
 				CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */,
 				CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */,
+				CFE15D2C17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh in Resources */,
+				CFE15D3017BC84F500ECE1C2 /* ColoredVerticesProgram.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +399,7 @@
 				CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */,
 				CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */,
 				CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */,
+				CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
