@@ -15,8 +15,6 @@
 
 @implementation LQSViewController
 {
-    NSObject<ILQSGLShader> *_vertexShader;
-    NSObject<ILQSGLShader> *_fragmentShader;
     NSObject<ILQSGLProgram> *_program;
     EAGLContext *_context;
     GLuint _aPosition;
@@ -44,9 +42,9 @@
         {
             const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
             const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
-            _vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
-            _fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
-            _program = [[LQSProgram alloc] initWithVertexShader:_vertexShader fragmentShader:_fragmentShader context:_context];
+            NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
+            NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
+            _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:_context];
         }
         int aPosition = glGetAttribLocation(_program.name, "aPosition");
         NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
