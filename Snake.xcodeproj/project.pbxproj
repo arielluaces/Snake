@@ -58,13 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B078737017AB48C200438D16 /* ILQSGLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ILQSGLProgram.h; path = shading/ILQSGLProgram.h; sourceTree = "<group>"; };
-		B078737117AB666300438D16 /* LQSGLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLUtils.h; path = shading/LQSGLUtils.h; sourceTree = "<group>"; };
-		B078737217AB666300438D16 /* LQSGLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLUtils.m; path = shading/LQSGLUtils.m; sourceTree = "<group>"; };
+		B078737017AB48C200438D16 /* ILQSGLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLProgram.h; sourceTree = "<group>"; };
+		B078737117AB666300438D16 /* LQSGLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLUtils.h; sourceTree = "<group>"; };
+		B078737217AB666300438D16 /* LQSGLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLUtils.m; sourceTree = "<group>"; };
 		B078737517AB79AD00438D16 /* MatrixGrid.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MatrixGrid.vsh; path = Shaders/MatrixGrid.vsh; sourceTree = "<group>"; };
 		B078737717AB79C000438D16 /* MatrixGrid.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MatrixGrid.fsh; path = Shaders/MatrixGrid.fsh; sourceTree = "<group>"; };
-		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLFileUtils.h; path = shading/LQSGLFileUtils.h; sourceTree = "<group>"; };
-		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLFileUtils.m; path = shading/LQSGLFileUtils.m; sourceTree = "<group>"; };
+		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
+		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF9B620A17D6517D006934AE /* ILQSSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILQSSpace.h; sourceTree = "<group>"; };
 		CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSAdjacentSpace.h; sourceTree = "<group>"; };
 		CF9B620C17D651EA006934AE /* ILQSChildSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSChildSpace.h; sourceTree = "<group>"; };
@@ -97,29 +97,29 @@
 		CFA656CF17A5ADDA00148B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFA656D117A5ADDA00148B4F /* SnakeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnakeTests.h; sourceTree = "<group>"; };
 		CFA656D217A5ADDA00148B4F /* SnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeTests.m; sourceTree = "<group>"; };
-		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSFragmentShader.h; path = shading/LQSFragmentShader.h; sourceTree = "<group>"; };
-		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSFragmentShader.m; path = shading/LQSFragmentShader.m; sourceTree = "<group>"; };
-		CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSProgram.h; path = shading/LQSProgram.h; sourceTree = "<group>"; };
-		CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSProgram.m; path = shading/LQSProgram.m; sourceTree = "<group>"; };
-		CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLProgram.h; path = shading/LQSGLProgram.h; sourceTree = "<group>"; };
-		CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLProgram.m; path = shading/LQSGLProgram.m; sourceTree = "<group>"; };
-		CFDF4A4017A5D99B0066BE84 /* LQSGLVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLVertexShader.h; path = shading/LQSGLVertexShader.h; sourceTree = "<group>"; };
-		CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLVertexShader.m; path = shading/LQSGLVertexShader.m; sourceTree = "<group>"; };
-		CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLFragmentShader.h; path = shading/LQSGLFragmentShader.h; sourceTree = "<group>"; };
-		CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLFragmentShader.m; path = shading/LQSGLFragmentShader.m; sourceTree = "<group>"; };
-		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLShader.h; path = shading/LQSGLShader.h; sourceTree = "<group>"; };
-		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLShader.m; path = shading/LQSGLShader.m; sourceTree = "<group>"; };
-		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ILQSGLShader.h; path = shading/ILQSGLShader.h; sourceTree = "<group>"; };
+		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFragmentShader.h; sourceTree = "<group>"; };
+		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFragmentShader.m; sourceTree = "<group>"; };
+		CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSProgram.h; sourceTree = "<group>"; };
+		CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSProgram.m; sourceTree = "<group>"; };
+		CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLProgram.h; sourceTree = "<group>"; };
+		CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLProgram.m; sourceTree = "<group>"; };
+		CFDF4A4017A5D99B0066BE84 /* LQSGLVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLVertexShader.h; sourceTree = "<group>"; };
+		CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLVertexShader.m; sourceTree = "<group>"; };
+		CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFragmentShader.h; sourceTree = "<group>"; };
+		CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFragmentShader.m; sourceTree = "<group>"; };
+		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
+		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
+		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShader.h; sourceTree = "<group>"; };
 		CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColoredVerticesProgram.vsh; path = Shaders/ColoredVerticesProgram.vsh; sourceTree = "<group>"; };
 		CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ColoredVerticesProgram.fsh; path = Shaders/ColoredVerticesProgram.fsh; sourceTree = "<group>"; };
-		CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ILQSColoredVerticesProgram.h; path = shading/ILQSColoredVerticesProgram.h; sourceTree = "<group>"; };
-		CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSColoredVerticesProgram.h; path = shading/LQSColoredVerticesProgram.h; sourceTree = "<group>"; };
-		CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSColoredVerticesProgram.m; path = shading/LQSColoredVerticesProgram.m; sourceTree = "<group>"; };
-		CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSVertexShader.h; path = shading/LQSVertexShader.h; sourceTree = "<group>"; };
-		CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSVertexShader.m; path = shading/LQSVertexShader.m; sourceTree = "<group>"; };
-		CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ILQSTexturedVerticesProgram.h; path = shading/ILQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
-		CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSTexturedVerticesProgram.h; path = shading/LQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
-		CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSTexturedVerticesProgram.m; path = shading/LQSTexturedVerticesProgram.m; sourceTree = "<group>"; };
+		CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSColoredVerticesProgram.h; sourceTree = "<group>"; };
+		CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSColoredVerticesProgram.h; sourceTree = "<group>"; };
+		CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSColoredVerticesProgram.m; sourceTree = "<group>"; };
+		CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSVertexShader.h; sourceTree = "<group>"; };
+		CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSVertexShader.m; sourceTree = "<group>"; };
+		CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
+		CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
+		CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTexturedVerticesProgram.m; sourceTree = "<group>"; };
 		CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = TexturedVerticesProgram.vsh; path = Shaders/TexturedVerticesProgram.vsh; sourceTree = "<group>"; };
 		CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = TexturedVerticesProgram.fsh; path = Shaders/TexturedVerticesProgram.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
 				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
 			);
-			name = shading;
+			path = shading;
 			sourceTree = "<group>";
 		};
 		CFA6568A17A5ADD900148B4F = {
