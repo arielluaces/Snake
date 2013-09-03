@@ -65,6 +65,11 @@
 		B078737717AB79C000438D16 /* MatrixGrid.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MatrixGrid.fsh; path = Shaders/MatrixGrid.fsh; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LQSGLFileUtils.h; path = shading/LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LQSGLFileUtils.m; path = shading/LQSGLFileUtils.m; sourceTree = "<group>"; };
+		CF9B620A17D6517D006934AE /* ILQSSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILQSSpace.h; sourceTree = "<group>"; };
+		CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSAdjacentSpace.h; sourceTree = "<group>"; };
+		CF9B620C17D651EA006934AE /* ILQSChildSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSChildSpace.h; sourceTree = "<group>"; };
+		CF9B620D17D651F4006934AE /* ILQSRootSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSRootSpace.h; sourceTree = "<group>"; };
+		CF9B620E17D65200006934AE /* ILQSTransformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformation.h; sourceTree = "<group>"; };
 		CFA6569317A5ADDA00148B4F /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA6569617A5ADDA00148B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFA6569817A5ADDA00148B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +165,18 @@
 			name = Shaders;
 			sourceTree = "<group>";
 		};
+		CF9B620917D6517D006934AE /* space */ = {
+			isa = PBXGroup;
+			children = (
+				CF9B620A17D6517D006934AE /* ILQSSpace.h */,
+				CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */,
+				CF9B620C17D651EA006934AE /* ILQSChildSpace.h */,
+				CF9B620D17D651F4006934AE /* ILQSRootSpace.h */,
+				CF9B620E17D65200006934AE /* ILQSTransformation.h */,
+			);
+			path = space;
+			sourceTree = "<group>";
+		};
 		CFA3F81717BD44E800539A2A /* shading */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +253,7 @@
 				CFA656BC17A5ADDA00148B4F /* LQSViewController.h */,
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
+				CF9B620917D6517D006934AE /* space */,
 				CFA3F81717BD44E800539A2A /* shading */,
 			);
 			path = Snake;
