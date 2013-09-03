@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ILQSAdjacentSpace.h"
 
-@protocol ILQSRootSpace <NSObject>
+@protocol ILQSRootSpace <ILQSAdjacentSpace>
 
 @end
