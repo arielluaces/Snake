@@ -13,6 +13,10 @@
 #import "LQSGLFileUtils.h"
 #import <Foundation/NSBundle.h>
 #import "LQSColoredVerticesProgram.h"
+#import "LQSChildSpace.h"
+#import "LQSRootSpace.h"
+#import "LQSScaleTransformation.h"
+#import "ILQSSpaceCollection.h"
 
 @implementation LQSViewController
 {
@@ -27,11 +31,9 @@
     float _exponent;
     
     NSObject<ILQSColoredVerticesProgram> *_program2;
-    float _squareSpaceToRootSpaceScale;
-    NSObject *_squareSpace;
-    NSObject *_squareSpaceParent;
-    NSObject *_squareSpaceToParentTransform;
-    NSObject *_rootSpace;
+    
+    NSObject<ILQSAdjacentSpace> *_squareSpace;
+    NSObject<ILQSAdjacentSpace> *_rootSpace;
 }
 
 - (void)viewDidLoad
@@ -44,11 +46,16 @@
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
     // Create space information for the square being drawn
-    _squareSpace = [[NSObject alloc] init];
-    _rootSpace = [[NSObject alloc] init];
-    _squareSpaceParent = _rootSpace;
-    _squareSpaceToParentTransform = _squareSpace;
-    _squareSpaceToRootSpaceScale = 1.0f/16.0f;
+    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+    LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
+    childSpace.parent = rootSpace;
+    LQSScaleTransformation *scaleTransformation = [[LQSScaleTransformation alloc] init];
+    scaleTransformation.scaleX = 1.0f/16.0f;
+    scaleTransformation.scaleY = 1.0f/16.0f;
+    scaleTransformation.scaleZ = 1.0f/16.0f;
+    childSpace.transformToParent = scaleTransformation;
+    _squareSpace = childSpace;
+    _rootSpace = rootSpace;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
@@ -96,142 +103,28 @@
     _exponent = _exponent+1.0f;
 }
 
-- (GLKMatrix4)transformationMatrixFromSpace:(NSObject *)space1 toSpace:(NSObject *)space2
+- (GLKMatrix4)transformationMatrixFromSpace:(NSObject<ILQSAdjacentSpace> *)space1 toSpace:(NSObject<ILQSAdjacentSpace> *)space2
 {
     if (space1 == space2)
     {
         return GLKMatrix4Identity;
     }
-    else if ([self isObject:space2 InAdjacentObjectsOfObject:space1])
+    else if ([space1 isAdjacentSpace:space2])
     {
-        return [self transformationMatrixOfSpace:space1 toSpace:space2];
+        return [[space1 transformationObjectToSpace:space2] transformationMatrix];
     }
-    else if ([self isObject:space1 InAdjacentObjectsOfObject:space2])
+    else if ([space2 isAdjacentSpace:space1])
     {
         // We can either ask the object for the matrix already ionverted or we could invert the matrix ourselves
         // The matrices can be inverted individually or a large set of matrices that need to be inverted can
         // be inverted one chunk after being multiplied together
-        return [self transformationMatrixInverseOfSpace:space2 toSpace:space1];
+        return [[space2 transformationObjectToSpace:space1] transformationMatrixInverse];
     }
     else
     {
         // Start looking for longer chains in the directed graph to end up with a path from space1 to space2
         NSAssert(FALSE, @"Not implemented yet");
         return GLKMatrix4Identity;
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return GLKMatrix4Identity;
-}
-
-- (GLKMatrix4)transformationMatrixOfSpace:(NSObject *)space1 toSpace:(NSObject *)space2
-{
-    if (space1 == _squareSpace)
-    {
-        if (space2 == _squareSpaceParent)
-        {
-            return [self transformatrionMatrixOfObject:[self transformObjectOfOBject:space1]];
-        }
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return GLKMatrix4Identity;
-}
-
-- (GLKMatrix4)transformationMatrixInverseOfSpace:(NSObject *)space1 toSpace:(NSObject *)space2
-{
-    if (space1 == _squareSpace)
-    {
-        if (space2 == _squareSpaceParent)
-        {
-            return [self transformatrionMatrixInverseOfObject:[self transformObjectOfOBject:space1]];
-        }
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return GLKMatrix4Identity;
-}
-
-- (bool)isChild:(NSObject *)object
-{
-    if (object == _squareSpace)
-    {
-        return true;
-    }
-    else if (object == _rootSpace)
-    {
-        return false;
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return false;
-}
-
-- (bool)isObject:(NSObject *)adjacentObject InAdjacentObjectsOfObject:(NSObject *)object
-{
-    // Should be equivalent to "adjacentObject" being in the set of adjacent objects of "object"
-    // This function is just used of optimizations so that the adjacnet objects set doesn't need
-    // to be constructed in order to determine if an "adjacentObject" is in the set
-    if (object == _squareSpace)
-    {
-        if (adjacentObject == _squareSpaceParent)
-        {
-            return true;
-        }
-    }
-    else if (object == _rootSpace)
-    {
-        return false;
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return false;
-}
-
-- (NSArray *)adjacentSpacesOfObject:(NSObject *)object
-{
-    if (object == _squareSpace)
-    {
-        return [NSArray arrayWithObject:_squareSpaceParent];
-    }
-    else if (object == _rootSpace)
-    {
-        return [NSArray array];
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return [NSArray array];
-}
-
-- (NSObject *)transformObjectOfOBject:(NSObject *)object
-{
-    if (object == _squareSpace)
-    {
-        return _squareSpaceToParentTransform;
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return nil;
-}
-
-- (NSObject *)parentOfObject:(NSObject *)object
-{
-    if (object == _squareSpace)
-    {
-        return _squareSpaceParent;
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return nil;
-}
-
-- (GLKMatrix4)transformatrionMatrixOfObject:(NSObject *)object;
-{
-    if (object == _squareSpaceToParentTransform)
-    {
-        return GLKMatrix4MakeScale(_squareSpaceToRootSpaceScale, _squareSpaceToRootSpaceScale, _squareSpaceToRootSpaceScale);
-    }
-    NSAssert(FALSE, @"This is not suppoed to run");
-    return GLKMatrix4Identity;
-}
-
-- (GLKMatrix4)transformatrionMatrixInverseOfObject:(NSObject *)object
-{
-    if (object == _squareSpaceToParentTransform)
-    {
-        return GLKMatrix4MakeScale(1.0f/_squareSpaceToRootSpaceScale, 1.0f/_squareSpaceToRootSpaceScale, 1.0f/_squareSpaceToRootSpaceScale);
     }
     NSAssert(FALSE, @"This is not suppoed to run");
     return GLKMatrix4Identity;
