@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
 @protocol ILQSTransformation <NSObject>
+
+- (GLKMatrix4)transformationMatrix;
+- (GLKMatrix4)transformationMatrixInverse;
 
 @end
