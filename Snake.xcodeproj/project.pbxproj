@@ -34,6 +34,7 @@
 		CFA656D317A5ADDA00148B4F /* SnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA656D217A5ADDA00148B4F /* SnakeTests.m */; };
 		CFA923E417D659660067835F /* LQSRootSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E317D659660067835F /* LQSRootSpace.m */; };
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
+		CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923ED17D65FDE0067835F /* LQSCollection.m */; };
 		CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */; };
 		CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */; };
 		CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */; };
@@ -103,6 +104,9 @@
 		CFA923E317D659660067835F /* LQSRootSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSRootSpace.m; sourceTree = "<group>"; };
 		CFA923E717D65DAD0067835F /* LQSChildSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSChildSpace.h; sourceTree = "<group>"; };
 		CFA923E817D65DAD0067835F /* LQSChildSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSChildSpace.m; sourceTree = "<group>"; };
+		CFA923EB17D65ED30067835F /* ILQSCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSCollection.h; sourceTree = "<group>"; };
+		CFA923EC17D65FDE0067835F /* LQSCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSCollection.h; sourceTree = "<group>"; };
+		CFA923ED17D65FDE0067835F /* LQSCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSCollection.m; sourceTree = "<group>"; };
 		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFragmentShader.h; sourceTree = "<group>"; };
 		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFragmentShader.m; sourceTree = "<group>"; };
 		CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSProgram.h; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
 				CF9B620917D6517D006934AE /* space */,
 				CFA3F81717BD44E800539A2A /* shading */,
+				CFA923EA17D65EB80067835F /* utils */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -300,6 +305,16 @@
 				CFA656CE17A5ADDA00148B4F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFA923EA17D65EB80067835F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CFA923EB17D65ED30067835F /* ILQSCollection.h */,
+				CFA923EC17D65FDE0067835F /* LQSCollection.h */,
+				CFA923ED17D65FDE0067835F /* LQSCollection.m */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +453,7 @@
 				CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */,
 				CFA923E417D659660067835F /* LQSRootSpace.m in Sources */,
 				CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */,
+				CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
