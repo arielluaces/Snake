@@ -11,4 +11,7 @@
 
 @interface LQSChildSpace : NSObject <ILQSChildSpace>
 
+@property (nonatomic) NSObject<ILQSAdjacentSpace> *parent;
+@property (nonatomic) NSObject<ILQSTransformation> *transformToParent;
+
 @end

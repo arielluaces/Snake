@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ILQSAdjacentSpace.h"
 
+@protocol ILQSTransformation;
+
 @protocol ILQSChildSpace <ILQSAdjacentSpace>
+
+- (NSObject<ILQSAdjacentSpace> *)parent;
+- (NSObject<ILQSTransformation> *)transformToParent;
 
 @end
