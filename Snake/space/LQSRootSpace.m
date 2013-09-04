@@ -16,4 +16,9 @@
     return [[LQSSpaceCollection alloc] init];
 }
 
+- (bool)isAdjacentSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace
+{
+    return false;
+}
+
 @end

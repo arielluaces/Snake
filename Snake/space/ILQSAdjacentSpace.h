@@ -14,5 +14,6 @@
 @protocol ILQSAdjacentSpace <ILQSSpace>
 
 - (NSObject<ILQSSpaceCollection> *)adjacentSpaces;
+- (bool)isAdjacentSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace;
 
 @end

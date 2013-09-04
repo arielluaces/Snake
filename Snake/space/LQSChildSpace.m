@@ -18,4 +18,9 @@
     return spaceCollection;
 }
 
+- (bool)isAdjacentSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace
+{
+    return adjacentSpace == _parent;
+}
+
 @end
