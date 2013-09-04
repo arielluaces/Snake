@@ -15,7 +15,7 @@
 #import "LQSColoredVerticesProgram.h"
 #import "LQSChildSpace.h"
 #import "LQSRootSpace.h"
-#import "LQSScaleTransformation.h"
+#import "LQSUniformScaleTransformation.h"
 #import "ILQSSpaceCollection.h"
 
 @implementation LQSViewController
@@ -49,10 +49,8 @@
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
     LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
     childSpace.parent = rootSpace;
-    LQSScaleTransformation *scaleTransformation = [[LQSScaleTransformation alloc] init];
-    scaleTransformation.scaleX = 1.0f/16.0f;
-    scaleTransformation.scaleY = 1.0f/16.0f;
-    scaleTransformation.scaleZ = 1.0f/16.0f;
+    LQSUniformScaleTransformation *scaleTransformation = [[LQSUniformScaleTransformation alloc] init];
+    scaleTransformation.scale = 1.0f/16.0f;
     childSpace.transformToParent = scaleTransformation;
     _squareSpace = childSpace;
     _rootSpace = rootSpace;
