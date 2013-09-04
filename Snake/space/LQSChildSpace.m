@@ -23,4 +23,10 @@
     return adjacentSpace == _parent;
 }
 
+- (NSObject<ILQSTransformation> *)transformationObjectToSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace
+{
+    NSAssert(adjacentSpace == _parent, @"Adjacent space:<%@: %p> is not adjacent to self:<%@: %p>", [adjacentSpace class], adjacentSpace, [self class], self);
+    return _transformToParent;
+}
+
 @end

@@ -10,10 +10,12 @@
 #import "ILQSSpace.h"
 
 @protocol ILQSSpaceCollection;
+@protocol ILQSTransformation;
 
 @protocol ILQSAdjacentSpace <ILQSSpace>
 
 - (NSObject<ILQSSpaceCollection> *)adjacentSpaces;
 - (bool)isAdjacentSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace;
+- (NSObject<ILQSTransformation> *)transformationObjectToSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace;
 
 @end

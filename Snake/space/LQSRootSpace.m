@@ -21,4 +21,10 @@
     return false;
 }
 
+- (NSObject<ILQSTransformation> *)transformationObjectToSpace:(NSObject<ILQSAdjacentSpace> *)adjacentSpace
+{
+    NSAssert(false, @"Adjacent space:<%@: %p> is not adjacent to self:<%@: %p>", [adjacentSpace class], adjacentSpace, [self class], self);
+    return nil;
+}
+
 @end
