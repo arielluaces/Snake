@@ -7,7 +7,15 @@
 //
 
 #import "LQSChildSpace.h"
+#import "LQSSpaceCollection.h"
 
 @implementation LQSChildSpace
+
+- (NSObject<ILQSSpaceCollection> *)adjacentSpaces
+{
+    LQSSpaceCollection *spaceCollection = [[LQSSpaceCollection alloc] init];
+    [spaceCollection addSpace:_parent];
+    return spaceCollection;
+}
 
 @end

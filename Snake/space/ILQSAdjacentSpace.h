@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ILQSSpace.h"
 
+@protocol ILQSSpaceCollection;
+
 @protocol ILQSAdjacentSpace <ILQSSpace>
+
+- (NSObject<ILQSSpaceCollection> *)adjacentSpaces;
 
 @end

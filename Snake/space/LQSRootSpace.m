@@ -7,7 +7,13 @@
 //
 
 #import "LQSRootSpace.h"
+#import "LQSSpaceCollection.h"
 
 @implementation LQSRootSpace
+
+- (NSObject<ILQSSpaceCollection> *)adjacentSpaces
+{
+    return [[LQSSpaceCollection alloc] init];
+}
 
 @end
