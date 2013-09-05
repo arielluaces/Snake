@@ -188,25 +188,33 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		CF2F1F7017D8046400A967AE /* transformations */ = {
+			isa = PBXGroup;
+			children = (
+				CF9B620E17D65200006934AE /* ILQSTransformation.h */,
+				CF33243B17D6B44400C0C2DD /* LQSScaleTransformation.h */,
+				CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */,
+				CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */,
+				CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */,
+			);
+			path = transformations;
+			sourceTree = "<group>";
+		};
 		CF9B620917D6517D006934AE /* space */ = {
 			isa = PBXGroup;
 			children = (
+				CF2F1F7017D8046400A967AE /* transformations */,
 				CF9B620A17D6517D006934AE /* ILQSSpace.h */,
 				CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */,
 				CF9B620C17D651EA006934AE /* ILQSChildSpace.h */,
 				CF9B620D17D651F4006934AE /* ILQSRootSpace.h */,
-				CF9B620E17D65200006934AE /* ILQSTransformation.h */,
 				CFA923E217D659660067835F /* LQSRootSpace.h */,
 				CFA923E317D659660067835F /* LQSRootSpace.m */,
 				CFA923E717D65DAD0067835F /* LQSChildSpace.h */,
 				CFA923E817D65DAD0067835F /* LQSChildSpace.m */,
-				CF33243B17D6B44400C0C2DD /* LQSScaleTransformation.h */,
-				CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */,
 				CF33244017D6B6FC00C0C2DD /* ILQSSpaceCollection.h */,
 				CF33244117D6B89900C0C2DD /* LQSSpaceCollection.h */,
 				CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */,
-				CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */,
-				CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */,
 				CF33244A17D7C71100C0C2DD /* LQSSpaceUtils.h */,
 				CF33244B17D7C71100C0C2DD /* LQSSpaceUtils.m */,
 			);
