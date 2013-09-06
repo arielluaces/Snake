@@ -10,6 +10,7 @@
 #import "ILQSAdjacentSpace.h"
 #import "ILQSTransformation.h"
 #import <GLKit/GLKMatrix4.h>
+#import "ILQSSpaceCollection.h"
 
 @implementation LQSSpaceUtils
 
@@ -33,6 +34,74 @@
     else
     {
         // Start looking for longer chains in the directed graph to end up with a path from space1 to space2
+        NSObject<ILQSAdjacentSpace> *commonSpace = nil;
+        NSMutableArray *space1AdjacencyPath = [[NSMutableArray alloc] init];
+        [space1AdjacencyPath addObject:space1];
+        NSMutableArray *space2AdjacencyPath = [[NSMutableArray alloc] init];
+        [space2AdjacencyPath addObject:space2];
+        while (true)
+        {
+            NSObject<ILQSAdjacentSpace> *space = [space1AdjacencyPath lastObject];
+            NSArray *adjacentSpaces = space.adjacentSpaces.toArray;
+            NSAssert(adjacentSpaces.count < 2, @"This algorithm doesn work if the number of adjacent spaces to any space is 2 or greater");
+            if (adjacentSpaces.count == 0)
+            {
+                break;
+            }
+            else if (adjacentSpaces.count == 1)
+            {
+                NSObject<ILQSAdjacentSpace> *adjacentSpace = adjacentSpaces.lastObject;
+                [space1AdjacencyPath addObject:adjacentSpace];
+                if (adjacentSpace == space2)
+                {
+                    commonSpace = adjacentSpace;
+                    GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
+                    for (uint i = 0; i < space1AdjacencyPath.count-1; ++i)
+                    {
+                        NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space1AdjacencyPath objectAtIndex:i];
+                        NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space1AdjacencyPath objectAtIndex:i+1];
+                        transformationMatrix = GLKMatrix4Multiply([currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace].transformationMatrix, transformationMatrix);
+                    }
+                    return transformationMatrix;
+                }
+                else if (adjacentSpace != space2)
+                {
+                    continue;
+                }
+            }
+        }
+        while (true)
+        {
+            NSObject<ILQSAdjacentSpace> *space = [space2AdjacencyPath lastObject];
+            NSArray *adjacentSpaces = space.adjacentSpaces.toArray;
+            NSAssert(adjacentSpaces.count < 2, @"This algorithm doesn work if the number of adjacent spaces to any space is 2 or greater");
+            if (adjacentSpaces.count == 0)
+            {
+                break;
+            }
+            else if (adjacentSpaces.count == 1)
+            {
+                NSObject<ILQSAdjacentSpace> *adjacentSpace = adjacentSpaces.lastObject;
+                [space2AdjacencyPath addObject:adjacentSpace];
+                if (adjacentSpace == space1)
+                {
+                    commonSpace = adjacentSpace;
+                    GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
+                    for (uint i = 0; i < space2AdjacencyPath.count-1; ++i)
+                    {
+                        NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space2AdjacencyPath objectAtIndex:i];
+                        NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space2AdjacencyPath objectAtIndex:i+1];
+                        transformationMatrix = GLKMatrix4Multiply(transformationMatrix, [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace].transformationMatrixInverse);
+                    }
+                    return transformationMatrix;
+                }
+                else if (adjacentSpace != space1)
+                {
+                    continue;
+                }
+            }
+        }
+        //Next we must find the first object that is in common with the two adjacent space adjacency paths
         NSAssert(FALSE, @"Not implemented yet");
         return GLKMatrix4Identity;
     }
