@@ -75,6 +75,11 @@
     [_array removeAllObjects];
 }
 
+- (NSArray *)toArray
+{
+    return [NSArray arrayWithArray:_array];
+}
+
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
     return [_array countByEnumeratingWithState:state objects:buffer count:len];

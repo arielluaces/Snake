@@ -20,5 +20,6 @@
 - (void)addSpaces:(NSObject<ILQSSpaceCollection> *)spaces;
 - (void)removeSpaces:(NSObject<ILQSSpaceCollection> *)spaces;
 - (void)clear;
+- (NSArray *)toArray;
 
 @end
