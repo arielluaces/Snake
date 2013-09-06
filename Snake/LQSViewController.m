@@ -18,6 +18,7 @@
 #import "LQSUniformScaleTransformation.h"
 #import "ILQSSpaceCollection.h"
 #import "LQSSpaceUtils.h"
+#import "LQSTranslationTransformation.h"
 
 @implementation LQSViewController
 {
@@ -48,11 +49,29 @@
     [EAGLContext setCurrentContext:_context];
     // Create space information for the square being drawn
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+    LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
     LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
-    childSpace.parent = rootSpace;
-    LQSUniformScaleTransformation *scaleTransformation = [[LQSUniformScaleTransformation alloc] init];
-    scaleTransformation.scale = 1.0f/16.0f;
-    childSpace.transformToParent = scaleTransformation;
+    childSpace.parent = parentSpace;
+    parentSpace.parent = rootSpace;
+    {
+        NSObject<ILQSTransformation> *transformToParent;
+        {
+            LQSUniformScaleTransformation *scaleTransformation = [[LQSUniformScaleTransformation alloc] init];
+            scaleTransformation.scale = 1.0f/16.0f;
+            transformToParent = scaleTransformation;
+        }
+        childSpace.transformToParent = transformToParent;
+    }
+    {
+        NSObject<ILQSTransformation> *transformToParent;
+        {
+            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
+            translationTransformation.x = 1.0f/32.0f;
+            translationTransformation.y = 1.0f/32.0f;
+            transformToParent = translationTransformation;
+        }
+        parentSpace.transformToParent = transformToParent;
+    }
     _squareSpace = childSpace;
     _rootSpace = rootSpace;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
