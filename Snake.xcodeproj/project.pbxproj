@@ -71,6 +71,7 @@
 		B078737217AB666300438D16 /* LQSGLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLUtils.m; sourceTree = "<group>"; };
 		B078737517AB79AD00438D16 /* MatrixGrid.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = MatrixGrid.vsh; sourceTree = "<group>"; };
 		B078737717AB79C000438D16 /* MatrixGrid.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = MatrixGrid.fsh; sourceTree = "<group>"; };
+		CF01104217DE5C7D00FC92C2 /* ILQSDrawable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawable.h; sourceTree = "<group>"; };
 		CF01E26A17D80EA6002BDB25 /* LQSTranslationTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTranslationTransformation.h; sourceTree = "<group>"; };
 		CF01E26B17D80EA6002BDB25 /* LQSTranslationTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTranslationTransformation.m; sourceTree = "<group>"; };
 		CF33243B17D6B44400C0C2DD /* LQSScaleTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSScaleTransformation.h; sourceTree = "<group>"; };
@@ -191,6 +192,14 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		CF01104117DE5C4A00FC92C2 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				CF01104217DE5C7D00FC92C2 /* ILQSDrawable.h */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
 		CF2F1F7017D8046400A967AE /* transformations */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +312,7 @@
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
 				CF9B620917D6517D006934AE /* space */,
+				CF01104117DE5C4A00FC92C2 /* draw */,
 				CFA3F81717BD44E800539A2A /* shading */,
 				CFA923EA17D65EB80067835F /* utils */,
 			);
