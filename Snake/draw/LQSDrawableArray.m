@@ -70,6 +70,11 @@
     return true;
 }
 
+- (void)insertObject:(NSObject<ILQSDrawable> *)drawableObject atIndex:(NSUInteger)index
+{
+    [_array insertObject:drawableObject atIndex:index];
+}
+
 - (void)clear
 {
     [_array removeAllObjects];

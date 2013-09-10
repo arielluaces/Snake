@@ -11,5 +11,6 @@
 
 @protocol ILQSDrawableArray <ILQSDrawableCollection>
 
+- (void)insertObject:(NSObject<ILQSDrawable> *)drawableObject atIndex:(NSUInteger)index;
 
 @end
