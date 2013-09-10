@@ -92,6 +92,7 @@
 		CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableSquareData.m; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
+		CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableCollection.h; sourceTree = "<group>"; };
 		CF9B620A17D6517D006934AE /* ILQSSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILQSSpace.h; sourceTree = "<group>"; };
 		CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSAdjacentSpace.h; sourceTree = "<group>"; };
 		CF9B620C17D651EA006934AE /* ILQSChildSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSChildSpace.h; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 				CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */,
 				CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */,
 				CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */,
+				CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */,
 			);
 			path = draw;
 			sourceTree = "<group>";
