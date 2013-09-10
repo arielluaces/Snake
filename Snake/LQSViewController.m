@@ -19,6 +19,8 @@
 #import "ILQSSpaceCollection.h"
 #import "LQSSpaceUtils.h"
 #import "LQSTranslationTransformation.h"
+#import "LQSDrawableSquare.h"
+#import "LQSDrawableSquareData.h"
 
 @implementation LQSViewController
 {
@@ -36,6 +38,7 @@
     
     NSObject<ILQSAdjacentSpace> *_squareSpace;
     NSObject<ILQSAdjacentSpace> *_rootSpace;
+    NSObject<ILQSDrawable> *_drawableObject;
 }
 
 - (void)viewDidLoad
@@ -104,6 +107,18 @@
             _program2 = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
         }
     }
+    {
+        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+        drawableSquareData.program = _program2;
+        drawableSquareData.space = _squareSpace;
+        drawableSquareData.rootSpace = _rootSpace;
+        drawableSquareData.colorR = 0.6f;
+        drawableSquareData.colorG = 0.2f;
+        drawableSquareData.colorB = 0.95f;
+        drawableSquare.squareData = drawableSquareData;
+        _drawableObject = drawableSquare;
+    }
     [EAGLContext setCurrentContext:savedContext];
 }
 
@@ -155,20 +170,7 @@
         glUseProgram(0);
     }
     {
-        glUseProgram(_program2.name);
-        glEnableVertexAttribArray(_program2.aPosition);
-        float vertexPositions[] = {
-            0.0f, 0.0f,
-            0.0f, 1.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f,
-        };
-        GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_squareSpace toSpace:_rootSpace];
-        glUniformMatrix4fv(_program2.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-        glVertexAttribPointer(_program2.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertexPositions);
-        glUniform3f(_program2.uColor, 0.6f, 0.2f, 0.95f);
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        glUseProgram(0);
+        [_drawableObject draw];
     }
 }
 
