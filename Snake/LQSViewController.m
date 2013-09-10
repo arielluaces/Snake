@@ -104,7 +104,6 @@
         parentSpace3.transformToParent = transformToParent;
     }
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    NSObject<ILQSColoredVerticesProgram> *program;
     {
         // Create program
         {
@@ -129,11 +128,9 @@
         _uMVPMatrix = (GLint)uMVPMatrix;
         _uColor = (GLint)uColor;
         _uExponent = (GLint)uExponent;
-        // Create second program
-        {
-            program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
-        }
     }
+    // Create second program
+    NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
