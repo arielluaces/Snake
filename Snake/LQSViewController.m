@@ -21,6 +21,8 @@
 #import "LQSTranslationTransformation.h"
 #import "LQSDrawableSquare.h"
 #import "LQSDrawableSquareData.h"
+#import "LQSDrawableParent.h"
+#import "ILQSDrawableArray.h"
 
 @implementation LQSViewController
 {
@@ -34,9 +36,7 @@
     
     float _exponent;
     
-    NSObject<ILQSDrawable> *_drawableObject;
-    NSObject<ILQSDrawable> *_drawableObject2;
-    NSObject<ILQSDrawable> *_drawableObject3;
+    NSObject<ILQSDrawable> *_drawable;
 }
 
 - (void)viewDidLoad
@@ -131,6 +131,8 @@
     }
     // Create second program
     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
+    LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
+    _drawable = drawableParent;
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -141,7 +143,7 @@
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
         drawableSquare.squareData = drawableSquareData;
-        _drawableObject = drawableSquare;
+        [drawableParent.drawableArray addDrawableObject:drawableSquare];
     }
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -153,7 +155,7 @@
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
         drawableSquare.squareData = drawableSquareData;
-        _drawableObject2 = drawableSquare;
+        [drawableParent.drawableArray addDrawableObject:drawableSquare];
     }
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -165,7 +167,7 @@
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
         drawableSquare.squareData = drawableSquareData;
-        _drawableObject3 = drawableSquare;
+        [drawableParent.drawableArray addDrawableObject:drawableSquare];
     }
     [EAGLContext setCurrentContext:savedContext];
 }
@@ -218,9 +220,7 @@
         glUseProgram(0);
     }
     {
-        [_drawableObject draw];
-        [_drawableObject2 draw];
-        [_drawableObject3 draw];
+        [_drawable draw];
     }
 }
 
