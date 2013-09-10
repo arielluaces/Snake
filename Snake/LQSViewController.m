@@ -34,10 +34,6 @@
     
     float _exponent;
     
-    NSObject<ILQSColoredVerticesProgram> *_program2;
-    
-    NSObject<ILQSAdjacentSpace> *_squareSpace;
-    NSObject<ILQSAdjacentSpace> *_rootSpace;
     NSObject<ILQSDrawable> *_drawableObject;
 }
 
@@ -75,9 +71,8 @@
         }
         parentSpace.transformToParent = transformToParent;
     }
-    _squareSpace = childSpace;
-    _rootSpace = rootSpace;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    NSObject<ILQSColoredVerticesProgram> *program;
     {
         // Create program
         {
@@ -104,15 +99,15 @@
         _uExponent = (GLint)uExponent;
         // Create second program
         {
-            _program2 = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
+            program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
         }
     }
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-        drawableSquareData.program = _program2;
-        drawableSquareData.space = _squareSpace;
-        drawableSquareData.rootSpace = _rootSpace;
+        drawableSquareData.program = program;
+        drawableSquareData.space = childSpace;
+        drawableSquareData.rootSpace = rootSpace;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
