@@ -35,6 +35,8 @@
     float _exponent;
     
     NSObject<ILQSDrawable> *_drawableObject;
+    NSObject<ILQSDrawable> *_drawableObject2;
+    NSObject<ILQSDrawable> *_drawableObject3;
 }
 
 - (void)viewDidLoad
@@ -49,9 +51,17 @@
     // Create space information for the square being drawn
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
+    LQSChildSpace *childSpace2 = [[LQSChildSpace alloc] init];
+    LQSChildSpace *parentSpace2 = [[LQSChildSpace alloc] init];
+    LQSChildSpace *childSpace3 = [[LQSChildSpace alloc] init];
+    LQSChildSpace *parentSpace3 = [[LQSChildSpace alloc] init];
     LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
     childSpace.parent = parentSpace;
+    childSpace2.parent = parentSpace2;
+    childSpace3.parent = parentSpace3;
     parentSpace.parent = rootSpace;
+    parentSpace2.parent = rootSpace;
+    parentSpace3.parent = rootSpace;
     {
         NSObject<ILQSTransformation> *transformToParent;
         {
@@ -60,16 +70,38 @@
             transformToParent = scaleTransformation;
         }
         childSpace.transformToParent = transformToParent;
+        childSpace2.transformToParent = transformToParent;
+        childSpace3.transformToParent = transformToParent;
     }
     {
         NSObject<ILQSTransformation> *transformToParent;
         {
             LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-            translationTransformation.x = 1.0f/32.0f;
+            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*0;
             translationTransformation.y = 1.0f/32.0f;
             transformToParent = translationTransformation;
         }
         parentSpace.transformToParent = transformToParent;
+    }
+    {
+        NSObject<ILQSTransformation> *transformToParent;
+        {
+            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
+            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*2;
+            translationTransformation.y = 1.0f/32.0f;
+            transformToParent = translationTransformation;
+        }
+        parentSpace2.transformToParent = transformToParent;
+    }
+    {
+        NSObject<ILQSTransformation> *transformToParent;
+        {
+            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
+            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*4;
+            translationTransformation.y = 1.0f/32.0f;
+            transformToParent = translationTransformation;
+        }
+        parentSpace3.transformToParent = transformToParent;
     }
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     NSObject<ILQSColoredVerticesProgram> *program;
@@ -113,6 +145,30 @@
         drawableSquareData.colorB = 0.95f;
         drawableSquare.squareData = drawableSquareData;
         _drawableObject = drawableSquare;
+    }
+    {
+        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+        drawableSquareData.program = program;
+        drawableSquareData.space = childSpace2;
+        drawableSquareData.rootSpace = rootSpace;
+        drawableSquareData.colorR = 0.6f;
+        drawableSquareData.colorG = 0.2f;
+        drawableSquareData.colorB = 0.95f;
+        drawableSquare.squareData = drawableSquareData;
+        _drawableObject2 = drawableSquare;
+    }
+    {
+        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+        drawableSquareData.program = program;
+        drawableSquareData.space = childSpace3;
+        drawableSquareData.rootSpace = rootSpace;
+        drawableSquareData.colorR = 0.6f;
+        drawableSquareData.colorG = 0.2f;
+        drawableSquareData.colorB = 0.95f;
+        drawableSquare.squareData = drawableSquareData;
+        _drawableObject3 = drawableSquare;
     }
     [EAGLContext setCurrentContext:savedContext];
 }
@@ -166,6 +222,8 @@
     }
     {
         [_drawableObject draw];
+        [_drawableObject2 draw];
+        [_drawableObject3 draw];
     }
 }
 
