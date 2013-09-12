@@ -23,6 +23,7 @@
 #import "LQSDrawableSquareData.h"
 #import "LQSDrawableParent.h"
 #import "ILQSDrawableArray.h"
+#import "LQSTransformationFactory.h"
 
 @implementation LQSViewController
 {
@@ -64,58 +65,16 @@
     parentSpace2.parent = rootSpace;
     parentSpace3.parent = rootSpace;
     cameraSpace.parent = rootSpace;
+    cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
     {
-        NSObject<ILQSTransformation> *transformToParent;
-        {
-            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-            translationTransformation.x = 1;
-            translationTransformation.y = 0;
-            translationTransformation.z = 0;
-            transformToParent = translationTransformation;
-        }
-        cameraSpace.transformToParent = transformToParent;
-    }
-    {
-        NSObject<ILQSTransformation> *transformToParent;
-        {
-            LQSUniformScaleTransformation *scaleTransformation = [[LQSUniformScaleTransformation alloc] init];
-            scaleTransformation.scale = 1.0f/16.0f;
-            transformToParent = scaleTransformation;
-        }
+        NSObject<ILQSTransformation> *transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
         childSpace.transformToParent = transformToParent;
         childSpace2.transformToParent = transformToParent;
         childSpace3.transformToParent = transformToParent;
     }
-    {
-        NSObject<ILQSTransformation> *transformToParent;
-        {
-            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*0;
-            translationTransformation.y = 1.0f/32.0f;
-            transformToParent = translationTransformation;
-        }
-        parentSpace.transformToParent = transformToParent;
-    }
-    {
-        NSObject<ILQSTransformation> *transformToParent;
-        {
-            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*2;
-            translationTransformation.y = 1.0f/32.0f;
-            transformToParent = translationTransformation;
-        }
-        parentSpace2.transformToParent = transformToParent;
-    }
-    {
-        NSObject<ILQSTransformation> *transformToParent;
-        {
-            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-            translationTransformation.x = 1.0f/32.0f+1.0f/16.0f*4;
-            translationTransformation.y = 1.0f/32.0f;
-            transformToParent = translationTransformation;
-        }
-        parentSpace3.transformToParent = transformToParent;
-    }
+    parentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/32.0f+1.0f/16.0f*0 y:1.0f/32.0f z:0];
+    parentSpace2.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/32.0f+1.0f/16.0f*2 y:1.0f/32.0f z:0];
+    parentSpace3.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/32.0f+1.0f/16.0f*4 y:1.0f/32.0f z:0];
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create program
