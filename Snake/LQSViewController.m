@@ -49,6 +49,7 @@
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
     // Create space information for the square being drawn
+    LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace2 = [[LQSChildSpace alloc] init];
@@ -62,6 +63,18 @@
     parentSpace.parent = rootSpace;
     parentSpace2.parent = rootSpace;
     parentSpace3.parent = rootSpace;
+    cameraSpace.parent = rootSpace;
+    {
+        NSObject<ILQSTransformation> *transformToParent;
+        {
+            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
+            translationTransformation.x = 1;
+            translationTransformation.y = 0;
+            translationTransformation.z = 0;
+            transformToParent = translationTransformation;
+        }
+        cameraSpace.transformToParent = transformToParent;
+    }
     {
         NSObject<ILQSTransformation> *transformToParent;
         {
@@ -138,7 +151,7 @@
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace;
-        drawableSquareData.rootSpace = rootSpace;
+        drawableSquareData.rootSpace = cameraSpace;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
@@ -150,7 +163,7 @@
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace2;
-        drawableSquareData.rootSpace = rootSpace;
+        drawableSquareData.rootSpace = cameraSpace;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
@@ -162,7 +175,7 @@
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace3;
-        drawableSquareData.rootSpace = rootSpace;
+        drawableSquareData.rootSpace = cameraSpace;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
