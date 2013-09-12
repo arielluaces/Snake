@@ -102,8 +102,53 @@
             }
         }
         //Next we must find the first object that is in common with the two adjacent space adjacency paths
-        NSAssert(FALSE, @"Not implemented yet");
-        return GLKMatrix4Identity;
+        NSAssert([space1AdjacencyPath lastObject] == [space2AdjacencyPath lastObject], @"should be the same if adjacency paths merged at a common adjacent space");
+        {
+            //We can trim away some common spaces so that we don't have to calculate and multiply transformations that will collide with their inverses and be negated
+            while (true)
+            {
+                NSObject<ILQSAdjacentSpace> *space1AdjacentSecondLastObject = [space1AdjacencyPath objectAtIndex:[space1AdjacencyPath count]-2];
+                NSObject<ILQSAdjacentSpace> *space2AdjacentSecondLastObject = [space2AdjacencyPath objectAtIndex:[space2AdjacencyPath count]-2];
+                if (space1AdjacentSecondLastObject == space2AdjacentSecondLastObject)
+                {
+                    [space1AdjacencyPath removeLastObject];
+                    [space2AdjacencyPath removeLastObject];
+                }
+                else if (space1AdjacentSecondLastObject != space2AdjacentSecondLastObject)
+                {
+                    break;
+                }
+            }
+        }
+        {
+            GLKMatrix4 transformationMatrixSpace1;
+            GLKMatrix4 transformationMatrixSpace2;
+            {
+                GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
+                for (uint i = 0; i < space1AdjacencyPath.count-1; ++i)
+                {
+                    NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space1AdjacencyPath objectAtIndex:i];
+                    NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space1AdjacencyPath objectAtIndex:i+1];
+                    NSObject<ILQSTransformation> *newTransform = [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace];
+                    NSAssert(newTransform != nil, @"transform can't be nil");
+                    transformationMatrix = GLKMatrix4Multiply(newTransform.transformationMatrix, transformationMatrix);
+                }
+                transformationMatrixSpace1 = transformationMatrix;
+            }
+            {
+                GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
+                for (uint i = 0; i < space2AdjacencyPath.count-1; ++i)
+                {
+                    NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space2AdjacencyPath objectAtIndex:i];
+                    NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space2AdjacencyPath objectAtIndex:i+1];
+                    NSObject<ILQSTransformation> *newTransform = [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace];
+                    NSAssert(newTransform != nil, @"transform can't be nil");
+                    transformationMatrix = GLKMatrix4Multiply(transformationMatrix, newTransform.transformationMatrixInverse);
+                }
+                transformationMatrixSpace2 = transformationMatrix;
+            }
+            return GLKMatrix4Multiply(transformationMatrixSpace2, transformationMatrixSpace1);
+        }
     }
     NSAssert(FALSE, @"This is not suppoed to run");
     return GLKMatrix4Identity;
