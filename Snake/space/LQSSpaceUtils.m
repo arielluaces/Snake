@@ -34,7 +34,6 @@
     else
     {
         // Start looking for longer chains in the directed graph to end up with a path from space1 to space2
-        NSObject<ILQSAdjacentSpace> *commonSpace = nil;
         NSMutableArray *space1AdjacencyPath = [[NSMutableArray alloc] init];
         [space1AdjacencyPath addObject:space1];
         NSMutableArray *space2AdjacencyPath = [[NSMutableArray alloc] init];
@@ -54,7 +53,6 @@
                 [space1AdjacencyPath addObject:adjacentSpace];
                 if (adjacentSpace == space2)
                 {
-                    commonSpace = adjacentSpace;
                     GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
                     for (uint i = 0; i < space1AdjacencyPath.count-1; ++i)
                     {
@@ -85,7 +83,6 @@
                 [space2AdjacencyPath addObject:adjacentSpace];
                 if (adjacentSpace == space1)
                 {
-                    commonSpace = adjacentSpace;
                     GLKMatrix4 transformationMatrix = GLKMatrix4Identity;
                     for (uint i = 0; i < space2AdjacencyPath.count-1; ++i)
                     {
