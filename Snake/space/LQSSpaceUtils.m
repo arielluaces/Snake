@@ -58,7 +58,9 @@
                     {
                         NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space1AdjacencyPath objectAtIndex:i];
                         NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space1AdjacencyPath objectAtIndex:i+1];
-                        transformationMatrix = GLKMatrix4Multiply([currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace].transformationMatrix, transformationMatrix);
+                        NSObject<ILQSTransformation> *newTransform = [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace];
+                        NSAssert(newTransform != nil, @"transform can't be nil");
+                        transformationMatrix = GLKMatrix4Multiply(newTransform.transformationMatrix, transformationMatrix);
                     }
                     return transformationMatrix;
                 }
@@ -88,7 +90,9 @@
                     {
                         NSObject<ILQSAdjacentSpace> *currentAdjacentSpace = [space2AdjacencyPath objectAtIndex:i];
                         NSObject<ILQSAdjacentSpace> *nextAdjacentSpace = [space2AdjacencyPath objectAtIndex:i+1];
-                        transformationMatrix = GLKMatrix4Multiply(transformationMatrix, [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace].transformationMatrixInverse);
+                        NSObject<ILQSTransformation> *newTransform = [currentAdjacentSpace transformationObjectToSpace:nextAdjacentSpace];
+                        NSAssert(newTransform != nil, @"transform can't be nil");
+                        transformationMatrix = GLKMatrix4Multiply(transformationMatrix, newTransform.transformationMatrixInverse);
                     }
                     return transformationMatrix;
                 }
