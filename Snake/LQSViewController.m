@@ -24,6 +24,7 @@
 #import "LQSDrawableParent.h"
 #import "ILQSDrawableArray.h"
 #import "LQSTransformationFactory.h"
+#import "LQSTexturedVerticesProgram.h"
 
 @implementation LQSViewController
 {
@@ -38,6 +39,9 @@
     float _exponent;
     
     NSObject<ILQSDrawable> *_drawable;
+    
+    NSObject<ILQSTexturedVerticesProgram> *_texProgram;
+    GLuint _textureName;
 }
 
 - (void)viewDidLoad
@@ -49,6 +53,12 @@
     self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
+    NSBundle *textureBundle = [NSBundle mainBundle];
+    NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
+    NSError *textureLoaderError = nil;
+    GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
+    _textureName = texureInfo.name;
+    glBindTexture(GL_TEXTURE_2D, 0);
     // Create space information for the square being drawn
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -101,6 +111,7 @@
         _uColor = (GLint)uColor;
         _uExponent = (GLint)uExponent;
     }
+    _texProgram = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
     // Create second program
     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
@@ -193,6 +204,32 @@
     }
     {
         [_drawable draw];
+    }
+    {
+        glUseProgram(_texProgram.name);
+        glEnableVertexAttribArray(_texProgram.aPosition);
+        glEnableVertexAttribArray(_texProgram.aTexCoord);
+        float positions[] = {
+            0.0f, 0.0f,
+            0.0f, 1.0f,
+            1.0f, 0.0f,
+            1.0f, 1.0f,
+        };
+        float texCoords[] = {
+            0.0f, 1.0f,
+            0.0f, 0.0f,
+            1.0f, 1.0f,
+            1.0f, 0.0f,
+        };
+        GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
+        MVPMatrix = GLKMatrix4Scale(MVPMatrix, 2.0f/16.0f, 2.0f/16.0f, 1.0f);
+        MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
+        glUniformMatrix4fv(_texProgram.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
+        glVertexAttribPointer(_texProgram.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
+        glVertexAttribPointer(_texProgram.aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
+        glBindTexture(GL_TEXTURE_2D, _textureName);
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+        glUseProgram(0);
     }
 }
 
