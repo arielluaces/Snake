@@ -18,6 +18,7 @@
     GLuint _aPosition;
     GLuint _aTexCoord;
     GLint _uMVPMatrix;
+    GLint _sTexture;
 }
 
 - (id)init
@@ -35,9 +36,12 @@
         NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
         int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
         NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
+        int sTexture = glGetUniformLocation(_program.name, "sTexture");
+        NSAssert(sTexture >= 0, @"%@ uniform not found", @"sTexture");
         _aPosition = (GLuint)aPosition;
         _aTexCoord = (GLuint)aTexCoord;
         _uMVPMatrix = (GLint)uMVPMatrix;
+        _sTexture = (GLint)sTexture;
     }
     return self;
 }
@@ -57,9 +61,12 @@
         NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
         int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
         NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
+        int sTexture = glGetUniformLocation(_program.name, "sTexture");
+        NSAssert(sTexture >= 0, @"%@ uniform not found", @"sTexture");
         _aPosition = (GLuint)aPosition;
         _aTexCoord = (GLuint)aTexCoord;
         _uMVPMatrix = (GLint)uMVPMatrix;
+        _sTexture = (GLint)sTexture;
     }
     return self;
 }
@@ -79,9 +86,12 @@
         NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
         int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
         NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
+        int sTexture = glGetUniformLocation(_program.name, "sTexture");
+        NSAssert(sTexture >= 0, @"%@ uniform not found", @"sTexture");
         _aPosition = (GLuint)aPosition;
         _aTexCoord = (GLuint)aTexCoord;
         _uMVPMatrix = (GLint)uMVPMatrix;
+        _sTexture = (GLint)sTexture;
     }
     return self;
 }
@@ -109,6 +119,11 @@
 - (GLint)uMVPMatrix
 {
     return _uMVPMatrix;
+}
+
+- (GLint)sTexture
+{
+    return _sTexture;
 }
 
 @end

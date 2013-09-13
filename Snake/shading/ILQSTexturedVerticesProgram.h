@@ -14,5 +14,6 @@
 - (GLuint)aPosition;
 - (GLuint)aTexCoord;
 - (GLint)uMVPMatrix;
+- (GLint)sTexture;
 
 @end
