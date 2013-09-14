@@ -28,6 +28,8 @@
 
 @implementation LQSViewController
 {
+    NSObject<ILQSAdjacentSpace> *_cameraSpace;
+    
     NSObject<ILQSGLProgram> *_program;
     EAGLContext *_context;
     GLuint _aPosition;
@@ -41,6 +43,7 @@
     NSObject<ILQSDrawable> *_drawable;
     
     NSObject<ILQSTexturedVerticesProgram> *_texProgram;
+    NSObject<ILQSAdjacentSpace> *_textureSpace;
     GLuint _textureName;
 }
 
@@ -67,6 +70,8 @@
     LQSChildSpace *parentSpace2 = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace3 = [[LQSChildSpace alloc] init];
     LQSChildSpace *parentSpace3 = [[LQSChildSpace alloc] init];
+    LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
+    LQSChildSpace *textureSpaceParent = [[LQSChildSpace alloc] init];
     LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
     childSpace.parent = parentSpace;
     childSpace2.parent = parentSpace2;
@@ -74,7 +79,11 @@
     parentSpace.parent = rootSpace;
     parentSpace2.parent = rootSpace;
     parentSpace3.parent = rootSpace;
+    textureSpace.parent = textureSpaceParent;
+    textureSpaceParent.parent = rootSpace;
     cameraSpace.parent = rootSpace;
+    textureSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+    textureSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2.0f/16.0f];
     cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
     {
         NSObject<ILQSTransformation> *transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
@@ -152,6 +161,8 @@
         drawableSquare.squareData = drawableSquareData;
         [drawableParent.drawableArray addDrawableObject:drawableSquare];
     }
+    _cameraSpace = cameraSpace;
+    _textureSpace = textureSpace;
     [EAGLContext setCurrentContext:savedContext];
 }
 
@@ -221,9 +232,7 @@
             1.0f, 1.0f,
             1.0f, 0.0f,
         };
-        GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
-        MVPMatrix = GLKMatrix4Scale(MVPMatrix, 2.0f/16.0f, 2.0f/16.0f, 1.0f);
-        MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
+        GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_textureSpace toSpace:_cameraSpace];
         glUniformMatrix4fv(_texProgram.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
         glVertexAttribPointer(_texProgram.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
         glVertexAttribPointer(_texProgram.aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
