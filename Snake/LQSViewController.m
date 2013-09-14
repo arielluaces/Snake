@@ -30,6 +30,7 @@
 {
     NSObject<ILQSAdjacentSpace> *_cameraSpace;
     
+    NSObject<ILQSAdjacentSpace> *_gridSpace;
     NSObject<ILQSGLProgram> *_program;
     EAGLContext *_context;
     GLuint _aPosition;
@@ -72,6 +73,8 @@
     LQSChildSpace *parentSpace3 = [[LQSChildSpace alloc] init];
     LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *textureSpaceParent = [[LQSChildSpace alloc] init];
+    LQSChildSpace *gridSpace = [[LQSChildSpace alloc] init];
+    LQSChildSpace *gridSpaceParent = [[LQSChildSpace alloc] init];
     LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
     childSpace.parent = parentSpace;
     childSpace2.parent = parentSpace2;
@@ -81,9 +84,13 @@
     parentSpace3.parent = rootSpace;
     textureSpace.parent = textureSpaceParent;
     textureSpaceParent.parent = rootSpace;
+    gridSpace.parent = gridSpaceParent;
+    gridSpaceParent.parent = rootSpace;
     cameraSpace.parent = rootSpace;
     textureSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
     textureSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2.0f/16.0f];
+    gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+    gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
     cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
     {
         NSObject<ILQSTransformation> *transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
@@ -163,6 +170,7 @@
     }
     _cameraSpace = cameraSpace;
     _textureSpace = textureSpace;
+    _gridSpace = gridSpace;
     [EAGLContext setCurrentContext:savedContext];
 }
 
@@ -199,9 +207,7 @@
             32.0f, 0.0f,
             32.0f, 32.0f,
         };
-        GLKMatrix4 MVPMatrix = GLKMatrix4Identity;
-        MVPMatrix = GLKMatrix4Scale(MVPMatrix, 2.0f, 2.0f, 1.0f);
-        MVPMatrix = GLKMatrix4Translate(MVPMatrix, -0.5f, -0.5f, 0.0f);
+        GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
         glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
         glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
         glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
