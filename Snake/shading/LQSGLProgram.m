@@ -37,7 +37,7 @@
             NSAssert(_name != 0, @"Failed to create program");
             _sharegroup = context.sharegroup;
         }
-        else if (context != [EAGLContext currentContext])
+        else// if (context != [EAGLContext currentContext])
         {
             EAGLContext *savedContext = [EAGLContext currentContext];
             [EAGLContext setCurrentContext:context];
@@ -63,7 +63,7 @@
             NSAssert(_name != 0, @"Failed to create program");
             _sharegroup = sharegroup;
         }
-        else if (sharegroup != [EAGLContext currentContext].sharegroup)
+        else// if (sharegroup != [EAGLContext currentContext].sharegroup)
         {
             // Create a new "throwaway" context with the given sharegroup
             EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2 sharegroup:sharegroup];

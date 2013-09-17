@@ -47,7 +47,7 @@
             {
                 break;
             }
-            else if (adjacentSpaces.count == 1)
+            else// if (adjacentSpaces.count == 1)
             {
                 NSObject<ILQSAdjacentSpace> *adjacentSpace = adjacentSpaces.lastObject;
                 [space1AdjacencyPath addObject:adjacentSpace];
@@ -64,7 +64,7 @@
                     }
                     return transformationMatrix;
                 }
-                else if (adjacentSpace != space2)
+                else// if (adjacentSpace != space2)
                 {
                     continue;
                 }
@@ -79,7 +79,7 @@
             {
                 break;
             }
-            else if (adjacentSpaces.count == 1)
+            else// if (adjacentSpaces.count == 1)
             {
                 NSObject<ILQSAdjacentSpace> *adjacentSpace = adjacentSpaces.lastObject;
                 [space2AdjacencyPath addObject:adjacentSpace];
@@ -96,7 +96,7 @@
                     }
                     return transformationMatrix;
                 }
-                else if (adjacentSpace != space1)
+                else// if (adjacentSpace != space1)
                 {
                     continue;
                 }
@@ -115,7 +115,7 @@
                     [space1AdjacencyPath removeLastObject];
                     [space2AdjacencyPath removeLastObject];
                 }
-                else if (space1AdjacentSecondLastObject != space2AdjacentSecondLastObject)
+                else// if (space1AdjacentSecondLastObject != space2AdjacentSecondLastObject)
                 {
                     break;
                 }
