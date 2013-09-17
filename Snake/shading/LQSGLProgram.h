@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
+#import "ILQSGLProgram.h"
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/EAGL.h>
-#import "ILQSGLProgram.h"
 
 @interface LQSGLProgram : NSObject <ILQSGLProgram>
 

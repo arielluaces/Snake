@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
-#import <OpenGLES/EAGL.h>
 #import "ILQSGLShader.h"
+#import <OpenGLES/EAGL.h>
 
 @interface LQSGLFragmentShader : NSObject <ILQSGLShader>
 

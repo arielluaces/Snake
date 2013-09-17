@@ -11,7 +11,6 @@
 #import "LQSFragmentShader.h"
 #import "LQSProgram.h"
 #import "LQSGLFileUtils.h"
-#import <Foundation/NSBundle.h>
 #import "LQSColoredVerticesProgram.h"
 #import "LQSChildSpace.h"
 #import "LQSRootSpace.h"
@@ -28,6 +27,7 @@
 #import "LQSDrawableTexturedSquare.h"
 #import "LQSDrawableTexturedSquareData.h"
 #import "LQSGLTexture.h"
+#import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
 {
