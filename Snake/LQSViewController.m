@@ -25,6 +25,9 @@
 #import "ILQSDrawableArray.h"
 #import "LQSTransformationFactory.h"
 #import "LQSTexturedVerticesProgram.h"
+#import "LQSDrawableTexturedSquare.h"
+#import "LQSDrawableTexturedSquareData.h"
+#import "LQSGLTexture.h"
 
 @implementation LQSViewController
 {
@@ -42,10 +45,6 @@
     float _exponent;
     
     NSObject<ILQSDrawable> *_drawable;
-    
-    NSObject<ILQSTexturedVerticesProgram> *_texProgram;
-    NSObject<ILQSAdjacentSpace> *_textureSpace;
-    GLuint _textureName;
 }
 
 - (void)viewDidLoad
@@ -61,7 +60,8 @@
     NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
     NSError *textureLoaderError = nil;
     GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
-    _textureName = texureInfo.name;
+    LQSGLTexture *texture = [[LQSGLTexture alloc] init];
+    texture.name = texureInfo.name;
     glBindTexture(GL_TEXTURE_2D, 0);
     // Create space information for the square being drawn
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
@@ -127,7 +127,7 @@
         _uColor = (GLint)uColor;
         _uExponent = (GLint)uExponent;
     }
-    _texProgram = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
+    LQSTexturedVerticesProgram *textureProgram = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
     // Create second program
     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
@@ -168,8 +168,17 @@
         drawableSquare.squareData = drawableSquareData;
         [drawableParent.drawableArray addDrawableObject:drawableSquare];
     }
+    {
+        LQSDrawableTexturedSquare *drawableTexturedSquare = [[LQSDrawableTexturedSquare alloc] init];
+        LQSDrawableTexturedSquareData *drawableTexturedSquareData = [[LQSDrawableTexturedSquareData alloc] init];
+        drawableTexturedSquareData.program = textureProgram;
+        drawableTexturedSquareData.texture = texture;
+        drawableTexturedSquareData.squareSpace = textureSpace;
+        drawableTexturedSquareData.cameraSpace = cameraSpace;
+        drawableTexturedSquare.squareData = drawableTexturedSquareData;
+        [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
+    }
     _cameraSpace = cameraSpace;
-    _textureSpace = textureSpace;
     _gridSpace = gridSpace;
     [EAGLContext setCurrentContext:savedContext];
 }
@@ -221,30 +230,6 @@
     }
     {
         [_drawable draw];
-    }
-    {
-        glUseProgram(_texProgram.name);
-        glEnableVertexAttribArray(_texProgram.aPosition);
-        glEnableVertexAttribArray(_texProgram.aTexCoord);
-        float positions[] = {
-            0.0f, 0.0f,
-            0.0f, 1.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f,
-        };
-        float texCoords[] = {
-            0.0f, 1.0f,
-            0.0f, 0.0f,
-            1.0f, 1.0f,
-            1.0f, 0.0f,
-        };
-        GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_textureSpace toSpace:_cameraSpace];
-        glUniformMatrix4fv(_texProgram.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-        glVertexAttribPointer(_texProgram.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
-        glVertexAttribPointer(_texProgram.aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
-        glBindTexture(GL_TEXTURE_2D, _textureName);
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        glUseProgram(0);
     }
 }
 
