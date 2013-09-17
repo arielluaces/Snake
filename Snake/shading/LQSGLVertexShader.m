@@ -7,7 +7,6 @@
 //
 
 #import "LQSGLVertexShader.h"
-#import "ILQSGLShader.h"
 #import "LQSGLShader.h"
 
 @implementation LQSGLVertexShader

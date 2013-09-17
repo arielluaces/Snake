@@ -7,7 +7,6 @@
 //
 
 #import "LQSDrawableParent.h"
-#import "ILQSDrawable.h"
 #import "LQSDrawableArray.h"
 
 @implementation LQSDrawableParent
