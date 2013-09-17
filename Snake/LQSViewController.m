@@ -56,13 +56,6 @@
     self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
-    NSBundle *textureBundle = [NSBundle mainBundle];
-    NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
-    NSError *textureLoaderError = nil;
-    GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
-    LQSGLTexture *texture = [[LQSGLTexture alloc] init];
-    texture.name = texureInfo.name;
-    glBindTexture(GL_TEXTURE_2D, 0);
     // Create space information for the square being drawn
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -127,7 +120,6 @@
         _uColor = (GLint)uColor;
         _uExponent = (GLint)uExponent;
     }
-    LQSTexturedVerticesProgram *textureProgram = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
     // Create second program
     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
@@ -171,8 +163,17 @@
     {
         LQSDrawableTexturedSquare *drawableTexturedSquare = [[LQSDrawableTexturedSquare alloc] init];
         LQSDrawableTexturedSquareData *drawableTexturedSquareData = [[LQSDrawableTexturedSquareData alloc] init];
-        drawableTexturedSquareData.program = textureProgram;
-        drawableTexturedSquareData.texture = texture;
+        drawableTexturedSquareData.program = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
+        {
+            NSBundle *textureBundle = [NSBundle mainBundle];
+            NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
+            NSError *textureLoaderError = nil;
+            GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
+            LQSGLTexture *texture = [[LQSGLTexture alloc] init];
+            texture.name = texureInfo.name;
+            glBindTexture(GL_TEXTURE_2D, 0);
+            drawableTexturedSquareData.texture = texture;
+        }
         drawableTexturedSquareData.squareSpace = textureSpace;
         drawableTexturedSquareData.cameraSpace = cameraSpace;
         drawableTexturedSquare.squareData = drawableTexturedSquareData;
