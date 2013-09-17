@@ -77,6 +77,7 @@
 		CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */; };
 		CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */; };
 		CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */; };
+		CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,8 @@
 		CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLTexture.m; sourceTree = "<group>"; };
 		CFFBAFD917E7D52700A190BD /* LQSDrawableTexturedSquareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableTexturedSquareData.h; sourceTree = "<group>"; };
 		CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableTexturedSquareData.m; sourceTree = "<group>"; };
+		CFFEBDE017E7CE24004B3A30 /* LQSDrawableTexturedSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableTexturedSquare.h; sourceTree = "<group>"; };
+		CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableTexturedSquare.m; sourceTree = "<group>"; };
 		CFFEBDE317E7CE5F004B3A30 /* ILQSDrawableTexturedSquareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableTexturedSquareData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +270,8 @@
 				CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */,
 				CF7C488017DEA4A100FCE549 /* LQSDrawableArray.h */,
 				CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */,
+				CFFEBDE017E7CE24004B3A30 /* LQSDrawableTexturedSquare.h */,
+				CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */,
 				CFFEBDE317E7CE5F004B3A30 /* ILQSDrawableTexturedSquareData.h */,
 				CFFBAFD917E7D52700A190BD /* LQSDrawableTexturedSquareData.h */,
 				CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */,
@@ -638,6 +643,7 @@
 				CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */,
 				CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */,
 				CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */,
+				CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */,
 				CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */,
 				CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */,
 			);
