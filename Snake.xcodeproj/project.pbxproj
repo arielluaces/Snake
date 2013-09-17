@@ -75,6 +75,7 @@
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
 		CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */; };
+		CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,9 @@
 		CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTexturedVerticesProgram.m; sourceTree = "<group>"; };
 		CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.vsh; sourceTree = "<group>"; };
 		CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.fsh; sourceTree = "<group>"; };
+		CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLTexture.h; sourceTree = "<group>"; };
+		CFFBAFD617E7D39000A190BD /* LQSGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLTexture.h; sourceTree = "<group>"; };
+		CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLTexture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +382,7 @@
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
 				CF9B620917D6517D006934AE /* space */,
+				CFFBAFD417E7D2BE00A190BD /* texture */,
 				CF01104117DE5C4A00FC92C2 /* draw */,
 				CFA3F81717BD44E800539A2A /* shading */,
 				CFA923EA17D65EB80067835F /* utils */,
@@ -450,6 +455,16 @@
 				CFA923ED17D65FDE0067835F /* LQSCollection.m */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		CFFBAFD417E7D2BE00A190BD /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */,
+				CFFBAFD617E7D39000A190BD /* LQSGLTexture.h */,
+				CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */,
+			);
+			path = texture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +631,7 @@
 				CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */,
 				CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */,
 				CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */,
+				CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
