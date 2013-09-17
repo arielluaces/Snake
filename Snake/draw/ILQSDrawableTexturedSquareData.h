@@ -11,6 +11,7 @@
 @protocol ILQSTexturedVerticesProgram;
 @protocol ILQSAdjacentSpace;
 @protocol ILQSGLTexture;
+@protocol ILQSTransformationResolver;
 
 @protocol ILQSDrawableTexturedSquareData <NSObject>
 
@@ -18,5 +19,6 @@
 -(NSObject<ILQSGLTexture> *)texture;
 -(NSObject<ILQSAdjacentSpace> *)squareSpace;
 -(NSObject<ILQSAdjacentSpace> *)cameraSpace;
+-(NSObject<ILQSTransformationResolver> *)transformationResolver;
 
 @end

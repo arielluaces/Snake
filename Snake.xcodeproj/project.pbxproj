@@ -15,7 +15,6 @@
 		CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */; };
 		CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */; };
 		CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */; };
-		CF33244C17D7C71100C0C2DD /* LQSSpaceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244B17D7C71100C0C2DD /* LQSSpaceUtils.m */; };
 		CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
@@ -61,6 +60,7 @@
 		CFA923E417D659660067835F /* LQSRootSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E317D659660067835F /* LQSRootSpace.m */; };
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
 		CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923ED17D65FDE0067835F /* LQSCollection.m */; };
+		CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */; };
 		CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */; };
 		CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */; };
 		CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDBD15417E25EB400A41D35 /* LQSTransformationFactory.m */; };
@@ -108,8 +108,6 @@
 		CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSpaceCollection.m; sourceTree = "<group>"; };
 		CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSUniformScaleTransformation.h; sourceTree = "<group>"; };
 		CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUniformScaleTransformation.m; sourceTree = "<group>"; };
-		CF33244A17D7C71100C0C2DD /* LQSSpaceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSSpaceUtils.h; sourceTree = "<group>"; };
-		CF33244B17D7C71100C0C2DD /* LQSSpaceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSpaceUtils.m; sourceTree = "<group>"; };
 		CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableSquareData.m; sourceTree = "<group>"; };
@@ -177,6 +175,9 @@
 		CFA923EB17D65ED30067835F /* ILQSCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSCollection.h; sourceTree = "<group>"; };
 		CFA923EC17D65FDE0067835F /* LQSCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSCollection.h; sourceTree = "<group>"; };
 		CFA923ED17D65FDE0067835F /* LQSCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSCollection.m; sourceTree = "<group>"; };
+		CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformationResolver.h; sourceTree = "<group>"; };
+		CFC915E517E7DAC8005E6379 /* LQSTransformationResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTransformationResolver.h; sourceTree = "<group>"; };
+		CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTransformationResolver.m; sourceTree = "<group>"; };
 		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFragmentShader.h; sourceTree = "<group>"; };
 		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFragmentShader.m; sourceTree = "<group>"; };
 		CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSProgram.h; sourceTree = "<group>"; };
@@ -310,8 +311,9 @@
 				CF33244017D6B6FC00C0C2DD /* ILQSSpaceCollection.h */,
 				CF33244117D6B89900C0C2DD /* LQSSpaceCollection.h */,
 				CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */,
-				CF33244A17D7C71100C0C2DD /* LQSSpaceUtils.h */,
-				CF33244B17D7C71100C0C2DD /* LQSSpaceUtils.m */,
+				CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */,
+				CFC915E517E7DAC8005E6379 /* LQSTransformationResolver.h */,
+				CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */,
 			);
 			path = space;
 			sourceTree = "<group>";
@@ -636,7 +638,6 @@
 				CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */,
 				CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */,
 				CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */,
-				CF33244C17D7C71100C0C2DD /* LQSSpaceUtils.m in Sources */,
 				CF01E26C17D80EA6002BDB25 /* LQSTranslationTransformation.m in Sources */,
 				CF01104517DE5D9F00FC92C2 /* LQSDrawableSquare.m in Sources */,
 				CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */,
@@ -646,6 +647,7 @@
 				CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */,
 				CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */,
 				CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */,
+				CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

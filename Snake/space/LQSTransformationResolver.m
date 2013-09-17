@@ -1,20 +1,20 @@
 //
-//  LQSSpaceUtils.m
+//  LQSTransformationResolver.m
 //  Snake
 //
-//  Created by Ariel on 2013-09-04.
+//  Created by Ariel on 2013-09-16.
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
-#import "LQSSpaceUtils.h"
+#import "LQSTransformationResolver.h"
 #import "ILQSAdjacentSpace.h"
 #import "ILQSTransformation.h"
-#import <GLKit/GLKMatrix4.h>
 #import "ILQSSpaceCollection.h"
+#import <GLKit/GLKMatrix4.h>
 
-@implementation LQSSpaceUtils
+@implementation LQSTransformationResolver
 
-+ (GLKMatrix4)transformationMatrixFromSpace:(NSObject<ILQSAdjacentSpace> *)space1 toSpace:(NSObject<ILQSAdjacentSpace> *)space2
+- (GLKMatrix4)transformationMatrixFromSpace:(NSObject<ILQSAdjacentSpace> *)space1 toSpace:(NSObject<ILQSAdjacentSpace> *)space2
 {
     if (space1 == space2)
     {

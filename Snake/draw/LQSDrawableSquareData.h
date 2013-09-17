@@ -14,6 +14,7 @@
 @property (nonatomic) NSObject<ILQSColoredVerticesProgram> *program;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *space;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *rootSpace;
+@property (nonatomic) NSObject<ILQSTransformationResolver> *transformationResolver;
 @property (nonatomic) float colorR;
 @property (nonatomic) float colorG;
 @property (nonatomic) float colorB;

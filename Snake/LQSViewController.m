@@ -17,7 +17,7 @@
 #import "LQSRootSpace.h"
 #import "LQSUniformScaleTransformation.h"
 #import "ILQSSpaceCollection.h"
-#import "LQSSpaceUtils.h"
+#import "LQSTransformationResolver.h"
 #import "LQSTranslationTransformation.h"
 #import "LQSDrawableSquare.h"
 #import "LQSDrawableSquareData.h"
@@ -32,6 +32,7 @@
 @implementation LQSViewController
 {
     NSObject<ILQSAdjacentSpace> *_cameraSpace;
+    NSObject<ILQSTransformationResolver> *_transformationResolver;
     
     NSObject<ILQSAdjacentSpace> *_gridSpace;
     NSObject<ILQSGLProgram> *_program;
@@ -57,6 +58,7 @@
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:_context];
     // Create space information for the square being drawn
+    LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
@@ -130,6 +132,7 @@
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace;
         drawableSquareData.rootSpace = cameraSpace;
+        drawableSquareData.transformationResolver = transformationResolver;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
@@ -142,6 +145,7 @@
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace2;
         drawableSquareData.rootSpace = cameraSpace;
+        drawableSquareData.transformationResolver = transformationResolver;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
@@ -154,6 +158,7 @@
         drawableSquareData.program = program;
         drawableSquareData.space = childSpace3;
         drawableSquareData.rootSpace = cameraSpace;
+        drawableSquareData.transformationResolver = transformationResolver;
         drawableSquareData.colorR = 0.6f;
         drawableSquareData.colorG = 0.2f;
         drawableSquareData.colorB = 0.95f;
@@ -176,11 +181,13 @@
         }
         drawableTexturedSquareData.squareSpace = textureSpace;
         drawableTexturedSquareData.cameraSpace = cameraSpace;
+        drawableTexturedSquareData.transformationResolver = transformationResolver;
         drawableTexturedSquare.squareData = drawableTexturedSquareData;
         [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
     }
     _cameraSpace = cameraSpace;
     _gridSpace = gridSpace;
+    _transformationResolver = transformationResolver;
     [EAGLContext setCurrentContext:savedContext];
 }
 
@@ -217,7 +224,7 @@
             32.0f, 0.0f,
             32.0f, 32.0f,
         };
-        GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
+        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
         glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
         glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
         glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));

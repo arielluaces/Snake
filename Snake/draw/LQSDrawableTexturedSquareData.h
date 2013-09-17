@@ -15,5 +15,6 @@
 @property (nonatomic) NSObject<ILQSGLTexture> *texture;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *squareSpace;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *cameraSpace;
+@property (nonatomic) NSObject<ILQSTransformationResolver> *transformationResolver;
 
 @end

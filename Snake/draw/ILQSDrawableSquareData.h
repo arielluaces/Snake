@@ -10,12 +10,14 @@
 
 @protocol ILQSColoredVerticesProgram;
 @protocol ILQSAdjacentSpace;
+@protocol ILQSTransformationResolver;
 
 @protocol ILQSDrawableSquareData <NSObject>
 
 -(NSObject<ILQSColoredVerticesProgram> *)program;
 -(NSObject<ILQSAdjacentSpace> *)space;
 -(NSObject<ILQSAdjacentSpace> *)rootSpace;
+-(NSObject<ILQSTransformationResolver> *)transformationResolver;
 -(float)colorR;
 -(float)colorG;
 -(float)colorB;

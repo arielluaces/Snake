@@ -8,7 +8,7 @@
 
 #import "LQSDrawableSquare.h"
 #import "ILQSColoredVerticesProgram.h"
-#import "LQSSpaceUtils.h"
+#import "ILQSTransformationResolver.h"
 #import "ILQSDrawableSquareData.h"
 #import <GLKit/GLKMatrix4.h>
 
@@ -24,7 +24,7 @@
         1.0f, 0.0f,
         1.0f, 1.0f,
     };
-    GLKMatrix4 MVPMatrix = [LQSSpaceUtils transformationMatrixFromSpace:_squareData.space toSpace:_squareData.rootSpace];
+    GLKMatrix4 MVPMatrix = [_squareData.transformationResolver transformationMatrixFromSpace:_squareData.space toSpace:_squareData.rootSpace];
     glUniformMatrix4fv(_squareData.program.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
     glVertexAttribPointer(_squareData.program.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertexPositions);
     glUniform3f(_squareData.program.uColor, _squareData.colorR, _squareData.colorG, _squareData.colorB);
