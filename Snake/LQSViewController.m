@@ -125,7 +125,6 @@
     // Create second program
     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
-    _drawable = drawableParent;
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -185,6 +184,7 @@
         drawableTexturedSquare.squareData = drawableTexturedSquareData;
         [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
     }
+    _drawable = drawableParent;
     _cameraSpace = cameraSpace;
     _gridSpace = gridSpace;
     _transformationResolver = transformationResolver;
