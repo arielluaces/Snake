@@ -51,12 +51,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    NSAssert(_context != nil, @"Failed to create ES context");
-    self.glkView.context = _context;
+    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    NSAssert(context != nil, @"Failed to create ES context");
+    self.glkView.context = context;
     self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     EAGLContext *savedContext = [EAGLContext currentContext];
-    [EAGLContext setCurrentContext:_context];
+    [EAGLContext setCurrentContext:context];
     // Create space information for the square being drawn
     LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
@@ -102,9 +102,9 @@
         {
             const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
             const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
-            NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:_context];
-            NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:_context];
-            _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:_context];
+            NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:context];
+            NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:context];
+            _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
         }
         int aPosition = glGetAttribLocation(_program.name, "aPosition");
         NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
@@ -123,7 +123,7 @@
         _uExponent = (GLint)uExponent;
     }
     // Create second program
-    NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:_context];
+    NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
     {
         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -167,7 +167,7 @@
     {
         LQSDrawableTexturedSquare *drawableTexturedSquare = [[LQSDrawableTexturedSquare alloc] init];
         LQSDrawableTexturedSquareData *drawableTexturedSquareData = [[LQSDrawableTexturedSquareData alloc] init];
-        drawableTexturedSquareData.program = [[LQSTexturedVerticesProgram alloc] initWithContext:_context];
+        drawableTexturedSquareData.program = [[LQSTexturedVerticesProgram alloc] initWithContext:context];
         {
             NSBundle *textureBundle = [NSBundle mainBundle];
             NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
@@ -184,6 +184,7 @@
         drawableTexturedSquare.squareData = drawableTexturedSquareData;
         [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
     }
+    _context = context;
     _drawable = drawableParent;
     _cameraSpace = cameraSpace;
     _gridSpace = gridSpace;
