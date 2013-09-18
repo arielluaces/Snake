@@ -1558,6 +1558,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521B5017EA519100C22D38 /* transformations.m in Sources */,
+				CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */,
+				CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */,
+				CF01E26C17D80EA6002BDB25 /* LQSTranslationTransformation.m in Sources */,
+				CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1574,6 +1578,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521B7817EA519800C22D38 /* space.m in Sources */,
+				CFA923E417D659660067835F /* LQSRootSpace.m in Sources */,
+				CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */,
+				CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */,
+				CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1590,6 +1598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521BA017EA519F00C22D38 /* texture.m in Sources */,
+				CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1606,6 +1615,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521BC817EA51A900C22D38 /* draw.m in Sources */,
+				CF01104517DE5D9F00FC92C2 /* LQSDrawableSquare.m in Sources */,
+				CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */,
+				CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */,
+				CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */,
+				CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */,
+				CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1622,6 +1637,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521BF017EA51B200C22D38 /* shading.m in Sources */,
+				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
+				CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */,
+				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
+				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
+				B078737317AB666300438D16 /* LQSGLUtils.m in Sources */,
+				CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */,
+				CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */,
+				CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */,
+				CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */,
+				CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */,
+				CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521C1817EA51B700C22D38 /* utils.m in Sources */,
+				CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1656,33 +1683,6 @@
 				CFA656A717A5ADDA00148B4F /* main.m in Sources */,
 				CFA656AB17A5ADDA00148B4F /* LQSAppDelegate.m in Sources */,
 				CFA656BE17A5ADDA00148B4F /* LQSViewController.m in Sources */,
-				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
-				CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */,
-				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
-				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
-				B078737317AB666300438D16 /* LQSGLUtils.m in Sources */,
-				CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */,
-				CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */,
-				CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */,
-				CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */,
-				CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */,
-				CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */,
-				CFA923E417D659660067835F /* LQSRootSpace.m in Sources */,
-				CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */,
-				CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */,
-				CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */,
-				CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */,
-				CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */,
-				CF01E26C17D80EA6002BDB25 /* LQSTranslationTransformation.m in Sources */,
-				CF01104517DE5D9F00FC92C2 /* LQSDrawableSquare.m in Sources */,
-				CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */,
-				CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */,
-				CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */,
-				CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */,
-				CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */,
-				CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */,
-				CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */,
-				CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
