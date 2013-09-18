@@ -629,10 +629,6 @@
 				CFA656B817A5ADDA00148B4F /* Shader.fsh */,
 				B078737517AB79AD00438D16 /* MatrixGrid.vsh */,
 				B078737717AB79C000438D16 /* MatrixGrid.fsh */,
-				CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */,
-				CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */,
-				CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */,
-				CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -854,9 +850,13 @@
 				CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */,
 				CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */,
 				CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */,
+				CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */,
+				CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */,
 				CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */,
 				CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */,
 				CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */,
+				CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */,
+				CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */,
 				CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */,
 				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
 				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
