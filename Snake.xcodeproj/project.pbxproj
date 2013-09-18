@@ -454,8 +454,8 @@
 		CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShader.h; sourceTree = "<group>"; };
 		CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShader.m; sourceTree = "<group>"; };
 		CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShader.h; sourceTree = "<group>"; };
-		CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColoredVerticesProgram.vsh; sourceTree = "<group>"; };
-		CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColoredVerticesProgram.fsh; sourceTree = "<group>"; };
+		CFE15D2B17BC84EB00ECE1C2 /* ColoredVerticesProgram.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ColoredVerticesProgram.vsh; sourceTree = "<group>"; };
+		CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ColoredVerticesProgram.fsh; sourceTree = "<group>"; };
 		CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSColoredVerticesProgram.h; sourceTree = "<group>"; };
 		CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSColoredVerticesProgram.h; sourceTree = "<group>"; };
 		CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSColoredVerticesProgram.m; sourceTree = "<group>"; };
