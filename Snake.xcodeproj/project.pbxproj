@@ -583,33 +583,12 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		CF01104117DE5C4A00FC92C2 /* draw */ = {
+		CF521B4A17EA519100C22D38 /* transformations */ = {
 			isa = PBXGroup;
 			children = (
-				CF01104217DE5C7D00FC92C2 /* ILQSDrawable.h */,
-				CF01104317DE5D9F00FC92C2 /* LQSDrawableSquare.h */,
-				CF01104417DE5D9F00FC92C2 /* LQSDrawableSquare.m */,
-				CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */,
-				CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */,
-				CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */,
-				CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */,
-				CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */,
-				CF7C487E17DEA3A200FCE549 /* ILQSDrawableArray.h */,
-				CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */,
-				CF7C488017DEA4A100FCE549 /* LQSDrawableArray.h */,
-				CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */,
-				CFFEBDE017E7CE24004B3A30 /* LQSDrawableTexturedSquare.h */,
-				CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */,
-				CFFEBDE317E7CE5F004B3A30 /* ILQSDrawableTexturedSquareData.h */,
-				CFFBAFD917E7D52700A190BD /* LQSDrawableTexturedSquareData.h */,
-				CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */,
-			);
-			path = draw;
-			sourceTree = "<group>";
-		};
-		CF2F1F7017D8046400A967AE /* transformations */ = {
-			isa = PBXGroup;
-			children = (
+				CF521B4D17EA519100C22D38 /* transformations.h */,
+				CF521B4F17EA519100C22D38 /* transformations.m */,
+				CF521B4B17EA519100C22D38 /* Supporting Files */,
 				CF9B620E17D65200006934AE /* ILQSTransformation.h */,
 				CF33243B17D6B44400C0C2DD /* LQSScaleTransformation.h */,
 				CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */,
@@ -619,16 +598,6 @@
 				CF01E26B17D80EA6002BDB25 /* LQSTranslationTransformation.m */,
 				CFDBD15317E25EB400A41D35 /* LQSTransformationFactory.h */,
 				CFDBD15417E25EB400A41D35 /* LQSTransformationFactory.m */,
-			);
-			path = transformations;
-			sourceTree = "<group>";
-		};
-		CF521B4A17EA519100C22D38 /* transformations */ = {
-			isa = PBXGroup;
-			children = (
-				CF521B4D17EA519100C22D38 /* transformations.h */,
-				CF521B4F17EA519100C22D38 /* transformations.m */,
-				CF521B4B17EA519100C22D38 /* Supporting Files */,
 			);
 			path = transformations;
 			sourceTree = "<group>";
@@ -666,6 +635,20 @@
 				CF521B7517EA519800C22D38 /* space.h */,
 				CF521B7717EA519800C22D38 /* space.m */,
 				CF521B7317EA519800C22D38 /* Supporting Files */,
+				CF9B620A17D6517D006934AE /* ILQSSpace.h */,
+				CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */,
+				CF9B620C17D651EA006934AE /* ILQSChildSpace.h */,
+				CF9B620D17D651F4006934AE /* ILQSRootSpace.h */,
+				CFA923E217D659660067835F /* LQSRootSpace.h */,
+				CFA923E317D659660067835F /* LQSRootSpace.m */,
+				CFA923E717D65DAD0067835F /* LQSChildSpace.h */,
+				CFA923E817D65DAD0067835F /* LQSChildSpace.m */,
+				CF33244017D6B6FC00C0C2DD /* ILQSSpaceCollection.h */,
+				CF33244117D6B89900C0C2DD /* LQSSpaceCollection.h */,
+				CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */,
+				CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */,
+				CFC915E517E7DAC8005E6379 /* LQSTransformationResolver.h */,
+				CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */,
 			);
 			path = space;
 			sourceTree = "<group>";
@@ -703,6 +686,9 @@
 				CF521B9D17EA519F00C22D38 /* texture.h */,
 				CF521B9F17EA519F00C22D38 /* texture.m */,
 				CF521B9B17EA519F00C22D38 /* Supporting Files */,
+				CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */,
+				CFFBAFD617E7D39000A190BD /* LQSGLTexture.h */,
+				CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */,
 			);
 			path = texture;
 			sourceTree = "<group>";
@@ -740,6 +726,23 @@
 				CF521BC517EA51A900C22D38 /* draw.h */,
 				CF521BC717EA51A900C22D38 /* draw.m */,
 				CF521BC317EA51A900C22D38 /* Supporting Files */,
+				CF01104217DE5C7D00FC92C2 /* ILQSDrawable.h */,
+				CF01104317DE5D9F00FC92C2 /* LQSDrawableSquare.h */,
+				CF01104417DE5D9F00FC92C2 /* LQSDrawableSquare.m */,
+				CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */,
+				CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */,
+				CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */,
+				CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */,
+				CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */,
+				CF7C487E17DEA3A200FCE549 /* ILQSDrawableArray.h */,
+				CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */,
+				CF7C488017DEA4A100FCE549 /* LQSDrawableArray.h */,
+				CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */,
+				CFFEBDE017E7CE24004B3A30 /* LQSDrawableTexturedSquare.h */,
+				CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */,
+				CFFEBDE317E7CE5F004B3A30 /* ILQSDrawableTexturedSquareData.h */,
+				CFFBAFD917E7D52700A190BD /* LQSDrawableTexturedSquareData.h */,
+				CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -777,6 +780,32 @@
 				CF521BED17EA51B200C22D38 /* shading.h */,
 				CF521BEF17EA51B200C22D38 /* shading.m */,
 				CF521BEB17EA51B200C22D38 /* Supporting Files */,
+				CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */,
+				CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */,
+				CFDF4A4017A5D99B0066BE84 /* LQSGLVertexShader.h */,
+				CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */,
+				CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */,
+				CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */,
+				CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */,
+				CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */,
+				CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */,
+				B078737017AB48C200438D16 /* ILQSGLProgram.h */,
+				B078737117AB666300438D16 /* LQSGLUtils.h */,
+				B078737217AB666300438D16 /* LQSGLUtils.m */,
+				CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */,
+				CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */,
+				CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */,
+				CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */,
+				CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */,
+				CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */,
+				CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */,
+				CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */,
+				CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */,
+				CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */,
+				CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */,
+				CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */,
+				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
+				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
 			);
 			path = shading;
 			sourceTree = "<group>";
@@ -814,6 +843,9 @@
 				CF521C1517EA51B700C22D38 /* utils.h */,
 				CF521C1717EA51B700C22D38 /* utils.m */,
 				CF521C1317EA51B700C22D38 /* Supporting Files */,
+				CFA923EB17D65ED30067835F /* ILQSCollection.h */,
+				CFA923EC17D65FDE0067835F /* LQSCollection.h */,
+				CFA923ED17D65FDE0067835F /* LQSCollection.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -843,61 +875,6 @@
 				CF521C2817EA51B700C22D38 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CF9B620917D6517D006934AE /* space */ = {
-			isa = PBXGroup;
-			children = (
-				CF2F1F7017D8046400A967AE /* transformations */,
-				CF9B620A17D6517D006934AE /* ILQSSpace.h */,
-				CF9B620B17D651A3006934AE /* ILQSAdjacentSpace.h */,
-				CF9B620C17D651EA006934AE /* ILQSChildSpace.h */,
-				CF9B620D17D651F4006934AE /* ILQSRootSpace.h */,
-				CFA923E217D659660067835F /* LQSRootSpace.h */,
-				CFA923E317D659660067835F /* LQSRootSpace.m */,
-				CFA923E717D65DAD0067835F /* LQSChildSpace.h */,
-				CFA923E817D65DAD0067835F /* LQSChildSpace.m */,
-				CF33244017D6B6FC00C0C2DD /* ILQSSpaceCollection.h */,
-				CF33244117D6B89900C0C2DD /* LQSSpaceCollection.h */,
-				CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */,
-				CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */,
-				CFC915E517E7DAC8005E6379 /* LQSTransformationResolver.h */,
-				CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */,
-			);
-			path = space;
-			sourceTree = "<group>";
-		};
-		CFA3F81717BD44E800539A2A /* shading */ = {
-			isa = PBXGroup;
-			children = (
-				CFDF4A3D17A5D9300066BE84 /* LQSGLProgram.h */,
-				CFDF4A3E17A5D9300066BE84 /* LQSGLProgram.m */,
-				CFDF4A4017A5D99B0066BE84 /* LQSGLVertexShader.h */,
-				CFDF4A4117A5D99B0066BE84 /* LQSGLVertexShader.m */,
-				CFDF4A4317A5D9D10066BE84 /* LQSGLFragmentShader.h */,
-				CFDF4A4417A5D9D10066BE84 /* LQSGLFragmentShader.m */,
-				CFDF4A4617A5D9F00066BE84 /* LQSGLShader.h */,
-				CFDF4A4717A5D9F00066BE84 /* LQSGLShader.m */,
-				CFDF4A4917A600D40066BE84 /* ILQSGLShader.h */,
-				B078737017AB48C200438D16 /* ILQSGLProgram.h */,
-				B078737117AB666300438D16 /* LQSGLUtils.h */,
-				B078737217AB666300438D16 /* LQSGLUtils.m */,
-				CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */,
-				CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */,
-				CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */,
-				CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */,
-				CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */,
-				CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */,
-				CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */,
-				CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */,
-				CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */,
-				CFEAAF9717BC7056000F15DD /* LQSTexturedVerticesProgram.h */,
-				CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */,
-				CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */,
-				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
-				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
-			);
-			path = shading;
 			sourceTree = "<group>";
 		};
 		CFA6568A17A5ADD900148B4F = {
@@ -968,11 +945,6 @@
 				CFA656BC17A5ADDA00148B4F /* LQSViewController.h */,
 				CFA656BD17A5ADDA00148B4F /* LQSViewController.m */,
 				CFA656A117A5ADDA00148B4F /* Supporting Files */,
-				CF9B620917D6517D006934AE /* space */,
-				CFFBAFD417E7D2BE00A190BD /* texture */,
-				CF01104117DE5C4A00FC92C2 /* draw */,
-				CFA3F81717BD44E800539A2A /* shading */,
-				CFA923EA17D65EB80067835F /* utils */,
 			);
 			path = Snake;
 			sourceTree = "<group>";
@@ -1032,26 +1004,6 @@
 				CFA7C78B17E3A27A0089B371 /* fff7dce8bab7b1f11abd79c84ad9247e.png */,
 			);
 			path = data;
-			sourceTree = "<group>";
-		};
-		CFA923EA17D65EB80067835F /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				CFA923EB17D65ED30067835F /* ILQSCollection.h */,
-				CFA923EC17D65FDE0067835F /* LQSCollection.h */,
-				CFA923ED17D65FDE0067835F /* LQSCollection.m */,
-			);
-			path = utils;
-			sourceTree = "<group>";
-		};
-		CFFBAFD417E7D2BE00A190BD /* texture */ = {
-			isa = PBXGroup;
-			children = (
-				CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */,
-				CFFBAFD617E7D39000A190BD /* LQSGLTexture.h */,
-				CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */,
-			);
-			path = texture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
