@@ -70,6 +70,12 @@
 		CF521C2A17EA51B700C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521C2817EA51B700C22D38 /* InfoPlist.strings */; };
 		CF521C2D17EA51B700C22D38 /* utilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521C2C17EA51B700C22D38 /* utilsTests.m */; };
 		CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */; };
+		CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BC017EA51A900C22D38 /* libdraw.a */; };
+		CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BE817EA51B200C22D38 /* libshading.a */; };
+		CF7BC57B17EA55AF00637955 /* libspace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B7017EA519800C22D38 /* libspace.a */; };
+		CF7BC57C17EA55AF00637955 /* libtexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B9817EA519F00C22D38 /* libtexture.a */; };
+		CF7BC57D17EA55AF00637955 /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
+		CF7BC57E17EA55AF00637955 /* libutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521C1017EA51B600C22D38 /* libutils.a */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
 		CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */; };
@@ -171,6 +177,48 @@
 			remoteInfo = shading;
 		};
 		CF521C2217EA51B700C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521C0F17EA51B600C22D38;
+			remoteInfo = utils;
+		};
+		CF7BC56D17EA55A800637955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B4717EA519100C22D38;
+			remoteInfo = transformations;
+		};
+		CF7BC56F17EA55A800637955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B6F17EA519800C22D38;
+			remoteInfo = space;
+		};
+		CF7BC57117EA55A800637955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B9717EA519F00C22D38;
+			remoteInfo = texture;
+		};
+		CF7BC57317EA55A800637955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521BBF17EA51A900C22D38;
+			remoteInfo = draw;
+		};
+		CF7BC57517EA55A800637955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521BE717EA51B200C22D38;
+			remoteInfo = shading;
+		};
+		CF7BC57717EA55A800637955 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
 			proxyType = 1;
@@ -547,6 +595,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */,
+				CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */,
+				CF7BC57B17EA55AF00637955 /* libspace.a in Frameworks */,
+				CF7BC57C17EA55AF00637955 /* libtexture.a in Frameworks */,
+				CF7BC57D17EA55AF00637955 /* libtransformations.a in Frameworks */,
+				CF7BC57E17EA55AF00637955 /* libutils.a in Frameworks */,
 				CFA6569717A5ADDA00148B4F /* UIKit.framework in Frameworks */,
 				CFA6569917A5ADDA00148B4F /* Foundation.framework in Frameworks */,
 				CFA6569B17A5ADDA00148B4F /* CoreGraphics.framework in Frameworks */,
@@ -1236,6 +1290,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				CF7BC56E17EA55A800637955 /* PBXTargetDependency */,
+				CF7BC57017EA55A800637955 /* PBXTargetDependency */,
+				CF7BC57217EA55A800637955 /* PBXTargetDependency */,
+				CF7BC57417EA55A800637955 /* PBXTargetDependency */,
+				CF7BC57617EA55A800637955 /* PBXTargetDependency */,
+				CF7BC57817EA55A800637955 /* PBXTargetDependency */,
 			);
 			name = Snake;
 			productName = Snake;
@@ -1666,6 +1726,36 @@
 			isa = PBXTargetDependency;
 			target = CF521C0F17EA51B600C22D38 /* utils */;
 			targetProxy = CF521C2217EA51B700C22D38 /* PBXContainerItemProxy */;
+		};
+		CF7BC56E17EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B4717EA519100C22D38 /* transformations */;
+			targetProxy = CF7BC56D17EA55A800637955 /* PBXContainerItemProxy */;
+		};
+		CF7BC57017EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B6F17EA519800C22D38 /* space */;
+			targetProxy = CF7BC56F17EA55A800637955 /* PBXContainerItemProxy */;
+		};
+		CF7BC57217EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B9717EA519F00C22D38 /* texture */;
+			targetProxy = CF7BC57117EA55A800637955 /* PBXContainerItemProxy */;
+		};
+		CF7BC57417EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521BBF17EA51A900C22D38 /* draw */;
+			targetProxy = CF7BC57317EA55A800637955 /* PBXContainerItemProxy */;
+		};
+		CF7BC57617EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521BE717EA51B200C22D38 /* shading */;
+			targetProxy = CF7BC57517EA55A800637955 /* PBXContainerItemProxy */;
+		};
+		CF7BC57817EA55A800637955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521C0F17EA51B600C22D38 /* utils */;
+			targetProxy = CF7BC57717EA55A800637955 /* PBXContainerItemProxy */;
 		};
 		CFA656CA17A5ADDA00148B4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
