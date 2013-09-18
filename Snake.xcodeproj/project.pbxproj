@@ -15,6 +15,60 @@
 		CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */; };
 		CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */; };
 		CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */; };
+		CF521B4917EA519100C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521B4E17EA519100C22D38 /* transformations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B4D17EA519100C22D38 /* transformations.h */; };
+		CF521B5017EA519100C22D38 /* transformations.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B4F17EA519100C22D38 /* transformations.m */; };
+		CF521B5717EA519100C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521B5817EA519100C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521B5917EA519100C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521B5C17EA519100C22D38 /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
+		CF521B6217EA519100C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521B6017EA519100C22D38 /* InfoPlist.strings */; };
+		CF521B6517EA519100C22D38 /* transformationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B6417EA519100C22D38 /* transformationsTests.m */; };
+		CF521B7117EA519800C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521B7617EA519800C22D38 /* space.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B7517EA519800C22D38 /* space.h */; };
+		CF521B7817EA519800C22D38 /* space.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B7717EA519800C22D38 /* space.m */; };
+		CF521B7F17EA519800C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521B8017EA519800C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521B8117EA519800C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521B8417EA519800C22D38 /* libspace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B7017EA519800C22D38 /* libspace.a */; };
+		CF521B8A17EA519800C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521B8817EA519800C22D38 /* InfoPlist.strings */; };
+		CF521B8D17EA519800C22D38 /* spaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B8C17EA519800C22D38 /* spaceTests.m */; };
+		CF521B9917EA519F00C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521B9E17EA519F00C22D38 /* texture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B9D17EA519F00C22D38 /* texture.h */; };
+		CF521BA017EA519F00C22D38 /* texture.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B9F17EA519F00C22D38 /* texture.m */; };
+		CF521BA717EA51A000C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521BA817EA51A000C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521BA917EA51A000C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521BAC17EA51A000C22D38 /* libtexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B9817EA519F00C22D38 /* libtexture.a */; };
+		CF521BB217EA51A000C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521BB017EA51A000C22D38 /* InfoPlist.strings */; };
+		CF521BB517EA51A000C22D38 /* textureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521BB417EA51A000C22D38 /* textureTests.m */; };
+		CF521BC117EA51A900C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521BC617EA51A900C22D38 /* draw.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521BC517EA51A900C22D38 /* draw.h */; };
+		CF521BC817EA51A900C22D38 /* draw.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521BC717EA51A900C22D38 /* draw.m */; };
+		CF521BCF17EA51A900C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521BD017EA51A900C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521BD117EA51A900C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521BD417EA51A900C22D38 /* libdraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BC017EA51A900C22D38 /* libdraw.a */; };
+		CF521BDA17EA51A900C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521BD817EA51A900C22D38 /* InfoPlist.strings */; };
+		CF521BDD17EA51A900C22D38 /* drawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521BDC17EA51A900C22D38 /* drawTests.m */; };
+		CF521BE917EA51B200C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521BEE17EA51B200C22D38 /* shading.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521BED17EA51B200C22D38 /* shading.h */; };
+		CF521BF017EA51B200C22D38 /* shading.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521BEF17EA51B200C22D38 /* shading.m */; };
+		CF521BF717EA51B200C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521BF817EA51B200C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521BF917EA51B200C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521BFC17EA51B200C22D38 /* libshading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BE817EA51B200C22D38 /* libshading.a */; };
+		CF521C0217EA51B200C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521C0017EA51B200C22D38 /* InfoPlist.strings */; };
+		CF521C0517EA51B200C22D38 /* shadingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521C0417EA51B200C22D38 /* shadingTests.m */; };
+		CF521C1117EA51B700C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521C1617EA51B700C22D38 /* utils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521C1517EA51B700C22D38 /* utils.h */; };
+		CF521C1817EA51B700C22D38 /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521C1717EA51B700C22D38 /* utils.m */; };
+		CF521C1F17EA51B700C22D38 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
+		CF521C2017EA51B700C22D38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF521C2117EA51B700C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF521C2417EA51B700C22D38 /* libutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521C1017EA51B600C22D38 /* libutils.a */; };
+		CF521C2A17EA51B700C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521C2817EA51B700C22D38 /* InfoPlist.strings */; };
+		CF521C2D17EA51B700C22D38 /* utilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521C2C17EA51B700C22D38 /* utilsTests.m */; };
 		CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
@@ -81,6 +135,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF521B5A17EA519100C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B4717EA519100C22D38;
+			remoteInfo = transformations;
+		};
+		CF521B8217EA519800C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B6F17EA519800C22D38;
+			remoteInfo = space;
+		};
+		CF521BAA17EA51A000C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521B9717EA519F00C22D38;
+			remoteInfo = texture;
+		};
+		CF521BD217EA51A900C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521BBF17EA51A900C22D38;
+			remoteInfo = draw;
+		};
+		CF521BFA17EA51B200C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521BE717EA51B200C22D38;
+			remoteInfo = shading;
+		};
+		CF521C2217EA51B700C22D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF521C0F17EA51B600C22D38;
+			remoteInfo = utils;
+		};
 		CFA656C917A5ADDA00148B4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
@@ -89,6 +185,69 @@
 			remoteInfo = Snake;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF521B4617EA519100C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521B4E17EA519100C22D38 /* transformations.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B6E17EA519800C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521B7617EA519800C22D38 /* space.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B9617EA519F00C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521B9E17EA519F00C22D38 /* texture.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BBE17EA51A900C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521BC617EA51A900C22D38 /* draw.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BE617EA51B200C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521BEE17EA51B200C22D38 /* shading.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C0E17EA51B600C22D38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				CF521C1617EA51B700C22D38 /* utils.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B078737017AB48C200438D16 /* ILQSGLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLProgram.h; sourceTree = "<group>"; };
@@ -108,6 +267,60 @@
 		CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSpaceCollection.m; sourceTree = "<group>"; };
 		CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSUniformScaleTransformation.h; sourceTree = "<group>"; };
 		CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUniformScaleTransformation.m; sourceTree = "<group>"; };
+		CF521B4817EA519100C22D38 /* libtransformations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtransformations.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521B4C17EA519100C22D38 /* transformations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "transformations-Prefix.pch"; sourceTree = "<group>"; };
+		CF521B4D17EA519100C22D38 /* transformations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transformations.h; sourceTree = "<group>"; };
+		CF521B4F17EA519100C22D38 /* transformations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = transformations.m; sourceTree = "<group>"; };
+		CF521B5617EA519100C22D38 /* transformationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = transformationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521B5F17EA519100C22D38 /* transformationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "transformationsTests-Info.plist"; sourceTree = "<group>"; };
+		CF521B6117EA519100C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521B6317EA519100C22D38 /* transformationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transformationsTests.h; sourceTree = "<group>"; };
+		CF521B6417EA519100C22D38 /* transformationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = transformationsTests.m; sourceTree = "<group>"; };
+		CF521B7017EA519800C22D38 /* libspace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libspace.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521B7417EA519800C22D38 /* space-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "space-Prefix.pch"; sourceTree = "<group>"; };
+		CF521B7517EA519800C22D38 /* space.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = space.h; sourceTree = "<group>"; };
+		CF521B7717EA519800C22D38 /* space.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = space.m; sourceTree = "<group>"; };
+		CF521B7E17EA519800C22D38 /* spaceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spaceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521B8717EA519800C22D38 /* spaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spaceTests-Info.plist"; sourceTree = "<group>"; };
+		CF521B8917EA519800C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521B8B17EA519800C22D38 /* spaceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spaceTests.h; sourceTree = "<group>"; };
+		CF521B8C17EA519800C22D38 /* spaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spaceTests.m; sourceTree = "<group>"; };
+		CF521B9817EA519F00C22D38 /* libtexture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtexture.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521B9C17EA519F00C22D38 /* texture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "texture-Prefix.pch"; sourceTree = "<group>"; };
+		CF521B9D17EA519F00C22D38 /* texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
+		CF521B9F17EA519F00C22D38 /* texture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = texture.m; sourceTree = "<group>"; };
+		CF521BA617EA51A000C22D38 /* textureTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = textureTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521BAF17EA51A000C22D38 /* textureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "textureTests-Info.plist"; sourceTree = "<group>"; };
+		CF521BB117EA51A000C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521BB317EA51A000C22D38 /* textureTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textureTests.h; sourceTree = "<group>"; };
+		CF521BB417EA51A000C22D38 /* textureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textureTests.m; sourceTree = "<group>"; };
+		CF521BC017EA51A900C22D38 /* libdraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521BC417EA51A900C22D38 /* draw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-Prefix.pch"; sourceTree = "<group>"; };
+		CF521BC517EA51A900C22D38 /* draw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
+		CF521BC717EA51A900C22D38 /* draw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = draw.m; sourceTree = "<group>"; };
+		CF521BCE17EA51A900C22D38 /* drawTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521BD717EA51A900C22D38 /* drawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "drawTests-Info.plist"; sourceTree = "<group>"; };
+		CF521BD917EA51A900C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521BDB17EA51A900C22D38 /* drawTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawTests.h; sourceTree = "<group>"; };
+		CF521BDC17EA51A900C22D38 /* drawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawTests.m; sourceTree = "<group>"; };
+		CF521BE817EA51B200C22D38 /* libshading.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libshading.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521BEC17EA51B200C22D38 /* shading-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shading-Prefix.pch"; sourceTree = "<group>"; };
+		CF521BED17EA51B200C22D38 /* shading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shading.h; sourceTree = "<group>"; };
+		CF521BEF17EA51B200C22D38 /* shading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shading.m; sourceTree = "<group>"; };
+		CF521BF617EA51B200C22D38 /* shadingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shadingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521BFF17EA51B200C22D38 /* shadingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "shadingTests-Info.plist"; sourceTree = "<group>"; };
+		CF521C0117EA51B200C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521C0317EA51B200C22D38 /* shadingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shadingTests.h; sourceTree = "<group>"; };
+		CF521C0417EA51B200C22D38 /* shadingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shadingTests.m; sourceTree = "<group>"; };
+		CF521C1017EA51B600C22D38 /* libutils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521C1417EA51B700C22D38 /* utils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "utils-Prefix.pch"; sourceTree = "<group>"; };
+		CF521C1517EA51B700C22D38 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		CF521C1717EA51B700C22D38 /* utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		CF521C1E17EA51B700C22D38 /* utilsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = utilsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF521C2717EA51B700C22D38 /* utilsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "utilsTests-Info.plist"; sourceTree = "<group>"; };
+		CF521C2917EA51B700C22D38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF521C2B17EA51B700C22D38 /* utilsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilsTests.h; sourceTree = "<group>"; };
+		CF521C2C17EA51B700C22D38 /* utilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utilsTests.m; sourceTree = "<group>"; };
 		CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableSquareData.m; sourceTree = "<group>"; };
@@ -216,6 +429,120 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF521B4517EA519100C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B4917EA519100C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B5217EA519100C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B5717EA519100C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521B5817EA519100C22D38 /* UIKit.framework in Frameworks */,
+				CF521B5917EA519100C22D38 /* Foundation.framework in Frameworks */,
+				CF521B5C17EA519100C22D38 /* libtransformations.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B6D17EA519800C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B7117EA519800C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B7A17EA519800C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B7F17EA519800C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521B8017EA519800C22D38 /* UIKit.framework in Frameworks */,
+				CF521B8117EA519800C22D38 /* Foundation.framework in Frameworks */,
+				CF521B8417EA519800C22D38 /* libspace.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B9517EA519F00C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B9917EA519F00C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BA217EA51A000C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BA717EA51A000C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521BA817EA51A000C22D38 /* UIKit.framework in Frameworks */,
+				CF521BA917EA51A000C22D38 /* Foundation.framework in Frameworks */,
+				CF521BAC17EA51A000C22D38 /* libtexture.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BBD17EA51A900C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BC117EA51A900C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BCA17EA51A900C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BCF17EA51A900C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521BD017EA51A900C22D38 /* UIKit.framework in Frameworks */,
+				CF521BD117EA51A900C22D38 /* Foundation.framework in Frameworks */,
+				CF521BD417EA51A900C22D38 /* libdraw.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BE517EA51B200C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BE917EA51B200C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BF217EA51B200C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BF717EA51B200C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521BF817EA51B200C22D38 /* UIKit.framework in Frameworks */,
+				CF521BF917EA51B200C22D38 /* Foundation.framework in Frameworks */,
+				CF521BFC17EA51B200C22D38 /* libshading.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C0D17EA51B600C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C1117EA51B700C22D38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C1A17EA51B700C22D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C1F17EA51B700C22D38 /* SenTestingKit.framework in Frameworks */,
+				CF521C2017EA51B700C22D38 /* UIKit.framework in Frameworks */,
+				CF521C2117EA51B700C22D38 /* Foundation.framework in Frameworks */,
+				CF521C2417EA51B700C22D38 /* libutils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFA6569017A5ADD900148B4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +623,228 @@
 			path = transformations;
 			sourceTree = "<group>";
 		};
+		CF521B4A17EA519100C22D38 /* transformations */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B4D17EA519100C22D38 /* transformations.h */,
+				CF521B4F17EA519100C22D38 /* transformations.m */,
+				CF521B4B17EA519100C22D38 /* Supporting Files */,
+			);
+			path = transformations;
+			sourceTree = "<group>";
+		};
+		CF521B4B17EA519100C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B4C17EA519100C22D38 /* transformations-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521B5D17EA519100C22D38 /* transformationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B6317EA519100C22D38 /* transformationsTests.h */,
+				CF521B6417EA519100C22D38 /* transformationsTests.m */,
+				CF521B5E17EA519100C22D38 /* Supporting Files */,
+			);
+			path = transformationsTests;
+			sourceTree = "<group>";
+		};
+		CF521B5E17EA519100C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B5F17EA519100C22D38 /* transformationsTests-Info.plist */,
+				CF521B6017EA519100C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521B7217EA519800C22D38 /* space */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B7517EA519800C22D38 /* space.h */,
+				CF521B7717EA519800C22D38 /* space.m */,
+				CF521B7317EA519800C22D38 /* Supporting Files */,
+			);
+			path = space;
+			sourceTree = "<group>";
+		};
+		CF521B7317EA519800C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B7417EA519800C22D38 /* space-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521B8517EA519800C22D38 /* spaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B8B17EA519800C22D38 /* spaceTests.h */,
+				CF521B8C17EA519800C22D38 /* spaceTests.m */,
+				CF521B8617EA519800C22D38 /* Supporting Files */,
+			);
+			path = spaceTests;
+			sourceTree = "<group>";
+		};
+		CF521B8617EA519800C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B8717EA519800C22D38 /* spaceTests-Info.plist */,
+				CF521B8817EA519800C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521B9A17EA519F00C22D38 /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B9D17EA519F00C22D38 /* texture.h */,
+				CF521B9F17EA519F00C22D38 /* texture.m */,
+				CF521B9B17EA519F00C22D38 /* Supporting Files */,
+			);
+			path = texture;
+			sourceTree = "<group>";
+		};
+		CF521B9B17EA519F00C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521B9C17EA519F00C22D38 /* texture-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521BAD17EA51A000C22D38 /* textureTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BB317EA51A000C22D38 /* textureTests.h */,
+				CF521BB417EA51A000C22D38 /* textureTests.m */,
+				CF521BAE17EA51A000C22D38 /* Supporting Files */,
+			);
+			path = textureTests;
+			sourceTree = "<group>";
+		};
+		CF521BAE17EA51A000C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BAF17EA51A000C22D38 /* textureTests-Info.plist */,
+				CF521BB017EA51A000C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521BC217EA51A900C22D38 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BC517EA51A900C22D38 /* draw.h */,
+				CF521BC717EA51A900C22D38 /* draw.m */,
+				CF521BC317EA51A900C22D38 /* Supporting Files */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
+		CF521BC317EA51A900C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BC417EA51A900C22D38 /* draw-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521BD517EA51A900C22D38 /* drawTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BDB17EA51A900C22D38 /* drawTests.h */,
+				CF521BDC17EA51A900C22D38 /* drawTests.m */,
+				CF521BD617EA51A900C22D38 /* Supporting Files */,
+			);
+			path = drawTests;
+			sourceTree = "<group>";
+		};
+		CF521BD617EA51A900C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BD717EA51A900C22D38 /* drawTests-Info.plist */,
+				CF521BD817EA51A900C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521BEA17EA51B200C22D38 /* shading */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BED17EA51B200C22D38 /* shading.h */,
+				CF521BEF17EA51B200C22D38 /* shading.m */,
+				CF521BEB17EA51B200C22D38 /* Supporting Files */,
+			);
+			path = shading;
+			sourceTree = "<group>";
+		};
+		CF521BEB17EA51B200C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BEC17EA51B200C22D38 /* shading-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521BFD17EA51B200C22D38 /* shadingTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521C0317EA51B200C22D38 /* shadingTests.h */,
+				CF521C0417EA51B200C22D38 /* shadingTests.m */,
+				CF521BFE17EA51B200C22D38 /* Supporting Files */,
+			);
+			path = shadingTests;
+			sourceTree = "<group>";
+		};
+		CF521BFE17EA51B200C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521BFF17EA51B200C22D38 /* shadingTests-Info.plist */,
+				CF521C0017EA51B200C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521C1217EA51B700C22D38 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF521C1517EA51B700C22D38 /* utils.h */,
+				CF521C1717EA51B700C22D38 /* utils.m */,
+				CF521C1317EA51B700C22D38 /* Supporting Files */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		CF521C1317EA51B700C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521C1417EA51B700C22D38 /* utils-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF521C2517EA51B700C22D38 /* utilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF521C2B17EA51B700C22D38 /* utilsTests.h */,
+				CF521C2C17EA51B700C22D38 /* utilsTests.m */,
+				CF521C2617EA51B700C22D38 /* Supporting Files */,
+			);
+			path = utilsTests;
+			sourceTree = "<group>";
+		};
+		CF521C2617EA51B700C22D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF521C2717EA51B700C22D38 /* utilsTests-Info.plist */,
+				CF521C2817EA51B700C22D38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CF9B620917D6517D006934AE /* space */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +905,18 @@
 			children = (
 				CFA656A017A5ADDA00148B4F /* Snake */,
 				CFA656CB17A5ADDA00148B4F /* SnakeTests */,
+				CF521B4A17EA519100C22D38 /* transformations */,
+				CF521B5D17EA519100C22D38 /* transformationsTests */,
+				CF521B7217EA519800C22D38 /* space */,
+				CF521B8517EA519800C22D38 /* spaceTests */,
+				CF521B9A17EA519F00C22D38 /* texture */,
+				CF521BAD17EA51A000C22D38 /* textureTests */,
+				CF521BC217EA51A900C22D38 /* draw */,
+				CF521BD517EA51A900C22D38 /* drawTests */,
+				CF521BEA17EA51B200C22D38 /* shading */,
+				CF521BFD17EA51B200C22D38 /* shadingTests */,
+				CF521C1217EA51B700C22D38 /* utils */,
+				CF521C2517EA51B700C22D38 /* utilsTests */,
 				CFA6569517A5ADDA00148B4F /* Frameworks */,
 				CFA6569417A5ADDA00148B4F /* Products */,
 			);
@@ -366,6 +927,18 @@
 			children = (
 				CFA6569317A5ADDA00148B4F /* Snake.app */,
 				CFA656C417A5ADDA00148B4F /* SnakeTests.octest */,
+				CF521B4817EA519100C22D38 /* libtransformations.a */,
+				CF521B5617EA519100C22D38 /* transformationsTests.octest */,
+				CF521B7017EA519800C22D38 /* libspace.a */,
+				CF521B7E17EA519800C22D38 /* spaceTests.octest */,
+				CF521B9817EA519F00C22D38 /* libtexture.a */,
+				CF521BA617EA51A000C22D38 /* textureTests.octest */,
+				CF521BC017EA51A900C22D38 /* libdraw.a */,
+				CF521BCE17EA51A900C22D38 /* drawTests.octest */,
+				CF521BE817EA51B200C22D38 /* libshading.a */,
+				CF521BF617EA51B200C22D38 /* shadingTests.octest */,
+				CF521C1017EA51B600C22D38 /* libutils.a */,
+				CF521C1E17EA51B700C22D38 /* utilsTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -484,6 +1057,222 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF521B4717EA519100C22D38 /* transformations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521B6A17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformations" */;
+			buildPhases = (
+				CF521B4417EA519100C22D38 /* Sources */,
+				CF521B4517EA519100C22D38 /* Frameworks */,
+				CF521B4617EA519100C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = transformations;
+			productName = transformations;
+			productReference = CF521B4817EA519100C22D38 /* libtransformations.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521B5517EA519100C22D38 /* transformationsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521B6B17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformationsTests" */;
+			buildPhases = (
+				CF521B5117EA519100C22D38 /* Sources */,
+				CF521B5217EA519100C22D38 /* Frameworks */,
+				CF521B5317EA519100C22D38 /* Resources */,
+				CF521B5417EA519100C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521B5B17EA519100C22D38 /* PBXTargetDependency */,
+			);
+			name = transformationsTests;
+			productName = transformationsTests;
+			productReference = CF521B5617EA519100C22D38 /* transformationsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		CF521B6F17EA519800C22D38 /* space */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521B8E17EA519800C22D38 /* Build configuration list for PBXNativeTarget "space" */;
+			buildPhases = (
+				CF521B6C17EA519800C22D38 /* Sources */,
+				CF521B6D17EA519800C22D38 /* Frameworks */,
+				CF521B6E17EA519800C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = space;
+			productName = space;
+			productReference = CF521B7017EA519800C22D38 /* libspace.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521B7D17EA519800C22D38 /* spaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521B9117EA519800C22D38 /* Build configuration list for PBXNativeTarget "spaceTests" */;
+			buildPhases = (
+				CF521B7917EA519800C22D38 /* Sources */,
+				CF521B7A17EA519800C22D38 /* Frameworks */,
+				CF521B7B17EA519800C22D38 /* Resources */,
+				CF521B7C17EA519800C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521B8317EA519800C22D38 /* PBXTargetDependency */,
+			);
+			name = spaceTests;
+			productName = spaceTests;
+			productReference = CF521B7E17EA519800C22D38 /* spaceTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		CF521B9717EA519F00C22D38 /* texture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521BB617EA51A000C22D38 /* Build configuration list for PBXNativeTarget "texture" */;
+			buildPhases = (
+				CF521B9417EA519F00C22D38 /* Sources */,
+				CF521B9517EA519F00C22D38 /* Frameworks */,
+				CF521B9617EA519F00C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = texture;
+			productName = texture;
+			productReference = CF521B9817EA519F00C22D38 /* libtexture.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521BA517EA51A000C22D38 /* textureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521BB917EA51A000C22D38 /* Build configuration list for PBXNativeTarget "textureTests" */;
+			buildPhases = (
+				CF521BA117EA51A000C22D38 /* Sources */,
+				CF521BA217EA51A000C22D38 /* Frameworks */,
+				CF521BA317EA51A000C22D38 /* Resources */,
+				CF521BA417EA51A000C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521BAB17EA51A000C22D38 /* PBXTargetDependency */,
+			);
+			name = textureTests;
+			productName = textureTests;
+			productReference = CF521BA617EA51A000C22D38 /* textureTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		CF521BBF17EA51A900C22D38 /* draw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521BDE17EA51A900C22D38 /* Build configuration list for PBXNativeTarget "draw" */;
+			buildPhases = (
+				CF521BBC17EA51A900C22D38 /* Sources */,
+				CF521BBD17EA51A900C22D38 /* Frameworks */,
+				CF521BBE17EA51A900C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = draw;
+			productName = draw;
+			productReference = CF521BC017EA51A900C22D38 /* libdraw.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521BCD17EA51A900C22D38 /* drawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521BE117EA51A900C22D38 /* Build configuration list for PBXNativeTarget "drawTests" */;
+			buildPhases = (
+				CF521BC917EA51A900C22D38 /* Sources */,
+				CF521BCA17EA51A900C22D38 /* Frameworks */,
+				CF521BCB17EA51A900C22D38 /* Resources */,
+				CF521BCC17EA51A900C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521BD317EA51A900C22D38 /* PBXTargetDependency */,
+			);
+			name = drawTests;
+			productName = drawTests;
+			productReference = CF521BCE17EA51A900C22D38 /* drawTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		CF521BE717EA51B200C22D38 /* shading */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521C0617EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shading" */;
+			buildPhases = (
+				CF521BE417EA51B200C22D38 /* Sources */,
+				CF521BE517EA51B200C22D38 /* Frameworks */,
+				CF521BE617EA51B200C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shading;
+			productName = shading;
+			productReference = CF521BE817EA51B200C22D38 /* libshading.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521BF517EA51B200C22D38 /* shadingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521C0917EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shadingTests" */;
+			buildPhases = (
+				CF521BF117EA51B200C22D38 /* Sources */,
+				CF521BF217EA51B200C22D38 /* Frameworks */,
+				CF521BF317EA51B200C22D38 /* Resources */,
+				CF521BF417EA51B200C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521BFB17EA51B200C22D38 /* PBXTargetDependency */,
+			);
+			name = shadingTests;
+			productName = shadingTests;
+			productReference = CF521BF617EA51B200C22D38 /* shadingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		CF521C0F17EA51B600C22D38 /* utils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521C2E17EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utils" */;
+			buildPhases = (
+				CF521C0C17EA51B600C22D38 /* Sources */,
+				CF521C0D17EA51B600C22D38 /* Frameworks */,
+				CF521C0E17EA51B600C22D38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = utils;
+			productName = utils;
+			productReference = CF521C1017EA51B600C22D38 /* libutils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF521C1D17EA51B700C22D38 /* utilsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF521C3117EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utilsTests" */;
+			buildPhases = (
+				CF521C1917EA51B700C22D38 /* Sources */,
+				CF521C1A17EA51B700C22D38 /* Frameworks */,
+				CF521C1B17EA51B700C22D38 /* Resources */,
+				CF521C1C17EA51B700C22D38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF521C2317EA51B700C22D38 /* PBXTargetDependency */,
+			);
+			name = utilsTests;
+			productName = utilsTests;
+			productReference = CF521C1E17EA51B700C22D38 /* utilsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		CFA6569217A5ADD900148B4F /* Snake */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFA656D617A5ADDA00148B4F /* Build configuration list for PBXNativeTarget "Snake" */;
@@ -544,11 +1333,71 @@
 			targets = (
 				CFA6569217A5ADD900148B4F /* Snake */,
 				CFA656C317A5ADDA00148B4F /* SnakeTests */,
+				CF521B4717EA519100C22D38 /* transformations */,
+				CF521B5517EA519100C22D38 /* transformationsTests */,
+				CF521B6F17EA519800C22D38 /* space */,
+				CF521B7D17EA519800C22D38 /* spaceTests */,
+				CF521B9717EA519F00C22D38 /* texture */,
+				CF521BA517EA51A000C22D38 /* textureTests */,
+				CF521BBF17EA51A900C22D38 /* draw */,
+				CF521BCD17EA51A900C22D38 /* drawTests */,
+				CF521BE717EA51B200C22D38 /* shading */,
+				CF521BF517EA51B200C22D38 /* shadingTests */,
+				CF521C0F17EA51B600C22D38 /* utils */,
+				CF521C1D17EA51B700C22D38 /* utilsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF521B5317EA519100C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B6217EA519100C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B7B17EA519800C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B8A17EA519800C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BA317EA51A000C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BB217EA51A000C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BCB17EA51A900C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BDA17EA51A900C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BF317EA51B200C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C0217EA51B200C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C1B17EA51B700C22D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C2A17EA51B700C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFA6569117A5ADD900148B4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,6 +1447,84 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CF521B5417EA519100C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CF521B7C17EA519800C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CF521BA417EA51A000C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CF521BCC17EA51A900C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CF521BF417EA51B200C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		CF521C1C17EA51B700C22D38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		CFA656C217A5ADDA00148B4F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +1541,102 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF521B4417EA519100C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B5017EA519100C22D38 /* transformations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B5117EA519100C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B6517EA519100C22D38 /* transformationsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B6C17EA519800C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B7817EA519800C22D38 /* space.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B7917EA519800C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521B8D17EA519800C22D38 /* spaceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521B9417EA519F00C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BA017EA519F00C22D38 /* texture.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BA117EA51A000C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BB517EA51A000C22D38 /* textureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BBC17EA51A900C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BC817EA51A900C22D38 /* draw.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BC917EA51A900C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BDD17EA51A900C22D38 /* drawTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BE417EA51B200C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521BF017EA51B200C22D38 /* shading.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521BF117EA51B200C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C0517EA51B200C22D38 /* shadingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C0C17EA51B600C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C1817EA51B700C22D38 /* utils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF521C1917EA51B700C22D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF521C2D17EA51B700C22D38 /* utilsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFA6568F17A5ADD900148B4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -662,6 +1685,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF521B5B17EA519100C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B4717EA519100C22D38 /* transformations */;
+			targetProxy = CF521B5A17EA519100C22D38 /* PBXContainerItemProxy */;
+		};
+		CF521B8317EA519800C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B6F17EA519800C22D38 /* space */;
+			targetProxy = CF521B8217EA519800C22D38 /* PBXContainerItemProxy */;
+		};
+		CF521BAB17EA51A000C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521B9717EA519F00C22D38 /* texture */;
+			targetProxy = CF521BAA17EA51A000C22D38 /* PBXContainerItemProxy */;
+		};
+		CF521BD317EA51A900C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521BBF17EA51A900C22D38 /* draw */;
+			targetProxy = CF521BD217EA51A900C22D38 /* PBXContainerItemProxy */;
+		};
+		CF521BFB17EA51B200C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521BE717EA51B200C22D38 /* shading */;
+			targetProxy = CF521BFA17EA51B200C22D38 /* PBXContainerItemProxy */;
+		};
+		CF521C2317EA51B700C22D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF521C0F17EA51B600C22D38 /* utils */;
+			targetProxy = CF521C2217EA51B700C22D38 /* PBXContainerItemProxy */;
+		};
 		CFA656CA17A5ADDA00148B4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CFA6569217A5ADD900148B4F /* Snake */;
@@ -670,6 +1723,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CF521B6017EA519100C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521B6117EA519100C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF521B8817EA519800C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521B8917EA519800C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF521BB017EA51A000C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521BB117EA51A000C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF521BD817EA51A900C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521BD917EA51A900C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF521C0017EA51B200C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521C0117EA51B200C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF521C2817EA51B700C22D38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF521C2917EA51B700C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		CFA656A317A5ADDA00148B4F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -705,6 +1806,330 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF521B6617EA519100C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/transformations.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "transformations/transformations-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521B6717EA519100C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/transformations.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "transformations/transformations-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521B6817EA519100C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "transformations/transformations-Prefix.pch";
+				INFOPLIST_FILE = "transformationsTests/transformationsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521B6917EA519100C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "transformations/transformations-Prefix.pch";
+				INFOPLIST_FILE = "transformationsTests/transformationsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		CF521B8F17EA519800C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/space.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "space/space-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521B9017EA519800C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/space.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "space/space-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521B9217EA519800C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "space/space-Prefix.pch";
+				INFOPLIST_FILE = "spaceTests/spaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521B9317EA519800C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "space/space-Prefix.pch";
+				INFOPLIST_FILE = "spaceTests/spaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		CF521BB717EA51A000C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/texture.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "texture/texture-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521BB817EA51A000C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/texture.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "texture/texture-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521BBA17EA51A000C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "texture/texture-Prefix.pch";
+				INFOPLIST_FILE = "textureTests/textureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521BBB17EA51A000C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "texture/texture-Prefix.pch";
+				INFOPLIST_FILE = "textureTests/textureTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		CF521BDF17EA51A900C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/draw.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "draw/draw-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521BE017EA51A900C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/draw.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "draw/draw-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521BE217EA51A900C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "draw/draw-Prefix.pch";
+				INFOPLIST_FILE = "drawTests/drawTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521BE317EA51A900C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "draw/draw-Prefix.pch";
+				INFOPLIST_FILE = "drawTests/drawTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		CF521C0717EA51B200C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/shading.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shading/shading-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521C0817EA51B200C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/shading.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shading/shading-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521C0A17EA51B200C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shading/shading-Prefix.pch";
+				INFOPLIST_FILE = "shadingTests/shadingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521C0B17EA51B200C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shading/shading-Prefix.pch";
+				INFOPLIST_FILE = "shadingTests/shadingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		CF521C2F17EA51B700C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/utils.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "utils/utils-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF521C3017EA51B700C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/utils.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "utils/utils-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF521C3217EA51B700C22D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "utils/utils-Prefix.pch";
+				INFOPLIST_FILE = "utilsTests/utilsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF521C3317EA51B700C22D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "utils/utils-Prefix.pch";
+				INFOPLIST_FILE = "utilsTests/utilsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		CFA656D417A5ADDA00148B4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -864,6 +2289,102 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF521B6A17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521B6617EA519100C22D38 /* Debug */,
+				CF521B6717EA519100C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521B6B17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformationsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521B6817EA519100C22D38 /* Debug */,
+				CF521B6917EA519100C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521B8E17EA519800C22D38 /* Build configuration list for PBXNativeTarget "space" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521B8F17EA519800C22D38 /* Debug */,
+				CF521B9017EA519800C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521B9117EA519800C22D38 /* Build configuration list for PBXNativeTarget "spaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521B9217EA519800C22D38 /* Debug */,
+				CF521B9317EA519800C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521BB617EA51A000C22D38 /* Build configuration list for PBXNativeTarget "texture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521BB717EA51A000C22D38 /* Debug */,
+				CF521BB817EA51A000C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521BB917EA51A000C22D38 /* Build configuration list for PBXNativeTarget "textureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521BBA17EA51A000C22D38 /* Debug */,
+				CF521BBB17EA51A000C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521BDE17EA51A900C22D38 /* Build configuration list for PBXNativeTarget "draw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521BDF17EA51A900C22D38 /* Debug */,
+				CF521BE017EA51A900C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521BE117EA51A900C22D38 /* Build configuration list for PBXNativeTarget "drawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521BE217EA51A900C22D38 /* Debug */,
+				CF521BE317EA51A900C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521C0617EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shading" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521C0717EA51B200C22D38 /* Debug */,
+				CF521C0817EA51B200C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521C0917EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shadingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521C0A17EA51B200C22D38 /* Debug */,
+				CF521C0B17EA51B200C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521C2E17EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521C2F17EA51B700C22D38 /* Debug */,
+				CF521C3017EA51B700C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF521C3117EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utilsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF521C3217EA51B700C22D38 /* Debug */,
+				CF521C3317EA51B700C22D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CFA6568E17A5ADD900148B4F /* Build configuration list for PBXProject "Snake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

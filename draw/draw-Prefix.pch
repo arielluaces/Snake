@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'draw' target in the 'draw' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
