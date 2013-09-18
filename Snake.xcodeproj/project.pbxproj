@@ -2296,6 +2296,7 @@
 				CF521B6717EA519100C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521B6B17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformationsTests" */ = {
 			isa = XCConfigurationList;
@@ -2304,6 +2305,7 @@
 				CF521B6917EA519100C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521B8E17EA519800C22D38 /* Build configuration list for PBXNativeTarget "space" */ = {
 			isa = XCConfigurationList;
@@ -2312,6 +2314,7 @@
 				CF521B9017EA519800C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521B9117EA519800C22D38 /* Build configuration list for PBXNativeTarget "spaceTests" */ = {
 			isa = XCConfigurationList;
@@ -2320,6 +2323,7 @@
 				CF521B9317EA519800C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521BB617EA51A000C22D38 /* Build configuration list for PBXNativeTarget "texture" */ = {
 			isa = XCConfigurationList;
@@ -2328,6 +2332,7 @@
 				CF521BB817EA51A000C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521BB917EA51A000C22D38 /* Build configuration list for PBXNativeTarget "textureTests" */ = {
 			isa = XCConfigurationList;
@@ -2336,6 +2341,7 @@
 				CF521BBB17EA51A000C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521BDE17EA51A900C22D38 /* Build configuration list for PBXNativeTarget "draw" */ = {
 			isa = XCConfigurationList;
@@ -2344,6 +2350,7 @@
 				CF521BE017EA51A900C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521BE117EA51A900C22D38 /* Build configuration list for PBXNativeTarget "drawTests" */ = {
 			isa = XCConfigurationList;
@@ -2352,6 +2359,7 @@
 				CF521BE317EA51A900C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521C0617EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shading" */ = {
 			isa = XCConfigurationList;
@@ -2360,6 +2368,7 @@
 				CF521C0817EA51B200C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521C0917EA51B200C22D38 /* Build configuration list for PBXNativeTarget "shadingTests" */ = {
 			isa = XCConfigurationList;
@@ -2368,6 +2377,7 @@
 				CF521C0B17EA51B200C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521C2E17EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utils" */ = {
 			isa = XCConfigurationList;
@@ -2376,6 +2386,7 @@
 				CF521C3017EA51B700C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521C3117EA51B700C22D38 /* Build configuration list for PBXNativeTarget "utilsTests" */ = {
 			isa = XCConfigurationList;
@@ -2384,6 +2395,7 @@
 				CF521C3317EA51B700C22D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFA6568E17A5ADD900148B4F /* Build configuration list for PBXProject "Snake" */ = {
 			isa = XCConfigurationList;
