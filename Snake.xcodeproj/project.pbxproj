@@ -135,6 +135,8 @@
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
 		CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */; };
+		CFF1092717EB6BDD00E9707C /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
+		CFF1092817EB6BE800E9707C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569C17A5ADDA00148B4F /* GLKit.framework */; };
 		CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */; };
 		CFFBAFDB17E7D52700A190BD /* LQSDrawableTexturedSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFDA17E7D52700A190BD /* LQSDrawableTexturedSquareData.m */; };
 		CFFEBDE217E7CE24004B3A30 /* LQSDrawableTexturedSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEBDE117E7CE24004B3A30 /* LQSDrawableTexturedSquare.m */; };
@@ -508,6 +510,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF1092817EB6BE800E9707C /* GLKit.framework in Frameworks */,
+				CFF1092717EB6BDD00E9707C /* libtransformations.a in Frameworks */,
 				CF521B7F17EA519800C22D38 /* SenTestingKit.framework in Frameworks */,
 				CF521B8017EA519800C22D38 /* UIKit.framework in Frameworks */,
 				CF521B8117EA519800C22D38 /* Foundation.framework in Frameworks */,
