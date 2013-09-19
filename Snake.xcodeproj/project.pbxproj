@@ -135,6 +135,7 @@
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
 		CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */; };
+		CFF1092617EB667400E9707C /* LQSChildSpaceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1092517EB667400E9707C /* LQSChildSpaceTest.m */; };
 		CFF1092717EB6BDD00E9707C /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
 		CFF1092817EB6BE800E9707C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569C17A5ADDA00148B4F /* GLKit.framework */; };
 		CFFBAFD817E7D39000A190BD /* LQSGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */; };
@@ -468,6 +469,8 @@
 		CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTexturedVerticesProgram.m; sourceTree = "<group>"; };
 		CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.vsh; sourceTree = "<group>"; };
 		CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.fsh; sourceTree = "<group>"; };
+		CFF1092417EB667400E9707C /* LQSChildSpaceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSChildSpaceTest.h; sourceTree = "<group>"; };
+		CFF1092517EB667400E9707C /* LQSChildSpaceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSChildSpaceTest.m; sourceTree = "<group>"; };
 		CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLTexture.h; sourceTree = "<group>"; };
 		CFFBAFD617E7D39000A190BD /* LQSGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLTexture.h; sourceTree = "<group>"; };
 		CFFBAFD717E7D39000A190BD /* LQSGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLTexture.m; sourceTree = "<group>"; };
@@ -721,6 +724,8 @@
 				CF521B8B17EA519800C22D38 /* spaceTests.h */,
 				CF521B8C17EA519800C22D38 /* spaceTests.m */,
 				CF521B8617EA519800C22D38 /* Supporting Files */,
+				CFF1092417EB667400E9707C /* LQSChildSpaceTest.h */,
+				CFF1092517EB667400E9707C /* LQSChildSpaceTest.m */,
 			);
 			path = spaceTests;
 			sourceTree = "<group>";
@@ -1594,6 +1599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521B8D17EA519800C22D38 /* spaceTests.m in Sources */,
+				CFF1092617EB667400E9707C /* LQSChildSpaceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
