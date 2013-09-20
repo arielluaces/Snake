@@ -133,6 +133,7 @@
 		CFE15D3017BC84F500ECE1C2 /* ColoredVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFE15D2F17BC84F500ECE1C2 /* ColoredVerticesProgram.fsh */; };
 		CFE15D3417BC869700ECE1C2 /* LQSColoredVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */; };
 		CFE2EC2817ECE7870019269B /* LQSRotationTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2EC2717ECE7870019269B /* LQSRotationTransformation.m */; };
+		CFE2EC2D17ECFA760019269B /* LQSTransformationArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2EC2C17ECFA760019269B /* LQSTransformationArray.m */; };
 		CFE8BFDA17AC12E2003BC14C /* LQSVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */; };
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
@@ -468,6 +469,10 @@
 		CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSColoredVerticesProgram.m; sourceTree = "<group>"; };
 		CFE2EC2617ECE7870019269B /* LQSRotationTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSRotationTransformation.h; sourceTree = "<group>"; };
 		CFE2EC2717ECE7870019269B /* LQSRotationTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSRotationTransformation.m; sourceTree = "<group>"; };
+		CFE2EC2917ECFA460019269B /* ILQSTransformationCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformationCollection.h; sourceTree = "<group>"; };
+		CFE2EC2A17ECFA590019269B /* ILQSTransformationArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformationArray.h; sourceTree = "<group>"; };
+		CFE2EC2B17ECFA760019269B /* LQSTransformationArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTransformationArray.h; sourceTree = "<group>"; };
+		CFE2EC2C17ECFA760019269B /* LQSTransformationArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTransformationArray.m; sourceTree = "<group>"; };
 		CFE8BFD817AC12E2003BC14C /* LQSVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSVertexShader.h; sourceTree = "<group>"; };
 		CFE8BFD917AC12E2003BC14C /* LQSVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSVertexShader.m; sourceTree = "<group>"; };
 		CFEAAF9417BC7025000F15DD /* ILQSTexturedVerticesProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTexturedVerticesProgram.h; sourceTree = "<group>"; };
@@ -663,6 +668,10 @@
 				CFDBD15417E25EB400A41D35 /* LQSTransformationFactory.m */,
 				CFE2EC2617ECE7870019269B /* LQSRotationTransformation.h */,
 				CFE2EC2717ECE7870019269B /* LQSRotationTransformation.m */,
+				CFE2EC2917ECFA460019269B /* ILQSTransformationCollection.h */,
+				CFE2EC2A17ECFA590019269B /* ILQSTransformationArray.h */,
+				CFE2EC2B17ECFA760019269B /* LQSTransformationArray.h */,
+				CFE2EC2C17ECFA760019269B /* LQSTransformationArray.m */,
 			);
 			path = transformations;
 			sourceTree = "<group>";
@@ -1582,6 +1591,7 @@
 				CF01E26C17D80EA6002BDB25 /* LQSTranslationTransformation.m in Sources */,
 				CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */,
 				CFE2EC2817ECE7870019269B /* LQSRotationTransformation.m in Sources */,
+				CFE2EC2D17ECFA760019269B /* LQSTransformationArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
