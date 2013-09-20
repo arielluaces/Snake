@@ -27,6 +27,7 @@
 #import "LQSDrawableTexturedSquare.h"
 #import "LQSDrawableTexturedSquareData.h"
 #import "LQSGLTexture.h"
+#import "LQSRotationTransformation.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -70,6 +71,7 @@
         {
             NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
             NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
+            NSObject<ILQSTransformation> *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
             NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -82,7 +84,7 @@
                 parentParentParentSpace.parent = rootSpace;
                 childSpace.transformToParent = pivotTransformation;
                 parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                parentParentSpace.transformToParent = rotationTransformation;
                 parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*0 y:1.5f/16.0f z:0];
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -109,7 +111,7 @@
                 parentParentParentSpace.parent = rootSpace;
                 childSpace.transformToParent = pivotTransformation;
                 parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                parentParentSpace.transformToParent = rotationTransformation;
                 parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*2 y:1.5f/16.0f z:0];
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -136,7 +138,7 @@
                 parentParentParentSpace.parent = rootSpace;
                 childSpace.transformToParent = pivotTransformation;
                 parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                parentParentSpace.transformToParent = rotationTransformation;
                 parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*4 y:1.5f/16.0f z:0];
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
