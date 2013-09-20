@@ -28,6 +28,8 @@
 #import "LQSDrawableTexturedSquareData.h"
 #import "LQSGLTexture.h"
 #import "LQSRotationTransformation.h"
+#import "LQSTransformationSet.h"
+#import "LQSTransformationArray.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -75,17 +77,13 @@
             NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentParentSpace = [[LQSChildSpace alloc] init];
-                childSpace.parent = parentSpace;
-                parentSpace.parent = parentParentSpace;
-                parentParentSpace.parent = parentParentParentSpace;
-                parentParentParentSpace.parent = rootSpace;
-                childSpace.transformToParent = pivotTransformation;
-                parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = rotationTransformation;
-                parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*0 y:1.5f/16.0f z:0];
+                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                [transformationSet.transformationArray addTransformation:pivotTransformation];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
+                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*0 y:1.5f/16.0f z:0]];
+                childSpace.parent = rootSpace;
+                childSpace.transformToParent = transformationSet;
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                     LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -102,17 +100,13 @@
             }
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentParentSpace = [[LQSChildSpace alloc] init];
-                childSpace.parent = parentSpace;
-                parentSpace.parent = parentParentSpace;
-                parentParentSpace.parent = parentParentParentSpace;
-                parentParentParentSpace.parent = rootSpace;
-                childSpace.transformToParent = pivotTransformation;
-                parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = rotationTransformation;
-                parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*2 y:1.5f/16.0f z:0];
+                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                [transformationSet.transformationArray addTransformation:pivotTransformation];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
+                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*2 y:1.5f/16.0f z:0]];
+                childSpace.parent = rootSpace;
+                childSpace.transformToParent = transformationSet;
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                     LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -129,17 +123,13 @@
             }
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentSpace = [[LQSChildSpace alloc] init];
-                LQSChildSpace *parentParentParentSpace = [[LQSChildSpace alloc] init];
-                childSpace.parent = parentSpace;
-                parentSpace.parent = parentParentSpace;
-                parentParentSpace.parent = parentParentParentSpace;
-                parentParentParentSpace.parent = rootSpace;
-                childSpace.transformToParent = pivotTransformation;
-                parentSpace.transformToParent = scaleTransformation;
-                parentParentSpace.transformToParent = rotationTransformation;
-                parentParentParentSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*4 y:1.5f/16.0f z:0];
+                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                [transformationSet.transformationArray addTransformation:pivotTransformation];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
+                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:1.0f/16.0f*4 y:1.5f/16.0f z:0]];
+                childSpace.parent = rootSpace;
+                childSpace.transformToParent = transformationSet;
                 {
                     LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                     LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
