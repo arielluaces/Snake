@@ -80,9 +80,9 @@
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                 LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                 [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaledTranslationTransformationWithScale:1.0f/16.0f x:0 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 childSpace.parent = rootSpace;
                 childSpace.transformToParent = transformationSet;
                 {
@@ -103,9 +103,9 @@
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                 LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                 [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaledTranslationTransformationWithScale:1.0f/16.0f x:2 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 childSpace.parent = rootSpace;
                 childSpace.transformToParent = transformationSet;
                 {
@@ -126,9 +126,9 @@
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                 LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                 [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaledTranslationTransformationWithScale:1.0f/16.0f x:4 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:4 y:1.5f z:0]];
+                [transformationSet.transformationArray addTransformation:scaleTransformation];
                 childSpace.parent = rootSpace;
                 childSpace.transformToParent = transformationSet;
                 {
