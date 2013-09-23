@@ -12,6 +12,7 @@
 @class LQSUniformScaleTransformation;
 @class LQSTranslationTransformation;
 @class LQSRotationTransformation;
+@class LQSScaledTranslationTransformation;
 
 @interface LQSTransformationFactory : NSObject
 
@@ -19,5 +20,6 @@
 + (LQSUniformScaleTransformation *)uniformScaleTransformationWithScale:(float)scale;
 + (LQSTranslationTransformation *)translationTransformationWithX:(float)x y:(float)y z:(float)z;
 + (LQSRotationTransformation *)rotationTransformationWithRadians:(float)radians x:(float)x y:(float)y z:(float)z;
++ (LQSScaledTranslationTransformation *)scaledTranslationTransformationWithScale:(float)scale x:(float)x y:(float)y z:(float)z;
 
 @end

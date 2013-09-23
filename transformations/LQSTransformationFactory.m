@@ -11,6 +11,7 @@
 #import "LQSUniformScaleTransformation.h"
 #import "LQSTranslationTransformation.h"
 #import "LQSRotationTransformation.h"
+#import "LQSScaledTranslationTransformation.h"
 
 @implementation LQSTransformationFactory
 
@@ -47,6 +48,16 @@
     rotationTransformation.y = y;
     rotationTransformation.z = z;
     return rotationTransformation;
+}
+
++ (LQSScaledTranslationTransformation *)scaledTranslationTransformationWithScale:(float)scale x:(float)x y:(float)y z:(float)z
+{
+    LQSScaledTranslationTransformation *scaledTranslationTransformation = [[LQSScaledTranslationTransformation alloc] init];
+    scaledTranslationTransformation.scale = scale;
+    scaledTranslationTransformation.x = x;
+    scaledTranslationTransformation.y = y;
+    scaledTranslationTransformation.z = z;
+    return scaledTranslationTransformation;
 }
 
 @end
