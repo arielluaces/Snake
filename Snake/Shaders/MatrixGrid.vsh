@@ -1,10 +1,10 @@
-attribute vec2 aGridValue;
 attribute vec2 aPosition;
+attribute vec2 aTexCoord;
 uniform mat4 uMVPMatrix;
-varying highp vec2 vGridValue;
+varying highp vec2 vTexCoord;
 
 void main()
 {
     gl_Position = uMVPMatrix * vec4(aPosition, 0.0, 1.0);
-    vGridValue = aGridValue;
+    vTexCoord = aTexCoord;
 }

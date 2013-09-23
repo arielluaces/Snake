@@ -41,7 +41,7 @@
     NSObject<ILQSGLProgram> *_program;
     EAGLContext *_context;
     GLuint _aPosition;
-    GLuint _aGridValue;
+    GLuint _aTexCoord;
     GLint _uMVPMatrix;
     GLint _uColor;
     GLint _uExponent;
@@ -190,8 +190,8 @@
                 }
                 int aPosition = glGetAttribLocation(_program.name, "aPosition");
                 NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
-                int aGridValue = glGetAttribLocation(_program.name, "aGridValue");
-                NSAssert(aGridValue >= 0, @"%@ attribute not found", @"aGridValue");
+                int aTexCoord = glGetAttribLocation(_program.name, "aTexCoord");
+                NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
                 int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
                 NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
                 int uColor = glGetUniformLocation(_program.name, "uColor");
@@ -199,7 +199,7 @@
                 int uExponent = glGetUniformLocation(_program.name, "uExponent");
                 NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
                 _aPosition = (GLuint)aPosition;
-                _aGridValue = (GLuint)aGridValue;
+                _aTexCoord = (GLuint)aTexCoord;
                 _uMVPMatrix = (GLint)uMVPMatrix;
                 _uColor = (GLint)uColor;
                 _uExponent = (GLint)uExponent;
@@ -236,14 +236,14 @@
     {
         glUseProgram(_program.name);
         glEnableVertexAttribArray(_aPosition);
-        glEnableVertexAttribArray(_aGridValue);
-        float vertices[] = {
+        glEnableVertexAttribArray(_aTexCoord);
+        float positions[] = {
             0.0f, 0.0f,
             0.0f, 1.0f,
             1.0f, 0.0f,
             1.0f, 1.0f,
         };
-        float GridVals[] = {
+        float texCoords[] = {
             0.0f, 0.0f,
             0.0f, 32.0f,
             32.0f, 0.0f,
@@ -253,8 +253,8 @@
         glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
         glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
         glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
-        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, vertices);
-        glVertexAttribPointer(_aGridValue, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, GridVals);
+        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
+        glVertexAttribPointer(_aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
