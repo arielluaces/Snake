@@ -16,6 +16,7 @@
 		CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */; };
 		CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */; };
 		CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */; };
+		CF4D28A617F3B1DF00D6C523 /* LQSGLShaderArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */; };
 		CF521B4917EA519100C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CF521B4E17EA519100C22D38 /* transformations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B4D17EA519100C22D38 /* transformations.h */; };
 		CF521B5017EA519100C22D38 /* transformations.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521B4F17EA519100C22D38 /* transformations.m */; };
@@ -325,6 +326,10 @@
 		CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSpaceCollection.m; sourceTree = "<group>"; };
 		CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSUniformScaleTransformation.h; sourceTree = "<group>"; };
 		CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUniformScaleTransformation.m; sourceTree = "<group>"; };
+		CF4D28A117F3B18C00D6C523 /* ILQSGLShaderCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderCollection.h; sourceTree = "<group>"; };
+		CF4D28A217F3B1A200D6C523 /* ILQSGLShaderArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderArray.h; sourceTree = "<group>"; };
+		CF4D28A417F3B1DF00D6C523 /* LQSGLShaderArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShaderArray.h; sourceTree = "<group>"; };
+		CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLShaderArray.m; sourceTree = "<group>"; };
 		CF521B4817EA519100C22D38 /* libtransformations.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtransformations.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF521B4C17EA519100C22D38 /* transformations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "transformations-Prefix.pch"; sourceTree = "<group>"; };
 		CF521B4D17EA519100C22D38 /* transformations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transformations.h; sourceTree = "<group>"; };
@@ -898,6 +903,10 @@
 				CFE15D3117BC85EB00ECE1C2 /* ILQSColoredVerticesProgram.h */,
 				CFE15D3217BC869700ECE1C2 /* LQSColoredVerticesProgram.h */,
 				CFE15D3317BC869700ECE1C2 /* LQSColoredVerticesProgram.m */,
+				CF4D28A117F3B18C00D6C523 /* ILQSGLShaderCollection.h */,
+				CF4D28A217F3B1A200D6C523 /* ILQSGLShaderArray.h */,
+				CF4D28A417F3B1DF00D6C523 /* LQSGLShaderArray.h */,
+				CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */,
 			);
 			path = shading;
 			sourceTree = "<group>";
@@ -1683,6 +1692,7 @@
 				CF521BF017EA51B200C22D38 /* shading.m in Sources */,
 				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
 				CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */,
+				CF4D28A617F3B1DF00D6C523 /* LQSGLShaderArray.m in Sources */,
 				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
 				CFDF4A4817A5D9F00066BE84 /* LQSGLShader.m in Sources */,
 				B078737317AB666300438D16 /* LQSGLUtils.m in Sources */,
