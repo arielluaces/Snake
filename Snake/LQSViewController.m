@@ -31,10 +31,13 @@
 #import "LQSTransformationSet.h"
 #import "LQSTransformationArray.h"
 #import "LQSScaledTranslationTransformation.h"
+#import "LQSScaleTransformation.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
 {
+    LQSScaleTransformation *_viewScaleTransformation;
+    NSObject<ILQSAdjacentSpace> *_viewSpace;
     NSObject<ILQSAdjacentSpace> *_cameraSpace;
     NSObject<ILQSTransformationResolver> *_transformationResolver;
     
@@ -65,7 +68,19 @@
     // Create space information for the square being drawn
     LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
     LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
+    LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
     LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
+    {
+        viewSpace.parent = cameraSpace;
+        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+        LQSScaleTransformation *viewScaleTransformation = [LQSTransformationFactory scaleTransformationWithScaleX:1.0f/self.view.bounds.size.width scaleY:1.0f/self.view.bounds.size.height scaleZ:1];
+        [transformationSet.transformationArray addTransformation:viewScaleTransformation];
+        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory uniformScaleTransformationWithScale:2]];
+        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:-1 y:-1 z:0]];
+        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
+        viewSpace.transformToParent = transformationSet;
+        _viewScaleTransformation = viewScaleTransformation;
+    }
     LQSChildSpace *gridSpace = [[LQSChildSpace alloc] init];
     {
         LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
@@ -210,6 +225,7 @@
     {
         _context = context;
         _drawable = drawableParent;
+        _viewSpace = viewSpace;
         _cameraSpace = cameraSpace;
         _gridSpace = gridSpace;
         _transformationResolver = transformationResolver;
