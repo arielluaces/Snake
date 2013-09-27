@@ -123,6 +123,7 @@
 		CFA923E417D659660067835F /* LQSRootSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E317D659660067835F /* LQSRootSpace.m */; };
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
 		CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923ED17D65FDE0067835F /* LQSCollection.m */; };
+		CFB8584317F3B90C00159915 /* LQSMultiShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */; };
 		CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */; };
 		CFC9A07E17ED139F00E086A1 /* LQSTransformationSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC9A07D17ED139F00E086A1 /* LQSTransformationSet.m */; };
 		CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */; };
@@ -453,6 +454,8 @@
 		CFA923EB17D65ED30067835F /* ILQSCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSCollection.h; sourceTree = "<group>"; };
 		CFA923EC17D65FDE0067835F /* LQSCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSCollection.h; sourceTree = "<group>"; };
 		CFA923ED17D65FDE0067835F /* LQSCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSCollection.m; sourceTree = "<group>"; };
+		CFB8584117F3B90C00159915 /* LQSMultiShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSMultiShaderProgram.h; sourceTree = "<group>"; };
+		CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSMultiShaderProgram.m; sourceTree = "<group>"; };
 		CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformationResolver.h; sourceTree = "<group>"; };
 		CFC915E517E7DAC8005E6379 /* LQSTransformationResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTransformationResolver.h; sourceTree = "<group>"; };
 		CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTransformationResolver.m; sourceTree = "<group>"; };
@@ -907,6 +910,8 @@
 				CF4D28A217F3B1A200D6C523 /* ILQSGLShaderArray.h */,
 				CF4D28A417F3B1DF00D6C523 /* LQSGLShaderArray.h */,
 				CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */,
+				CFB8584117F3B90C00159915 /* LQSMultiShaderProgram.h */,
+				CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */,
 			);
 			path = shading;
 			sourceTree = "<group>";
@@ -1691,6 +1696,7 @@
 			files = (
 				CF521BF017EA51B200C22D38 /* shading.m in Sources */,
 				CFDF4A3F17A5D9300066BE84 /* LQSGLProgram.m in Sources */,
+				CFB8584317F3B90C00159915 /* LQSMultiShaderProgram.m in Sources */,
 				CFDF4A4217A5D99B0066BE84 /* LQSGLVertexShader.m in Sources */,
 				CF4D28A617F3B1DF00D6C523 /* LQSGLShaderArray.m in Sources */,
 				CFDF4A4517A5D9D10066BE84 /* LQSGLFragmentShader.m in Sources */,
