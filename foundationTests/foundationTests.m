@@ -26,9 +26,11 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testMainBundle
 {
-    STFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    STAssertEqualObjects([NSBundle mainBundle].bundlePath,
+                         [NSBundle bundleForClass:self.class].bundlePath,
+                         @"This is a stupid bug in the foundation or by the configuration of XCode. In reality main bundle should point to the root directory of this test's executable (which should be the \"foundationTests.octest\" directoy)");
 }
 
 @end
