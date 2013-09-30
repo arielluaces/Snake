@@ -263,6 +263,68 @@
     _squareRotationTransformation.radians = self.timeSinceFirstResume*6.283185307f/4;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in touches)
+    {
+        if (touch.view == self.view)
+        {
+            _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
+            _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
+            CGPoint locationInView = [touch locationInView:self.view];
+            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1Space];
+            GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
+            vector = GLKMatrix4MultiplyVector4(matrix, vector);
+            NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
+            if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
+            {
+                _square1Data.colorB = 0;
+                NSLog(@"hit");
+            }
+            else
+            {
+                _square1Data.colorB = 0.95f;
+            }
+        }
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in touches)
+    {
+        if (touch.view == self.view)
+        {
+            _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
+            _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
+            CGPoint locationInView = [touch locationInView:self.view];
+            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1Space];
+            GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
+            vector = GLKMatrix4MultiplyVector4(matrix, vector);
+            NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
+            if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
+            {
+                _square1Data.colorB = 0;
+                NSLog(@"hit");
+            }
+            else
+            {
+                _square1Data.colorB = 0.95f;
+            }
+        }
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _square1Data.colorB = 0.95f;
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _square1Data.colorB = 0.95f;
+}
+
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
