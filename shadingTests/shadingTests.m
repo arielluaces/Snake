@@ -80,4 +80,156 @@ const GLchar *fragmentShader3SourceC = "";
     [EAGLContext setCurrentContext:savedContext];
 }
 
+- (void)testMultipleShaders
+{
+    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    STAssertNotNil(context, @"Failed to create ES context");
+    EAGLContext *savedContext = [EAGLContext currentContext];
+    [EAGLContext setCurrentContext:context];
+    {
+        GLuint vertexShaderName;
+        GLuint fragmentShaderName;
+        GLuint fragmentShader2Name;
+        GLuint fragmentShader3Name;
+        {
+            GLuint shaderName = glCreateShader(GL_VERTEX_SHADER);
+            STAssertTrue(shaderName != 0, @"Failed to create shader");
+            vertexShaderName = shaderName;
+            glShaderSource(shaderName, 1, &vertexShaderSourceC, nil);
+            glCompileShader(shaderName);
+            {
+                int compileStatus = 0;
+                glGetShaderiv(shaderName, GL_COMPILE_STATUS, &compileStatus);
+                if (compileStatus == GL_FALSE)
+                {
+                    int logLength = 0;
+                    glGetShaderiv(shaderName, GL_INFO_LOG_LENGTH, &logLength);
+                    if (logLength != 0)
+                    {
+                        char *log = malloc(sizeof(char) * (uint)logLength);
+                        glGetShaderInfoLog(shaderName, logLength, NULL, log);
+                        STFail(@"Could not compile shader log: %s", log);
+                        free(log);
+                    }
+                    else// if (logLength == 0)
+                    {
+                        STFail(@"Could not compile shader");
+                    }
+                }
+            }
+        }
+        {
+            GLuint shaderName = glCreateShader(GL_FRAGMENT_SHADER);
+            STAssertTrue(shaderName != 0, @"Failed to create shader");
+            fragmentShaderName = shaderName;
+            glShaderSource(shaderName, 1, &fragmentShaderSourceC, nil);
+            glCompileShader(shaderName);
+            {
+                int compileStatus = 0;
+                glGetShaderiv(shaderName, GL_COMPILE_STATUS, &compileStatus);
+                if (compileStatus == GL_FALSE)
+                {
+                    int logLength = 0;
+                    glGetShaderiv(shaderName, GL_INFO_LOG_LENGTH, &logLength);
+                    if (logLength != 0)
+                    {
+                        char *log = malloc(sizeof(char) * (uint)logLength);
+                        glGetShaderInfoLog(shaderName, logLength, NULL, log);
+                        STFail(@"Could not compile shader log: %s", log);
+                        free(log);
+                    }
+                    else// if (logLength == 0)
+                    {
+                        STFail(@"Could not compile shader");
+                    }
+                }
+            }
+        }
+        {
+            GLuint shaderName = glCreateShader(GL_FRAGMENT_SHADER);
+            STAssertTrue(shaderName != 0, @"Failed to create shader");
+            fragmentShader2Name = shaderName;
+            glShaderSource(shaderName, 1, &fragmentShader2SourceC, nil);
+            glCompileShader(shaderName);
+            {
+                int compileStatus = 0;
+                glGetShaderiv(shaderName, GL_COMPILE_STATUS, &compileStatus);
+                if (compileStatus == GL_FALSE)
+                {
+                    int logLength = 0;
+                    glGetShaderiv(shaderName, GL_INFO_LOG_LENGTH, &logLength);
+                    if (logLength != 0)
+                    {
+                        char *log = malloc(sizeof(char) * (uint)logLength);
+                        glGetShaderInfoLog(shaderName, logLength, NULL, log);
+                        STFail(@"Could not compile shader log: %s", log);
+                        free(log);
+                    }
+                    else// if (logLength == 0)
+                    {
+                        STFail(@"Could not compile shader");
+                    }
+                }
+            }
+        }
+        {
+            GLuint shaderName = glCreateShader(GL_FRAGMENT_SHADER);
+            STAssertTrue(shaderName != 0, @"Failed to create shader");
+            fragmentShader3Name = shaderName;
+            glShaderSource(shaderName, 1, &fragmentShader3SourceC, nil);
+            glCompileShader(shaderName);
+            {
+                int compileStatus = 0;
+                glGetShaderiv(shaderName, GL_COMPILE_STATUS, &compileStatus);
+                if (compileStatus == GL_FALSE)
+                {
+                    int logLength = 0;
+                    glGetShaderiv(shaderName, GL_INFO_LOG_LENGTH, &logLength);
+                    if (logLength != 0)
+                    {
+                        char *log = malloc(sizeof(char) * (uint)logLength);
+                        glGetShaderInfoLog(shaderName, logLength, NULL, log);
+                        STFail(@"Could not compile shader log: %s", log);
+                        free(log);
+                    }
+                    else// if (logLength == 0)
+                    {
+                        STFail(@"Could not compile shader");
+                    }
+                }
+            }
+        }
+        {
+            GLuint programName = glCreateProgram();
+            NSAssert(programName != 0, @"Failed to create program");
+            glAttachShader(programName, vertexShaderName);
+            glAttachShader(programName, fragmentShaderName);
+            glAttachShader(programName, fragmentShader2Name);
+            glAttachShader(programName, fragmentShader3Name);
+            glLinkProgram(programName);
+            {
+                int linkStatus = 0;
+                glGetProgramiv(programName, GL_LINK_STATUS, &linkStatus);
+                if (linkStatus == GL_FALSE)
+                {
+                    int logLength = 0;
+                    glGetProgramiv(programName, GL_INFO_LOG_LENGTH, &logLength);
+                    if (logLength != 0)
+                    {
+                        char *log = malloc(sizeof(char) * (uint)logLength);
+                        glGetProgramInfoLog(programName, logLength, NULL, log);
+                        STFail(@"Could not link shader program log: %s",log);
+                        free(log);
+                    }
+                    else// if (logLength == 0)
+                    {
+                        STFail(@"Could not link shader program");
+                    }
+                }
+            }
+        }
+    }
+    [EAGLContext setCurrentContext:savedContext];
+}
+
 @end
