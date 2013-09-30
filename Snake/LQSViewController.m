@@ -55,6 +55,12 @@
     NSObject<ILQSDrawable> *_drawable;
     
     LQSRotationTransformation *_squareRotationTransformation;
+    NSObject<ILQSAdjacentSpace> *_square1Space;
+    NSObject<ILQSAdjacentSpace> *_square2Space;
+    NSObject<ILQSAdjacentSpace> *_square3Space;
+    LQSDrawableSquareData *_square1Data;
+    LQSDrawableSquareData *_square2Data;
+    LQSDrawableSquareData *_square3Data;
 }
 
 - (void)viewDidLoad
@@ -114,7 +120,9 @@
                     drawableSquareData.colorB = 0.95f;
                     drawableSquare.squareData = drawableSquareData;
                     [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                    _square1Data = drawableSquareData;
                 }
+                _square1Space = childSpace;
             }
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -137,7 +145,9 @@
                     drawableSquareData.colorB = 0.95f;
                     drawableSquare.squareData = drawableSquareData;
                     [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                    _square2Data = drawableSquareData;
                 }
+                _square2Space = childSpace;
             }
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -160,7 +170,9 @@
                     drawableSquareData.colorB = 0.95f;
                     drawableSquare.squareData = drawableSquareData;
                     [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                    _square3Data = drawableSquareData;
                 }
+                _square3Space = childSpace;
             }
             _squareRotationTransformation = rotationTransformation;
         }
