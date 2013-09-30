@@ -53,6 +53,8 @@
     float _exponent;
     
     NSObject<ILQSDrawable> *_drawable;
+    
+    LQSRotationTransformation *_squareRotationTransformation;
 }
 
 - (void)viewDidLoad
@@ -88,8 +90,8 @@
         cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
         {
             NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-            NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
-            NSObject<ILQSTransformation> *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
+            NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:3.0f/16.0f];
+            LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
             NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
             {
                 LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -160,6 +162,7 @@
                     [drawableParent.drawableArray addDrawableObject:drawableSquare];
                 }
             }
+            _squareRotationTransformation = rotationTransformation;
         }
         {
             LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
@@ -245,6 +248,7 @@
 - (void)update
 {
     _exponent = _exponent+1.0f;
+    _squareRotationTransformation.radians = self.timeSinceFirstResume*6.283185307f/4;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
