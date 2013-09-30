@@ -128,6 +128,7 @@
 		CFA923E417D659660067835F /* LQSRootSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E317D659660067835F /* LQSRootSpace.m */; };
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
 		CFA923EE17D65FDE0067835F /* LQSCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923ED17D65FDE0067835F /* LQSCollection.m */; };
+		CFADCB9B17F401A300585C14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569E17A5ADDA00148B4F /* OpenGLES.framework */; };
 		CFB8584317F3B90C00159915 /* LQSMultiShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */; };
 		CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */; };
 		CFC9A07E17ED139F00E086A1 /* LQSTransformationSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC9A07D17ED139F00E086A1 /* LQSTransformationSet.m */; };
@@ -607,6 +608,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFADCB9B17F401A300585C14 /* OpenGLES.framework in Frameworks */,
 				CF521BF717EA51B200C22D38 /* SenTestingKit.framework in Frameworks */,
 				CF521BF817EA51B200C22D38 /* UIKit.framework in Frameworks */,
 				CF521BF917EA51B200C22D38 /* Foundation.framework in Frameworks */,
