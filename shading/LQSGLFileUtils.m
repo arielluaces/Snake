@@ -13,26 +13,34 @@
 
 + (const GLchar *)loadVertexShaderSource:(NSString *)resourceName
 {
-    NSStringEncoding *vertexShaderSourceEncoding = nil;
-    NSError *vertexShaderError;
-    NSString *vertexShaderFilePath = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"vsh"];
-    NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", resourceName, @"vsh");
-    NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
-    NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", resourceName, @"vsh");
-    return [vertexShaderSource UTF8String];
-
+    return [LQSGLFileUtils loadVertexShaderSource:resourceName fromBundle:[NSBundle mainBundle]];
 }
 
 + (const GLchar *)loadFragmentShaderSource:(NSString *)resourceName
 {
+    return [LQSGLFileUtils loadFragmentShaderSource:resourceName fromBundle:[NSBundle mainBundle]];
+}
+
++ (const GLchar *)loadVertexShaderSource:(NSString *)resourceName fromBundle:(NSBundle *)bundle
+{
+    NSStringEncoding *vertexShaderSourceEncoding = nil;
+    NSError *vertexShaderError;
+    NSString *vertexShaderFilePath = [bundle pathForResource:resourceName ofType:@"vsh"];
+    NSAssert(vertexShaderFilePath != nil, @"Could not find file %@.%@", resourceName, @"vsh");
+    NSString *vertexShaderSource = [NSString stringWithContentsOfFile:vertexShaderFilePath usedEncoding:vertexShaderSourceEncoding error:&vertexShaderError];
+    NSAssert(vertexShaderSource != nil, @"Could not load file %@.%@", resourceName, @"vsh");
+    return [vertexShaderSource UTF8String];
+}
+
++ (const GLchar *)loadFragmentShaderSource:(NSString *)resourceName fromBundle:(NSBundle *)bundle
+{
     NSStringEncoding *fragmentShaderSourceEncoding = nil;
     NSError *fragmentShaderError;
-    NSString *fragmentShaderFilePath = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"fsh"];
+    NSString *fragmentShaderFilePath = [bundle pathForResource:resourceName ofType:@"fsh"];
     NSAssert(fragmentShaderFilePath != nil, @"Could not find file %@.%@", resourceName, @"fsh");
     NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:fragmentShaderFilePath usedEncoding:fragmentShaderSourceEncoding error:&fragmentShaderError];
     NSAssert(fragmentShaderSource != nil, @"Could not load file %@.%@", resourceName, @"vsh");
     return [fragmentShaderSource UTF8String];
-
 }
 
 @end

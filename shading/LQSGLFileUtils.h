@@ -13,5 +13,7 @@
 
 + (const GLchar *)loadVertexShaderSource:(NSString *)resourceName;
 + (const GLchar *)loadFragmentShaderSource:(NSString *)resourceName;
++ (const GLchar *)loadVertexShaderSource:(NSString *)resourceName fromBundle:(NSBundle *)bundle;
++ (const GLchar *)loadFragmentShaderSource:(NSString *)resourceName fromBundle:(NSBundle *)bundle;
 
 @end
