@@ -255,32 +255,32 @@
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     {
-        glUseProgram(_program.name);
-        glEnableVertexAttribArray(_aPosition);
-        glEnableVertexAttribArray(_aTexCoord);
-        float positions[] = {
-            0.0f, 0.0f,
-            0.0f, 1.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f,
-        };
-        float texCoords[] = {
-            0.0f, 0.0f,
-            0.0f, 32.0f,
-            32.0f, 0.0f,
-            32.0f, 32.0f,
-        };
-        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
-        glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-        glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
-        glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
-        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
-        glVertexAttribPointer(_aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        glDisable(GL_BLEND);
-        glUseProgram(0);
+//        glUseProgram(_program.name);
+//        glEnableVertexAttribArray(_aPosition);
+//        glEnableVertexAttribArray(_aTexCoord);
+//        float positions[] = {
+//            0.0f, 0.0f,
+//            0.0f, 1.0f,
+//            1.0f, 0.0f,
+//            1.0f, 1.0f,
+//        };
+//        float texCoords[] = {
+//            0.0f, 0.0f,
+//            0.0f, 32.0f,
+//            32.0f, 0.0f,
+//            32.0f, 32.0f,
+//        };
+//        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
+//        glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
+//        glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
+//        glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
+//        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
+//        glVertexAttribPointer(_aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
+//        glEnable(GL_BLEND);
+//        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+//        glDisable(GL_BLEND);
+//        glUseProgram(0);
     }
     {
         [_drawable draw];
