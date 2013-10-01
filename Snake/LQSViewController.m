@@ -97,91 +97,6 @@
             cameraSpace.parent = rootSpace;
             cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
             {
-                NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-                NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:3.0f/16.0f];
-                LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
-                NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
-                {
-                    // Set up purple square 1
-                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:1.5f z:0]];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
-                    childSpace.transformToParent = transformationSet;
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                        drawableSquareData.program = program;
-                        drawableSquareData.space = childSpace;
-                        drawableSquareData.rootSpace = cameraSpace;
-                        drawableSquareData.transformationResolver = transformationResolver;
-                        drawableSquareData.colorR = 0.6f;
-                        drawableSquareData.colorG = 0.2f;
-                        drawableSquareData.colorB = 0.95f;
-                        drawableSquare.squareData = drawableSquareData;
-                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square1Data = drawableSquareData;
-                    }
-                    _square1Space = childSpace;
-                }
-                {
-                    // Set up purple square 2
-                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:1.5f z:0]];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
-                    childSpace.transformToParent = transformationSet;
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                        drawableSquareData.program = program;
-                        drawableSquareData.space = childSpace;
-                        drawableSquareData.rootSpace = cameraSpace;
-                        drawableSquareData.transformationResolver = transformationResolver;
-                        drawableSquareData.colorR = 0.6f;
-                        drawableSquareData.colorG = 0.2f;
-                        drawableSquareData.colorB = 0.95f;
-                        drawableSquare.squareData = drawableSquareData;
-                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square2Data = drawableSquareData;
-                    }
-                    _square2Space = childSpace;
-                }
-                {
-                    // Set up purple square 3
-                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:4 y:1.5f z:0]];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
-                    childSpace.transformToParent = transformationSet;
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                        drawableSquareData.program = program;
-                        drawableSquareData.space = childSpace;
-                        drawableSquareData.rootSpace = cameraSpace;
-                        drawableSquareData.transformationResolver = transformationResolver;
-                        drawableSquareData.colorR = 0.6f;
-                        drawableSquareData.colorG = 0.2f;
-                        drawableSquareData.colorB = 0.95f;
-                        drawableSquare.squareData = drawableSquareData;
-                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square3Data = drawableSquareData;
-                    }
-                    _square3Space = childSpace;
-                }
-                _squareRotationTransformation = rotationTransformation;
-            }
-            {
                 // Set up textured square
                 LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
                 LQSChildSpace *textureSpaceParent = [[LQSChildSpace alloc] init];
@@ -209,6 +124,95 @@
                     drawableTexturedSquare.squareData = drawableTexturedSquareData;
                     [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
                 }
+            }
+            {
+                NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+                NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
+                NSObject<ILQSTransformation> *scale2Transformation = [LQSTransformationFactory uniformScaleTransformationWithScale:0.9f];
+                LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
+                {
+                    // Set up purple square 1
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:0 z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square1Data = drawableSquareData;
+                    }
+                    _square1Space = childSpace;
+                }
+                {
+                    // Set up purple square 2
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:1 y:0 z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square2Data = drawableSquareData;
+                    }
+                    _square2Space = childSpace;
+                }
+                {
+                    // Set up purple square 3
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:0 z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square3Data = drawableSquareData;
+                    }
+                    _square3Space = childSpace;
+                }
+                _squareRotationTransformation = rotationTransformation;
             }
             {
                 // Set up grid shader program
@@ -266,7 +270,6 @@
 - (void)update
 {
     _exponent = _exponent+1.0f;
-    _squareRotationTransformation.radians = self.timeSinceFirstResume*6.283185307f/4;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
