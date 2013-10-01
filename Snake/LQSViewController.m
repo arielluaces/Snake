@@ -161,7 +161,7 @@
                         drawableSquareData.transformationResolver = transformationResolver;
                         drawableSquareData.colorR = 0.6f;
                         drawableSquareData.colorG = 0.2f;
-                        drawableSquareData.colorB = 0.95f;
+                        drawableSquareData.colorB = 0;//0.95f;
                         drawableSquare.squareData = drawableSquareData;
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
                         _square1Data = drawableSquareData;
@@ -385,12 +385,12 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    _square1Data.colorB = 0.95f;
+//    _square1Data.colorB = 0.95f;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    _square1Data.colorB = 0.95f;
+//    _square1Data.colorB = 0.95f;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
