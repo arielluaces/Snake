@@ -61,6 +61,12 @@
     LQSDrawableSquareData *_square1Data;
     LQSDrawableSquareData *_square2Data;
     LQSDrawableSquareData *_square3Data;
+    LQSTranslationTransformation *_square1TranslationTransformation;
+    LQSTranslationTransformation *_square2TranslationTransformation;
+    LQSTranslationTransformation *_square3TranslationTransformation;
+    
+    float _velocityX;
+    float _velocityY;
 }
 
 - (void)viewDidLoad
@@ -75,6 +81,8 @@
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create space information for the square being drawn
+        _velocityX = -1;
+        _velocityY = 0;
         LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
         LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
         LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
@@ -138,7 +146,9 @@
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:0 z:0]];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                    _square1TranslationTransformation = translationTransformation;
+                    [transformationSet.transformationArray addTransformation:translationTransformation];
                     [transformationSet.transformationArray addTransformation:scaleTransformation];
                     childSpace.parent = rootSpace;
                     childSpace.transformToParent = transformationSet;
@@ -165,7 +175,9 @@
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:1 y:0 z:0]];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
+                    _square2TranslationTransformation = translationTransformation;
+                    [transformationSet.transformationArray addTransformation:translationTransformation];
                     [transformationSet.transformationArray addTransformation:scaleTransformation];
                     childSpace.parent = rootSpace;
                     childSpace.transformToParent = transformationSet;
@@ -192,7 +204,9 @@
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:0 z:0]];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
+                    _square3TranslationTransformation = translationTransformation;
+                    [transformationSet.transformationArray addTransformation:translationTransformation];
                     [transformationSet.transformationArray addTransformation:scaleTransformation];
                     childSpace.parent = rootSpace;
                     childSpace.transformToParent = transformationSet;
@@ -270,6 +284,51 @@
 - (void)update
 {
     _exponent = _exponent+1.0f;
+    if (self.timeSinceFirstResume>5)
+    {
+        if (floor(self.timeSinceFirstResume)!=floor(self.timeSinceFirstResume-self.timeSinceLastUpdate))
+        {
+            if (rand()%4==0)
+            {
+                int change = rand()%2;
+                switch (change)
+                {
+                    case 0:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(6.283185307f/4, 0, 0, 1), oldVelocity);
+                        _velocityX = newVelocity.x;
+                        _velocityY = newVelocity.y;
+                        break;
+                    }
+                    case 1:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(-6.283185307f/4, 0, 0, 1), oldVelocity);
+                        _velocityX = newVelocity.x;
+                        _velocityY = newVelocity.y;
+                        break;
+                    }
+                    case 2:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(0, 0, 0, 1), oldVelocity);
+                        _velocityX = newVelocity.x;
+                        _velocityY = newVelocity.y;
+                        break;
+                    }
+                    default:
+                        break;
+                };
+            }
+            _square3TranslationTransformation.x = _square2TranslationTransformation.x;
+            _square3TranslationTransformation.y = _square2TranslationTransformation.y;
+            _square2TranslationTransformation.x = _square1TranslationTransformation.x;
+            _square2TranslationTransformation.y = _square1TranslationTransformation.y;
+            _square1TranslationTransformation.x = _square1TranslationTransformation.x+_velocityX;
+            _square1TranslationTransformation.y = _square1TranslationTransformation.y+_velocityY;
+        }
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
