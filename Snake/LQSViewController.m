@@ -73,171 +73,177 @@
     EAGLContext *savedContext = [EAGLContext currentContext];
     [EAGLContext setCurrentContext:context];
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    // Create space information for the square being drawn
-    LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
-    LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
-    LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
-    LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
     {
-        viewSpace.parent = cameraSpace;
-        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-        LQSScaleTransformation *viewScaleTransformation = [LQSTransformationFactory scaleTransformationWithScaleX:1.0f/self.view.bounds.size.width scaleY:1.0f/self.view.bounds.size.height scaleZ:1];
-        [transformationSet.transformationArray addTransformation:viewScaleTransformation];
-        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory uniformScaleTransformationWithScale:2]];
-        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:-1 y:-1 z:0]];
-        [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
-        viewSpace.transformToParent = transformationSet;
-        _viewScaleTransformation = viewScaleTransformation;
-    }
-    LQSChildSpace *gridSpace = [[LQSChildSpace alloc] init];
-    {
-        LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
-        cameraSpace.parent = rootSpace;
-        cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+        // Create space information for the square being drawn
+        LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
+        LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
+        LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
+        LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
+        LQSChildSpace *gridSpace = [[LQSChildSpace alloc] init];
         {
-            NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-            NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:3.0f/16.0f];
-            LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
-            NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
-            {
-                LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:1.5f z:0]];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
-                childSpace.parent = rootSpace;
-                childSpace.transformToParent = transformationSet;
-                {
-                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                    drawableSquareData.program = program;
-                    drawableSquareData.space = childSpace;
-                    drawableSquareData.rootSpace = cameraSpace;
-                    drawableSquareData.transformationResolver = transformationResolver;
-                    drawableSquareData.colorR = 0.6f;
-                    drawableSquareData.colorG = 0.2f;
-                    drawableSquareData.colorB = 0.95f;
-                    drawableSquare.squareData = drawableSquareData;
-                    [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                    _square1Data = drawableSquareData;
-                }
-                _square1Space = childSpace;
-            }
-            {
-                LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:1.5f z:0]];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
-                childSpace.parent = rootSpace;
-                childSpace.transformToParent = transformationSet;
-                {
-                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                    drawableSquareData.program = program;
-                    drawableSquareData.space = childSpace;
-                    drawableSquareData.rootSpace = cameraSpace;
-                    drawableSquareData.transformationResolver = transformationResolver;
-                    drawableSquareData.colorR = 0.6f;
-                    drawableSquareData.colorG = 0.2f;
-                    drawableSquareData.colorB = 0.95f;
-                    drawableSquare.squareData = drawableSquareData;
-                    [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                    _square2Data = drawableSquareData;
-                }
-                _square2Space = childSpace;
-            }
-            {
-                LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                [transformationSet.transformationArray addTransformation:rotationTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:4 y:1.5f z:0]];
-                [transformationSet.transformationArray addTransformation:scaleTransformation];
-                childSpace.parent = rootSpace;
-                childSpace.transformToParent = transformationSet;
-                {
-                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                    drawableSquareData.program = program;
-                    drawableSquareData.space = childSpace;
-                    drawableSquareData.rootSpace = cameraSpace;
-                    drawableSquareData.transformationResolver = transformationResolver;
-                    drawableSquareData.colorR = 0.6f;
-                    drawableSquareData.colorG = 0.2f;
-                    drawableSquareData.colorB = 0.95f;
-                    drawableSquare.squareData = drawableSquareData;
-                    [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                    _square3Data = drawableSquareData;
-                }
-                _square3Space = childSpace;
-            }
-            _squareRotationTransformation = rotationTransformation;
+            // Set up view space relative to camera space
+            viewSpace.parent = cameraSpace;
+            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+            LQSScaleTransformation *viewScaleTransformation = [LQSTransformationFactory scaleTransformationWithScaleX:1.0f/self.view.bounds.size.width scaleY:1.0f/self.view.bounds.size.height scaleZ:1];
+            [transformationSet.transformationArray addTransformation:viewScaleTransformation];
+            [transformationSet.transformationArray addTransformation:[LQSTransformationFactory uniformScaleTransformationWithScale:2]];
+            [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:-1 y:-1 z:0]];
+            [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
+            viewSpace.transformToParent = transformationSet;
+            _viewScaleTransformation = viewScaleTransformation;
         }
         {
-            LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
-            LQSChildSpace *textureSpaceParent = [[LQSChildSpace alloc] init];
-            textureSpace.parent = textureSpaceParent;
-            textureSpaceParent.parent = rootSpace;
-            textureSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-            textureSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2.0f/16.0f];
+            LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
+            cameraSpace.parent = rootSpace;
+            cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
             {
-                LQSDrawableTexturedSquare *drawableTexturedSquare = [[LQSDrawableTexturedSquare alloc] init];
-                LQSDrawableTexturedSquareData *drawableTexturedSquareData = [[LQSDrawableTexturedSquareData alloc] init];
-                drawableTexturedSquareData.program = [[LQSTexturedVerticesProgram alloc] initWithContext:context];
+                NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+                NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:3.0f/16.0f];
+                LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:6.283185307f/8 x:0 y:0 z:1];
+                NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
                 {
-                    NSBundle *textureBundle = [NSBundle mainBundle];
-                    NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
-                    NSError *textureLoaderError = nil;
-                    GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
-                    LQSGLTexture *texture = [[LQSGLTexture alloc] init];
-                    texture.name = texureInfo.name;
-                    glBindTexture(GL_TEXTURE_2D, 0);
-                    drawableTexturedSquareData.texture = texture;
+                    // Set up purple square 1
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:0 y:1.5f z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square1Data = drawableSquareData;
+                    }
+                    _square1Space = childSpace;
                 }
-                drawableTexturedSquareData.squareSpace = textureSpace;
-                drawableTexturedSquareData.cameraSpace = cameraSpace;
-                drawableTexturedSquareData.transformationResolver = transformationResolver;
-                drawableTexturedSquare.squareData = drawableTexturedSquareData;
-                [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
+                {
+                    // Set up purple square 2
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:2 y:1.5f z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square2Data = drawableSquareData;
+                    }
+                    _square2Space = childSpace;
+                }
+                {
+                    // Set up purple square 3
+                    LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    [transformationSet.transformationArray addTransformation:pivotTransformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
+                    [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:4 y:1.5f z:0]];
+                    [transformationSet.transformationArray addTransformation:scaleTransformation];
+                    childSpace.parent = rootSpace;
+                    childSpace.transformToParent = transformationSet;
+                    {
+                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                        drawableSquareData.program = program;
+                        drawableSquareData.space = childSpace;
+                        drawableSquareData.rootSpace = cameraSpace;
+                        drawableSquareData.transformationResolver = transformationResolver;
+                        drawableSquareData.colorR = 0.6f;
+                        drawableSquareData.colorG = 0.2f;
+                        drawableSquareData.colorB = 0.95f;
+                        drawableSquare.squareData = drawableSquareData;
+                        [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                        _square3Data = drawableSquareData;
+                    }
+                    _square3Space = childSpace;
+                }
+                _squareRotationTransformation = rotationTransformation;
+            }
+            {
+                // Set up textured square
+                LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
+                LQSChildSpace *textureSpaceParent = [[LQSChildSpace alloc] init];
+                textureSpace.parent = textureSpaceParent;
+                textureSpaceParent.parent = rootSpace;
+                textureSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+                textureSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2.0f/16.0f];
+                {
+                    LQSDrawableTexturedSquare *drawableTexturedSquare = [[LQSDrawableTexturedSquare alloc] init];
+                    LQSDrawableTexturedSquareData *drawableTexturedSquareData = [[LQSDrawableTexturedSquareData alloc] init];
+                    drawableTexturedSquareData.program = [[LQSTexturedVerticesProgram alloc] initWithContext:context];
+                    {
+                        NSBundle *textureBundle = [NSBundle mainBundle];
+                        NSString *texturePath = [textureBundle pathForResource:@"fff7dce8bab7b1f11abd79c84ad9247e" ofType:@"png"];
+                        NSError *textureLoaderError = nil;
+                        GLKTextureInfo *texureInfo = [GLKTextureLoader textureWithContentsOfFile:texturePath options:nil error:&textureLoaderError];
+                        LQSGLTexture *texture = [[LQSGLTexture alloc] init];
+                        texture.name = texureInfo.name;
+                        glBindTexture(GL_TEXTURE_2D, 0);
+                        drawableTexturedSquareData.texture = texture;
+                    }
+                    drawableTexturedSquareData.squareSpace = textureSpace;
+                    drawableTexturedSquareData.cameraSpace = cameraSpace;
+                    drawableTexturedSquareData.transformationResolver = transformationResolver;
+                    drawableTexturedSquare.squareData = drawableTexturedSquareData;
+                    [drawableParent.drawableArray addDrawableObject:drawableTexturedSquare];
+                }
+            }
+            {
+                // Set up grid shader program
+                LQSChildSpace *gridSpaceParent = [[LQSChildSpace alloc] init];
+                gridSpace.parent = gridSpaceParent;
+                gridSpaceParent.parent = rootSpace;
+                gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+                gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
+                {
+                    // Create program
+                    {
+                        const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
+                        const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
+                        NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:context];
+                        NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:context];
+                        _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
+                    }
+                    int aPosition = glGetAttribLocation(_program.name, "aPosition");
+                    NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
+                    int aTexCoord = glGetAttribLocation(_program.name, "aTexCoord");
+                    NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
+                    int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
+                    NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
+                    int uColor = glGetUniformLocation(_program.name, "uColor");
+                    NSAssert(uColor >= 0, @"%@ unifrom not found", @"uColor");
+                    int uExponent = glGetUniformLocation(_program.name, "uExponent");
+                    NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
+                    _aPosition = (GLuint)aPosition;
+                    _aTexCoord = (GLuint)aTexCoord;
+                    _uMVPMatrix = (GLint)uMVPMatrix;
+                    _uColor = (GLint)uColor;
+                    _uExponent = (GLint)uExponent;
+                }
             }
         }
-        {
-            LQSChildSpace *gridSpaceParent = [[LQSChildSpace alloc] init];
-            gridSpace.parent = gridSpaceParent;
-            gridSpaceParent.parent = rootSpace;
-            gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-            gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
-            {
-                // Create program
-                {
-                    const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
-                    const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
-                    NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:context];
-                    NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:context];
-                    _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
-                }
-                int aPosition = glGetAttribLocation(_program.name, "aPosition");
-                NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
-                int aTexCoord = glGetAttribLocation(_program.name, "aTexCoord");
-                NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
-                int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
-                NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
-                int uColor = glGetUniformLocation(_program.name, "uColor");
-                NSAssert(uColor >= 0, @"%@ unifrom not found", @"uColor");
-                int uExponent = glGetUniformLocation(_program.name, "uExponent");
-                NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
-                _aPosition = (GLuint)aPosition;
-                _aTexCoord = (GLuint)aTexCoord;
-                _uMVPMatrix = (GLint)uMVPMatrix;
-                _uColor = (GLint)uColor;
-                _uExponent = (GLint)uExponent;
-            }
-        }
-    }
-    {
         _context = context;
         _drawable = drawableParent;
         _viewSpace = viewSpace;
