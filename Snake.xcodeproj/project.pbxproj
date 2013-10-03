@@ -81,6 +81,15 @@
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
 		CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */; };
+		CF8459FA17FCC6640013603A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF8459FF17FCC6640013603A /* snakeSpecific.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF8459FE17FCC6640013603A /* snakeSpecific.h */; };
+		CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = CF845A0017FCC6640013603A /* snakeSpecific.m */; };
+		CF845A0817FCC6650013603A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF845A0717FCC6650013603A /* XCTest.framework */; };
+		CF845A0917FCC6650013603A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF845A0A17FCC6650013603A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF845A0D17FCC6650013603A /* libsnakeSpecific.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8459F917FCC6640013603A /* libsnakeSpecific.a */; };
+		CF845A1317FCC6650013603A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF845A1117FCC6650013603A /* InfoPlist.strings */; };
+		CF845A1517FCC6650013603A /* snakeSpecificTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF845A1417FCC6650013603A /* snakeSpecificTests.m */; };
 		CF97CDB817F0EC7200A52D6B /* LQSScaledTranslationTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF97CDB717F0EC7200A52D6B /* LQSScaledTranslationTransformation.m */; };
 		CF98B7E917F661030009AD0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */; };
 		CF98B7EA17F661030009AD0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
@@ -241,6 +250,13 @@
 			remoteGlobalIDString = CF521C0F17EA51B600C22D38;
 			remoteInfo = utils;
 		};
+		CF845A0B17FCC6650013603A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8459F817FCC6640013603A;
+			remoteInfo = snakeSpecific;
+		};
 		CFA656C917A5ADDA00148B4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
@@ -308,6 +324,16 @@
 			dstSubfolderSpec = 16;
 			files = (
 				CF521C1617EA51B700C22D38 /* utils.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8459F717FCC6640013603A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CF8459FF17FCC6640013603A /* snakeSpecific.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +428,15 @@
 		CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableCollection.h; sourceTree = "<group>"; };
 		CF7C488017DEA4A100FCE549 /* LQSDrawableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableArray.h; sourceTree = "<group>"; };
 		CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableArray.m; sourceTree = "<group>"; };
+		CF8459F917FCC6640013603A /* libsnakeSpecific.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsnakeSpecific.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8459FD17FCC6640013603A /* snakeSpecific-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "snakeSpecific-Prefix.pch"; sourceTree = "<group>"; };
+		CF8459FE17FCC6640013603A /* snakeSpecific.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snakeSpecific.h; sourceTree = "<group>"; };
+		CF845A0017FCC6640013603A /* snakeSpecific.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snakeSpecific.m; sourceTree = "<group>"; };
+		CF845A0617FCC6650013603A /* snakeSpecificTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snakeSpecificTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF845A0717FCC6650013603A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CF845A1017FCC6650013603A /* snakeSpecificTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "snakeSpecificTests-Info.plist"; sourceTree = "<group>"; };
+		CF845A1217FCC6650013603A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF845A1417FCC6650013603A /* snakeSpecificTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snakeSpecificTests.m; sourceTree = "<group>"; };
 		CF97CDB617F0EC7200A52D6B /* LQSScaledTranslationTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSScaledTranslationTransformation.h; sourceTree = "<group>"; };
 		CF97CDB717F0EC7200A52D6B /* LQSScaledTranslationTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSScaledTranslationTransformation.m; sourceTree = "<group>"; };
 		CF98B7E817F661030009AD0D /* foundationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -632,6 +667,25 @@
 				CF521C2017EA51B700C22D38 /* UIKit.framework in Frameworks */,
 				CF521C2117EA51B700C22D38 /* Foundation.framework in Frameworks */,
 				CF521C2417EA51B700C22D38 /* libutils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8459F617FCC6640013603A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8459FA17FCC6640013603A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF845A0317FCC6650013603A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF845A0D17FCC6650013603A /* libsnakeSpecific.a in Frameworks */,
+				CF845A0817FCC6650013603A /* XCTest.framework in Frameworks */,
+				CF845A0A17FCC6650013603A /* UIKit.framework in Frameworks */,
+				CF845A0917FCC6650013603A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1059,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CF8459FB17FCC6640013603A /* snakeSpecific */ = {
+			isa = PBXGroup;
+			children = (
+				CF8459FE17FCC6640013603A /* snakeSpecific.h */,
+				CF845A0017FCC6640013603A /* snakeSpecific.m */,
+				CF8459FC17FCC6640013603A /* Supporting Files */,
+			);
+			path = snakeSpecific;
+			sourceTree = "<group>";
+		};
+		CF8459FC17FCC6640013603A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF8459FD17FCC6640013603A /* snakeSpecific-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF845A0E17FCC6650013603A /* snakeSpecificTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF845A1417FCC6650013603A /* snakeSpecificTests.m */,
+				CF845A0F17FCC6650013603A /* Supporting Files */,
+			);
+			path = snakeSpecificTests;
+			sourceTree = "<group>";
+		};
+		CF845A0F17FCC6650013603A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF845A1017FCC6650013603A /* snakeSpecificTests-Info.plist */,
+				CF845A1117FCC6650013603A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CF98B7EC17F661030009AD0D /* foundationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,6 +1132,8 @@
 				CF521C1217EA51B700C22D38 /* utils */,
 				CF521C2517EA51B700C22D38 /* utilsTests */,
 				CF98B7EC17F661030009AD0D /* foundationTests */,
+				CF8459FB17FCC6640013603A /* snakeSpecific */,
+				CF845A0E17FCC6650013603A /* snakeSpecificTests */,
 				CFA6569517A5ADDA00148B4F /* Frameworks */,
 				CFA6569417A5ADDA00148B4F /* Products */,
 			);
@@ -1065,6 +1157,8 @@
 				CF521C1017EA51B600C22D38 /* libutils.a */,
 				CF521C1E17EA51B700C22D38 /* utilsTests.octest */,
 				CF98B7E817F661030009AD0D /* foundationTests.octest */,
+				CF8459F917FCC6640013603A /* libsnakeSpecific.a */,
+				CF845A0617FCC6650013603A /* snakeSpecificTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1078,6 +1172,7 @@
 				CFA6569C17A5ADDA00148B4F /* GLKit.framework */,
 				CFA6569E17A5ADDA00148B4F /* OpenGLES.framework */,
 				CFA656C517A5ADDA00148B4F /* SenTestingKit.framework */,
+				CF845A0717FCC6650013603A /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1374,6 +1469,41 @@
 			productReference = CF521C1E17EA51B700C22D38 /* utilsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		CF8459F817FCC6640013603A /* snakeSpecific */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF845A1A17FCC6650013603A /* Build configuration list for PBXNativeTarget "snakeSpecific" */;
+			buildPhases = (
+				CF8459F517FCC6640013603A /* Sources */,
+				CF8459F617FCC6640013603A /* Frameworks */,
+				CF8459F717FCC6640013603A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snakeSpecific;
+			productName = snakeSpecific;
+			productReference = CF8459F917FCC6640013603A /* libsnakeSpecific.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF845A0517FCC6650013603A /* snakeSpecificTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF845A1B17FCC6650013603A /* Build configuration list for PBXNativeTarget "snakeSpecificTests" */;
+			buildPhases = (
+				CF845A0217FCC6650013603A /* Sources */,
+				CF845A0317FCC6650013603A /* Frameworks */,
+				CF845A0417FCC6650013603A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF845A0C17FCC6650013603A /* PBXTargetDependency */,
+			);
+			name = snakeSpecificTests;
+			productName = snakeSpecificTests;
+			productReference = CF845A0617FCC6650013603A /* snakeSpecificTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CF98B7E717F661030009AD0D /* foundationTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF98B7F717F661030009AD0D /* Build configuration list for PBXNativeTarget "foundationTests" */;
@@ -1442,6 +1572,11 @@
 				CLASSPREFIX = LQS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Liquid Sparks";
+				TargetAttributes = {
+					CF845A0517FCC6650013603A = {
+						TestTargetID = CFA6569217A5ADD900148B4F;
+					};
+				};
 			};
 			buildConfigurationList = CFA6568E17A5ADD900148B4F /* Build configuration list for PBXProject "Snake" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1470,6 +1605,8 @@
 				CF521C0F17EA51B600C22D38 /* utils */,
 				CF521C1D17EA51B700C22D38 /* utilsTests */,
 				CF98B7E717F661030009AD0D /* foundationTests */,
+				CF8459F817FCC6640013603A /* snakeSpecific */,
+				CF845A0517FCC6650013603A /* snakeSpecificTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1520,6 +1657,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF521C2A17EA51B700C22D38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF845A0417FCC6650013603A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF845A1317FCC6650013603A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1805,6 +1950,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF8459F517FCC6640013603A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF845A0217FCC6650013603A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF845A1517FCC6650013603A /* snakeSpecificTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF98B7E417F661030009AD0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1894,6 +2055,11 @@
 			target = CF521C0F17EA51B600C22D38 /* utils */;
 			targetProxy = CF7BC57717EA55A800637955 /* PBXContainerItemProxy */;
 		};
+		CF845A0C17FCC6650013603A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8459F817FCC6640013603A /* snakeSpecific */;
+			targetProxy = CF845A0B17FCC6650013603A /* PBXContainerItemProxy */;
+		};
 		CFA656CA17A5ADDA00148B4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CFA6569217A5ADD900148B4F /* Snake */;
@@ -1946,6 +2112,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF521C2917EA51B700C22D38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF845A1117FCC6650013603A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF845A1217FCC6650013603A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2317,6 +2491,112 @@
 			};
 			name = Release;
 		};
+		CF845A1617FCC6650013603A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/snakeSpecific.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "snakeSpecific/snakeSpecific-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF845A1717FCC6650013603A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/snakeSpecific.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "snakeSpecific/snakeSpecific-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF845A1817FCC6650013603A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "snakeSpecific/snakeSpecific-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "snakeSpecificTests/snakeSpecificTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CF845A1917FCC6650013603A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "snakeSpecific/snakeSpecific-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "snakeSpecificTests/snakeSpecificTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		CF98B7F517F661030009AD0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2641,6 +2921,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CF845A1A17FCC6650013603A /* Build configuration list for PBXNativeTarget "snakeSpecific" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF845A1617FCC6650013603A /* Debug */,
+				CF845A1717FCC6650013603A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF845A1B17FCC6650013603A /* Build configuration list for PBXNativeTarget "snakeSpecificTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF845A1817FCC6650013603A /* Debug */,
+				CF845A1917FCC6650013603A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CF98B7F717F661030009AD0D /* Build configuration list for PBXNativeTarget "foundationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2648,6 +2944,7 @@
 				CF98B7F617F661030009AD0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFA6568E17A5ADD900148B4F /* Build configuration list for PBXProject "Snake" */ = {
 			isa = XCConfigurationList;
