@@ -2928,6 +2928,7 @@
 				CF845A1717FCC6650013603A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF845A1B17FCC6650013603A /* Build configuration list for PBXNativeTarget "snakeSpecificTests" */ = {
 			isa = XCConfigurationList;
@@ -2936,6 +2937,7 @@
 				CF845A1917FCC6650013603A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF98B7F717F661030009AD0D /* Build configuration list for PBXNativeTarget "foundationTests" */ = {
 			isa = XCConfigurationList;
