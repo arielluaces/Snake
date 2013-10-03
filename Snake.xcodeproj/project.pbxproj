@@ -72,6 +72,7 @@
 		CF521C2A17EA51B700C22D38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF521C2817EA51B700C22D38 /* InfoPlist.strings */; };
 		CF521C2D17EA51B700C22D38 /* utilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF521C2C17EA51B700C22D38 /* utilsTests.m */; };
 		CF60C5C917DE941B004B7468 /* LQSDrawableSquareData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */; };
+		CF741BB417FE0C6200E24193 /* libsnakeSpecific.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8459F917FCC6640013603A /* libsnakeSpecific.a */; };
 		CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BC017EA51A900C22D38 /* libdraw.a */; };
 		CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BE817EA51B200C22D38 /* libshading.a */; };
 		CF7BC57B17EA55AF00637955 /* libspace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B7017EA519800C22D38 /* libspace.a */; };
@@ -207,6 +208,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CF521C0F17EA51B600C22D38;
 			remoteInfo = utils;
+		};
+		CF741BB217FE0C5400E24193 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8459F817FCC6640013603A;
+			remoteInfo = snakeSpecific;
 		};
 		CF7BC56D17EA55A800637955 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -703,6 +711,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF741BB417FE0C6200E24193 /* libsnakeSpecific.a in Frameworks */,
 				CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */,
 				CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */,
 				CF7BC57B17EA55AF00637955 /* libspace.a in Frameworks */,
@@ -1532,6 +1541,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CF741BB317FE0C5400E24193 /* PBXTargetDependency */,
 				CF7BC56E17EA55A800637955 /* PBXTargetDependency */,
 				CF7BC57017EA55A800637955 /* PBXTargetDependency */,
 				CF7BC57217EA55A800637955 /* PBXTargetDependency */,
@@ -2024,6 +2034,11 @@
 			isa = PBXTargetDependency;
 			target = CF521C0F17EA51B600C22D38 /* utils */;
 			targetProxy = CF521C2217EA51B700C22D38 /* PBXContainerItemProxy */;
+		};
+		CF741BB317FE0C5400E24193 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8459F817FCC6640013603A /* snakeSpecific */;
+			targetProxy = CF741BB217FE0C5400E24193 /* PBXContainerItemProxy */;
 		};
 		CF7BC56E17EA55A800637955 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
