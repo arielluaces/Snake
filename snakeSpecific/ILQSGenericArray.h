@@ -11,11 +11,16 @@
 #define INVOKE(macro, ...) macro(__VA_ARGS__)
 #define ArrayInterface(name) ILQS##name##Array
 #define CollectionInterface(name) ILQS##name##Collection
+#define NameInterface(name) ILQS##name
 
 @protocol INVOKE(ArrayInterface, __LQS_GENERIC_NAME__) <INVOKE(CollectionInterface, __LQS_GENERIC_NAME__)>
+
+- (NSUInteger)indexOfObject:(NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)object;
+- (void)insertObject:(NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)object atIndex:(NSUInteger)index;
 
 @end
 
 #undef INVOKE
 #undef ArrayInterface
 #undef CollectionInterface
+#undef NameInterface
