@@ -144,8 +144,8 @@
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
                     _square1TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
@@ -173,8 +173,8 @@
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
                     _square2TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
@@ -202,8 +202,8 @@
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
                     _square3TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
