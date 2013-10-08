@@ -54,6 +54,7 @@
     
     NSObject<ILQSDrawable> *_drawable;
     
+    NSObject<ILQSAdjacentSpace> *_squareGridSpace;
     NSObject<ILQSAdjacentSpace> *_square1Space;
     NSObject<ILQSAdjacentSpace> *_square2Space;
     NSObject<ILQSAdjacentSpace> *_square3Space;
@@ -140,6 +141,10 @@
                 NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
                 NSObject<ILQSTransformation> *scale2Transformation = [LQSTransformationFactory uniformScaleTransformationWithScale:0.9f];
                 NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
+                LQSChildSpace *squareGridSpace = [[LQSChildSpace alloc] init];
+                _squareGridSpace = squareGridSpace;
+                squareGridSpace.parent = rootSpace;
+                squareGridSpace.transformToParent = scaleTransformation;
                 {
                     // Set up purple square 1
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -152,8 +157,7 @@
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
                     _square1TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
+                    childSpace.parent = squareGridSpace;
                     childSpace.transformToParent = transformationSet;
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -183,8 +187,7 @@
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
                     _square2TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
+                    childSpace.parent = squareGridSpace;
                     childSpace.transformToParent = transformationSet;
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
@@ -214,8 +217,7 @@
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
                     _square3TranslationTransformation = translationTransformation;
                     [transformationSet.transformationArray addTransformation:translationTransformation];
-                    [transformationSet.transformationArray addTransformation:scaleTransformation];
-                    childSpace.parent = rootSpace;
+                    childSpace.parent = squareGridSpace;
                     childSpace.transformToParent = transformationSet;
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
