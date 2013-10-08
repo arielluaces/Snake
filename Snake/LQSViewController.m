@@ -54,7 +54,6 @@
     
     NSObject<ILQSDrawable> *_drawable;
     
-    LQSRotationTransformation *_squareRotationTransformation;
     NSObject<ILQSAdjacentSpace> *_square1Space;
     NSObject<ILQSAdjacentSpace> *_square2Space;
     NSObject<ILQSAdjacentSpace> *_square3Space;
@@ -64,6 +63,9 @@
     LQSTranslationTransformation *_square1TranslationTransformation;
     LQSTranslationTransformation *_square2TranslationTransformation;
     LQSTranslationTransformation *_square3TranslationTransformation;
+    LQSRotationTransformation *_square1RotationTransformation;
+    LQSRotationTransformation *_square2RotationTransformation;
+    LQSRotationTransformation *_square3RotationTransformation;
     
     float _velocityX;
     float _velocityY;
@@ -137,7 +139,6 @@
                 NSObject<ILQSTransformation> *pivotTransformation = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
                 NSObject<ILQSTransformation> *scaleTransformation = [LQSTransformationFactory uniformScaleTransformationWithScale:1.0f/16.0f];
                 NSObject<ILQSTransformation> *scale2Transformation = [LQSTransformationFactory uniformScaleTransformationWithScale:0.9f];
-                LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
                 NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
                 {
                     // Set up purple square 1
@@ -145,6 +146,8 @@
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    _square1RotationTransformation = rotationTransformation;
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
                     _square1TranslationTransformation = translationTransformation;
@@ -174,6 +177,8 @@
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    _square2RotationTransformation = rotationTransformation;
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
                     _square2TranslationTransformation = translationTransformation;
@@ -203,6 +208,8 @@
                     LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                     [transformationSet.transformationArray addTransformation:pivotTransformation];
                     [transformationSet.transformationArray addTransformation:scale2Transformation];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    _square3RotationTransformation = rotationTransformation;
                     [transformationSet.transformationArray addTransformation:rotationTransformation];
                     LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
                     _square3TranslationTransformation = translationTransformation;
@@ -226,7 +233,6 @@
                     }
                     _square3Space = childSpace;
                 }
-                _squareRotationTransformation = rotationTransformation;
             }
             {
                 // Set up grid shader program
