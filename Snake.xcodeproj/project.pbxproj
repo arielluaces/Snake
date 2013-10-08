@@ -428,6 +428,10 @@
 		CF60C5C617DE9296004B7468 /* ILQSDrawableSquareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C717DE941B004B7468 /* LQSDrawableSquareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableSquareData.h; sourceTree = "<group>"; };
 		CF60C5C817DE941B004B7468 /* LQSDrawableSquareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableSquareData.m; sourceTree = "<group>"; };
+		CF741BBF17FE11F600E24193 /* ILQSGenericCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ILQSGenericCollection.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CF741BC017FE120300E24193 /* ILQSGenericArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ILQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CF741BC117FE121500E24193 /* LQSGenericArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CF741BC217FE121500E24193 /* LQSGenericArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LQSGenericArray.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -1074,6 +1078,10 @@
 				CF8459FE17FCC6640013603A /* snakeSpecific.h */,
 				CF845A0017FCC6640013603A /* snakeSpecific.m */,
 				CF8459FC17FCC6640013603A /* Supporting Files */,
+				CF741BBF17FE11F600E24193 /* ILQSGenericCollection.h */,
+				CF741BC017FE120300E24193 /* ILQSGenericArray.h */,
+				CF741BC117FE121500E24193 /* LQSGenericArray.h */,
+				CF741BC217FE121500E24193 /* LQSGenericArray.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
