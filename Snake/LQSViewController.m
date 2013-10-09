@@ -58,6 +58,9 @@
     NSObject<ILQSAdjacentSpace> *_square1Space;
     NSObject<ILQSAdjacentSpace> *_square2Space;
     NSObject<ILQSAdjacentSpace> *_square3Space;
+    NSObject<ILQSAdjacentSpace> *_square1SubSpace;
+    NSObject<ILQSAdjacentSpace> *_square2SubSpace;
+    NSObject<ILQSAdjacentSpace> *_square3SubSpace;
     LQSDrawableSquareData *_square1Data;
     LQSDrawableSquareData *_square2Data;
     LQSDrawableSquareData *_square3Data;
@@ -148,17 +151,23 @@
                 {
                     // Set up purple square 1
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                    _square1RotationTransformation = rotationTransformation;
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
-                    _square1TranslationTransformation = translationTransformation;
-                    [transformationSet.transformationArray addTransformation:translationTransformation];
-                    childSpace.parent = squareGridSpace;
-                    childSpace.transformToParent = transformationSet;
+                    LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    {
+                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        [transformationSet.transformationArray addTransformation:pivotTransformation];
+                        [transformationSet.transformationArray addTransformation:scale2Transformation];
+                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                        _square1RotationTransformation = rotationTransformation;
+                        [transformationSet.transformationArray addTransformation:rotationTransformation];
+                        childSpace.transformToParent = transformationSet;
+                        childSpace.parent = childSubSpace;
+                    }
+                    {
+                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                        _square1TranslationTransformation = translationTransformation;
+                        childSubSpace.transformToParent = translationTransformation;
+                        childSubSpace.parent = squareGridSpace;
+                    }
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -174,21 +183,28 @@
                         _square1Data = drawableSquareData;
                     }
                     _square1Space = childSpace;
+                    _square1SubSpace = childSubSpace;
                 }
                 {
                     // Set up purple square 2
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                    _square2RotationTransformation = rotationTransformation;
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
-                    _square2TranslationTransformation = translationTransformation;
-                    [transformationSet.transformationArray addTransformation:translationTransformation];
-                    childSpace.parent = squareGridSpace;
-                    childSpace.transformToParent = transformationSet;
+                    LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    {
+                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        [transformationSet.transformationArray addTransformation:pivotTransformation];
+                        [transformationSet.transformationArray addTransformation:scale2Transformation];
+                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                        _square2RotationTransformation = rotationTransformation;
+                        [transformationSet.transformationArray addTransformation:rotationTransformation];
+                        childSpace.transformToParent = transformationSet;
+                        childSpace.parent = childSubSpace;
+                    }
+                    {
+                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
+                        _square2TranslationTransformation = translationTransformation;
+                        childSubSpace.transformToParent = translationTransformation;
+                        childSubSpace.parent = squareGridSpace;
+                    }
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -204,21 +220,28 @@
                         _square2Data = drawableSquareData;
                     }
                     _square2Space = childSpace;
+                    _square2SubSpace = childSubSpace;
                 }
                 {
                     // Set up purple square 3
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    [transformationSet.transformationArray addTransformation:pivotTransformation];
-                    [transformationSet.transformationArray addTransformation:scale2Transformation];
-                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                    _square3RotationTransformation = rotationTransformation;
-                    [transformationSet.transformationArray addTransformation:rotationTransformation];
-                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
-                    _square3TranslationTransformation = translationTransformation;
-                    [transformationSet.transformationArray addTransformation:translationTransformation];
-                    childSpace.parent = squareGridSpace;
-                    childSpace.transformToParent = transformationSet;
+                    LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    {
+                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        [transformationSet.transformationArray addTransformation:pivotTransformation];
+                        [transformationSet.transformationArray addTransformation:scale2Transformation];
+                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                        _square3RotationTransformation = rotationTransformation;
+                        [transformationSet.transformationArray addTransformation:rotationTransformation];
+                        childSpace.transformToParent = transformationSet;
+                        childSpace.parent = childSubSpace;
+                    }
+                    {
+                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
+                        _square3TranslationTransformation = translationTransformation;
+                        childSubSpace.transformToParent = translationTransformation;
+                        childSubSpace.parent = squareGridSpace;
+                    }
                     {
                         LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
                         LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
@@ -234,6 +257,7 @@
                         _square3Data = drawableSquareData;
                     }
                     _square3Space = childSpace;
+                    _square3SubSpace = childSubSpace;
                 }
             }
             {
