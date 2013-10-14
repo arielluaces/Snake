@@ -61,6 +61,7 @@
     NSObject<ILQSAdjacentSpace> *_square1SubSpace;
     NSObject<ILQSAdjacentSpace> *_square2SubSpace;
     NSObject<ILQSAdjacentSpace> *_square3SubSpace;
+    NSObject<ILQSAdjacentSpace> *_square1VelocitySpace;
     LQSDrawableSquareData *_square1Data;
     LQSDrawableSquareData *_square2Data;
     LQSDrawableSquareData *_square3Data;
@@ -70,9 +71,7 @@
     LQSRotationTransformation *_square1RotationTransformation;
     LQSRotationTransformation *_square2RotationTransformation;
     LQSRotationTransformation *_square3RotationTransformation;
-    
-    float _velocityX;
-    float _velocityY;
+    LQSTranslationTransformation *_square1VelocityTransformation;
 }
 
 - (void)viewDidLoad
@@ -87,8 +86,6 @@
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     {
         // Create space information for the square being drawn
-        _velocityX = -1;
-        _velocityY = 0;
         LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
         LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
         LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
@@ -259,6 +256,15 @@
                     _square3Space = childSpace;
                     _square3SubSpace = childSubSpace;
                 }
+                {
+                    // Set up space 1 direction
+                    LQSChildSpace *square1VelocitySpace = [[LQSChildSpace alloc] init];
+                    LQSTranslationTransformation *square1VelocityTransformation = [LQSTransformationFactory translationTransformationWithX:-1 y:0 z:0];
+                    square1VelocitySpace.transformToParent = square1VelocityTransformation;
+                    square1VelocitySpace.parent = _square1SubSpace;
+                    _square1VelocitySpace = square1VelocitySpace;
+                    _square1VelocityTransformation = square1VelocityTransformation;
+                }
             }
             {
                 // Set up grid shader program
@@ -327,38 +333,53 @@
                 {
                     case 0:
                     {
-                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
                         GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _velocityX = newVelocity.x;
-                        _velocityY = newVelocity.y;
+                        _square1VelocityTransformation.x = newVelocity.x;
+                        _square1VelocityTransformation.y = newVelocity.y;
                         break;
                     }
                     case 1:
                     {
-                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
                         GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(-6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _velocityX = newVelocity.x;
-                        _velocityY = newVelocity.y;
+                        _square1VelocityTransformation.x = newVelocity.x;
+                        _square1VelocityTransformation.y = newVelocity.y;
                         break;
                     }
                     case 2:
                     {
-                        GLKVector3 oldVelocity = GLKVector3Make(_velocityX, _velocityY, 0);
+                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
                         GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(0, 0, 0, 1), oldVelocity);
-                        _velocityX = newVelocity.x;
-                        _velocityY = newVelocity.y;
+                        _square1VelocityTransformation.x = newVelocity.x;
+                        _square1VelocityTransformation.y = newVelocity.y;
                         break;
                     }
                     default:
                         break;
                 };
             }
-            _square3TranslationTransformation.x = _square2TranslationTransformation.x;
-            _square3TranslationTransformation.y = _square2TranslationTransformation.y;
-            _square2TranslationTransformation.x = _square1TranslationTransformation.x;
-            _square2TranslationTransformation.y = _square1TranslationTransformation.y;
-            _square1TranslationTransformation.x = _square1TranslationTransformation.x+_velocityX;
-            _square1TranslationTransformation.y = _square1TranslationTransformation.y+_velocityY;
+            {
+                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square2SubSpace toSpace:_squareGridSpace];
+                GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
+                GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
+                _square3TranslationTransformation.x = point2.x;
+                _square3TranslationTransformation.y = point2.y;
+            }
+            {
+                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square1SubSpace toSpace:_squareGridSpace];
+                GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
+                GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
+                _square2TranslationTransformation.x = point2.x;
+                _square2TranslationTransformation.y = point2.y;
+            }
+            {
+                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square1VelocitySpace toSpace:_squareGridSpace];
+                GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
+                GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
+                _square1TranslationTransformation.x = point2.x;
+                _square1TranslationTransformation.y = point2.y;
+            }
         }
     }
 }
