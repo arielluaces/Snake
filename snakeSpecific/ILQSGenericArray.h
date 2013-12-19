@@ -16,6 +16,7 @@
 @protocol INVOKE(ArrayInterface, __LQS_GENERIC_NAME__) <INVOKE(CollectionInterface, __LQS_GENERIC_NAME__)>
 
 - (NSUInteger)indexOfObject:(NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)object;
+- (NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)objectAtIndex:(NSUInteger)index;
 - (void)insertObject:(NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)object atIndex:(NSUInteger)index;
 
 @end

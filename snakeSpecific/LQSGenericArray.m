@@ -85,6 +85,11 @@
     return [_array indexOfObject:object];
 }
 
+- (NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)objectAtIndex:(NSUInteger)index
+{
+    return [_array objectAtIndex:index];
+}
+
 - (void)insertObject:(NSObject<INVOKE(NameInterface, __LQS_GENERIC_NAME__)> *)object atIndex:(NSUInteger)index
 {
     [_array insertObject:object atIndex:index];
