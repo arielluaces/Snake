@@ -32,6 +32,7 @@
 #import "LQSTransformationArray.h"
 #import "LQSScaledTranslationTransformation.h"
 #import "LQSScaleTransformation.h"
+#import "LQSSnakeChunk.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -54,23 +55,12 @@
     
     NSObject<ILQSDrawable> *_drawable;
     
+    NSObject<ILQSSnakeChunk> *_square1;
+    NSObject<ILQSSnakeChunk> *_square2;
+    NSObject<ILQSSnakeChunk> *_square3;
+    
     NSObject<ILQSAdjacentSpace> *_squareGridSpace;
-    NSObject<ILQSAdjacentSpace> *_square1Space;
-    NSObject<ILQSAdjacentSpace> *_square2Space;
-    NSObject<ILQSAdjacentSpace> *_square3Space;
-    NSObject<ILQSAdjacentSpace> *_square1SubSpace;
-    NSObject<ILQSAdjacentSpace> *_square2SubSpace;
-    NSObject<ILQSAdjacentSpace> *_square3SubSpace;
     NSObject<ILQSAdjacentSpace> *_square1VelocitySpace;
-    LQSDrawableSquareData *_square1Data;
-    LQSDrawableSquareData *_square2Data;
-    LQSDrawableSquareData *_square3Data;
-    LQSTranslationTransformation *_square1TranslationTransformation;
-    LQSTranslationTransformation *_square2TranslationTransformation;
-    LQSTranslationTransformation *_square3TranslationTransformation;
-    LQSRotationTransformation *_square1RotationTransformation;
-    LQSRotationTransformation *_square2RotationTransformation;
-    LQSRotationTransformation *_square3RotationTransformation;
     LQSTranslationTransformation *_square1VelocityTransformation;
 }
 
@@ -147,6 +137,7 @@
                 squareGridSpace.transformToParent = scaleTransformation;
                 {
                     // Set up purple square 1
+                    LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                     // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -175,14 +166,16 @@
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
                     }
                     // Save component access
-                    _square1Space = childSpace;
-                    _square1SubSpace = childSubSpace;
-                    _square1RotationTransformation = rotationTransformation;
-                    _square1TranslationTransformation = translationTransformation;
-                    _square1Data = drawableSquareData;
+                    snakeChunk.space = childSpace;
+                    snakeChunk.subSpace = childSubSpace;
+                    snakeChunk.rotationTransformation = rotationTransformation;
+                    snakeChunk.translationTransformation = translationTransformation;
+                    snakeChunk.drawData = drawableSquareData;
+                    _square1 = snakeChunk;
                 }
                 {
                     // Set up purple square 2
+                    LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                     // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -211,14 +204,16 @@
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
                     }
                     // Save component access
-                    _square2Space = childSpace;
-                    _square2SubSpace = childSubSpace;
-                    _square2RotationTransformation = rotationTransformation;
-                    _square2TranslationTransformation = translationTransformation;
-                    _square2Data = drawableSquareData;
+                    snakeChunk.space = childSpace;
+                    snakeChunk.subSpace = childSubSpace;
+                    snakeChunk.rotationTransformation = rotationTransformation;
+                    snakeChunk.translationTransformation = translationTransformation;
+                    snakeChunk.drawData = drawableSquareData;
+                    _square2 = snakeChunk;
                 }
                 {
                     // Set up purple square 3
+                    LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                     // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -247,18 +242,19 @@
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
                     }
                     // Save component access
-                    _square3Space = childSpace;
-                    _square3SubSpace = childSubSpace;
-                    _square3RotationTransformation = rotationTransformation;
-                    _square3TranslationTransformation = translationTransformation;
-                    _square3Data = drawableSquareData;
+                    snakeChunk.space = childSpace;
+                    snakeChunk.subSpace = childSubSpace;
+                    snakeChunk.rotationTransformation = rotationTransformation;
+                    snakeChunk.translationTransformation = translationTransformation;
+                    snakeChunk.drawData = drawableSquareData;
+                    _square3 = snakeChunk;
                 }
                 {
                     // Set up space 1 direction
                     LQSChildSpace *square1VelocitySpace = [[LQSChildSpace alloc] init];
                     LQSTranslationTransformation *square1VelocityTransformation = [LQSTransformationFactory translationTransformationWithX:-1 y:0 z:0];
                     square1VelocitySpace.transformToParent = square1VelocityTransformation;
-                    square1VelocitySpace.parent = _square1SubSpace;
+                    square1VelocitySpace.parent = _square1.subSpace;
                     _square1VelocitySpace = square1VelocitySpace;
                     _square1VelocityTransformation = square1VelocityTransformation;
                 }
@@ -357,25 +353,25 @@
                 };
             }
             {
-                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square2SubSpace toSpace:_squareGridSpace];
+                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square2.subSpace toSpace:_squareGridSpace];
                 GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
                 GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _square3TranslationTransformation.x = point2.x;
-                _square3TranslationTransformation.y = point2.y;
+                _square3.translationTransformation.x = point2.x;
+                _square3.translationTransformation.y = point2.y;
             }
             {
-                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square1SubSpace toSpace:_squareGridSpace];
+                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square1.subSpace toSpace:_squareGridSpace];
                 GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
                 GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _square2TranslationTransformation.x = point2.x;
-                _square2TranslationTransformation.y = point2.y;
+                _square2.translationTransformation.x = point2.x;
+                _square2.translationTransformation.y = point2.y;
             }
             {
                 GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_square1VelocitySpace toSpace:_squareGridSpace];
                 GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
                 GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _square1TranslationTransformation.x = point2.x;
-                _square1TranslationTransformation.y = point2.y;
+                _square1.translationTransformation.x = point2.x;
+                _square1.translationTransformation.y = point2.y;
             }
         }
     }
@@ -390,18 +386,18 @@
             _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
             _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
             CGPoint locationInView = [touch locationInView:self.view];
-            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1Space];
+            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
             GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
             vector = GLKMatrix4MultiplyVector4(matrix, vector);
             NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
             if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
             {
-                _square1Data.colorB = 0;
+                _square1.drawData.colorB = 0;
                 NSLog(@"hit");
             }
             else
             {
-                _square1Data.colorB = 0.95f;
+                _square1.drawData.colorB = 0.95f;
             }
         }
     }
@@ -416,18 +412,18 @@
             _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
             _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
             CGPoint locationInView = [touch locationInView:self.view];
-            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1Space];
+            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
             GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
             vector = GLKMatrix4MultiplyVector4(matrix, vector);
             NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
             if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
             {
-                _square1Data.colorB = 0;
+                _square1.drawData.colorB = 0;
                 NSLog(@"hit");
             }
             else
             {
-                _square1Data.colorB = 0.95f;
+                _square1.drawData.colorB = 0.95f;
             }
         }
     }

@@ -142,6 +142,7 @@
 		CFB8584317F3B90C00159915 /* LQSMultiShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */; };
 		CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */; };
 		CFC9A07E17ED139F00E086A1 /* LQSTransformationSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC9A07D17ED139F00E086A1 /* LQSTransformationSet.m */; };
+		CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCA11BD185FF80D00D38C84 /* LQSSnakeChunk.m */; };
 		CFD7FE2C17AC99FE00D78B5F /* LQSFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */; };
 		CFD7FE3117AC9DC300D78B5F /* LQSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7FE3017AC9DC300D78B5F /* LQSProgram.m */; };
 		CFDBD15517E25EB400A41D35 /* LQSTransformationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDBD15417E25EB400A41D35 /* LQSTransformationFactory.m */; };
@@ -519,6 +520,9 @@
 		CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTransformationResolver.m; sourceTree = "<group>"; };
 		CFC9A07C17ED139F00E086A1 /* LQSTransformationSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTransformationSet.h; sourceTree = "<group>"; };
 		CFC9A07D17ED139F00E086A1 /* LQSTransformationSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTransformationSet.m; sourceTree = "<group>"; };
+		CFCA11B5185FF62D00D38C84 /* ILQSSnakeChunk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSSnakeChunk.h; sourceTree = "<group>"; };
+		CFCA11BC185FF80D00D38C84 /* LQSSnakeChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSSnakeChunk.h; sourceTree = "<group>"; };
+		CFCA11BD185FF80D00D38C84 /* LQSSnakeChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSnakeChunk.m; sourceTree = "<group>"; };
 		CFD7FE2A17AC99FE00D78B5F /* LQSFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFragmentShader.h; sourceTree = "<group>"; };
 		CFD7FE2B17AC99FE00D78B5F /* LQSFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFragmentShader.m; sourceTree = "<group>"; };
 		CFD7FE2F17AC9DC300D78B5F /* LQSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSProgram.h; sourceTree = "<group>"; };
@@ -1082,6 +1086,9 @@
 				CF741BC017FE120300E24193 /* ILQSGenericArray.h */,
 				CF741BC117FE121500E24193 /* LQSGenericArray.h */,
 				CF741BC217FE121500E24193 /* LQSGenericArray.m */,
+				CFCA11B5185FF62D00D38C84 /* ILQSSnakeChunk.h */,
+				CFCA11BC185FF80D00D38C84 /* LQSSnakeChunk.h */,
+				CFCA11BD185FF80D00D38C84 /* LQSSnakeChunk.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -1973,6 +1980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */,
+				CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
