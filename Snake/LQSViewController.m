@@ -147,27 +147,23 @@
                 squareGridSpace.transformToParent = scaleTransformation;
                 {
                     // Set up purple square 1
+                    // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                     {
-                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        // Configure components
                         [transformationSet.transformationArray addTransformation:pivotTransformation];
                         [transformationSet.transformationArray addTransformation:scale2Transformation];
-                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                        _square1RotationTransformation = rotationTransformation;
                         [transformationSet.transformationArray addTransformation:rotationTransformation];
                         childSpace.transformToParent = transformationSet;
                         childSpace.parent = childSubSpace;
-                    }
-                    {
-                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
-                        _square1TranslationTransformation = translationTransformation;
                         childSubSpace.transformToParent = translationTransformation;
                         childSubSpace.parent = squareGridSpace;
-                    }
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                         drawableSquareData.program = program;
                         drawableSquareData.space = childSpace;
                         drawableSquareData.rootSpace = cameraSpace;
@@ -177,34 +173,33 @@
                         drawableSquareData.colorB = 0;//0.95f;
                         drawableSquare.squareData = drawableSquareData;
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square1Data = drawableSquareData;
                     }
+                    // Save component access
                     _square1Space = childSpace;
                     _square1SubSpace = childSubSpace;
+                    _square1RotationTransformation = rotationTransformation;
+                    _square1TranslationTransformation = translationTransformation;
+                    _square1Data = drawableSquareData;
                 }
                 {
                     // Set up purple square 2
+                    // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
+                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                     {
-                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        // Configure components
                         [transformationSet.transformationArray addTransformation:pivotTransformation];
                         [transformationSet.transformationArray addTransformation:scale2Transformation];
-                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                        _square2RotationTransformation = rotationTransformation;
                         [transformationSet.transformationArray addTransformation:rotationTransformation];
                         childSpace.transformToParent = transformationSet;
                         childSpace.parent = childSubSpace;
-                    }
-                    {
-                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:1 y:0 z:0];
-                        _square2TranslationTransformation = translationTransformation;
                         childSubSpace.transformToParent = translationTransformation;
                         childSubSpace.parent = squareGridSpace;
-                    }
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                         drawableSquareData.program = program;
                         drawableSquareData.space = childSpace;
                         drawableSquareData.rootSpace = cameraSpace;
@@ -214,34 +209,33 @@
                         drawableSquareData.colorB = 0.95f;
                         drawableSquare.squareData = drawableSquareData;
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square2Data = drawableSquareData;
                     }
+                    // Save component access
                     _square2Space = childSpace;
                     _square2SubSpace = childSubSpace;
+                    _square2RotationTransformation = rotationTransformation;
+                    _square2TranslationTransformation = translationTransformation;
+                    _square2Data = drawableSquareData;
                 }
                 {
                     // Set up purple square 3
+                    // Allocate components
                     LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                     LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
+                    LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
+                    LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                    LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                     {
-                        LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                        // Configure components
                         [transformationSet.transformationArray addTransformation:pivotTransformation];
                         [transformationSet.transformationArray addTransformation:scale2Transformation];
-                        LQSRotationTransformation *rotationTransformation = [LQSTransformationFactory rotationTransformationWithRadians:0*6.283185307f/8 x:0 y:0 z:1];
-                        _square3RotationTransformation = rotationTransformation;
                         [transformationSet.transformationArray addTransformation:rotationTransformation];
                         childSpace.transformToParent = transformationSet;
                         childSpace.parent = childSubSpace;
-                    }
-                    {
-                        LQSTranslationTransformation *translationTransformation = [LQSTransformationFactory translationTransformationWithX:2 y:0 z:0];
-                        _square3TranslationTransformation = translationTransformation;
                         childSubSpace.transformToParent = translationTransformation;
                         childSubSpace.parent = squareGridSpace;
-                    }
-                    {
-                        LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                        LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
                         drawableSquareData.program = program;
                         drawableSquareData.space = childSpace;
                         drawableSquareData.rootSpace = cameraSpace;
@@ -251,10 +245,13 @@
                         drawableSquareData.colorB = 0.95f;
                         drawableSquare.squareData = drawableSquareData;
                         [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                        _square3Data = drawableSquareData;
                     }
+                    // Save component access
                     _square3Space = childSpace;
                     _square3SubSpace = childSubSpace;
+                    _square3RotationTransformation = rotationTransformation;
+                    _square3TranslationTransformation = translationTransformation;
+                    _square3Data = drawableSquareData;
                 }
                 {
                     // Set up space 1 direction
