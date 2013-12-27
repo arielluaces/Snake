@@ -16,6 +16,15 @@
 		CF33243D17D6B44400C0C2DD /* LQSScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33243C17D6B44400C0C2DD /* LQSScaleTransformation.m */; };
 		CF33244317D6B89900C0C2DD /* LQSSpaceCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */; };
 		CF33244917D7C5C800C0C2DD /* LQSUniformScaleTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */; };
+		CF38298D186E1DF300E2C94F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF382992186E1DF300E2C94F /* touch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF382991186E1DF300E2C94F /* touch.h */; };
+		CF382994186E1DF300E2C94F /* touch.m in Sources */ = {isa = PBXBuildFile; fileRef = CF382993186E1DF300E2C94F /* touch.m */; };
+		CF38299A186E1DF300E2C94F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF845A0717FCC6650013603A /* XCTest.framework */; };
+		CF38299B186E1DF400E2C94F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
+		CF38299C186E1DF400E2C94F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569617A5ADDA00148B4F /* UIKit.framework */; };
+		CF38299F186E1DF400E2C94F /* libtouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF38298C186E1DF300E2C94F /* libtouch.a */; };
+		CF3829A5186E1DF400E2C94F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF3829A3186E1DF400E2C94F /* InfoPlist.strings */; };
+		CF3829A7186E1DF400E2C94F /* touchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3829A6186E1DF400E2C94F /* touchTests.m */; };
 		CF4D28A617F3B1DF00D6C523 /* LQSGLShaderArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */; };
 		CF521B4917EA519100C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CF521B4E17EA519100C22D38 /* transformations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B4D17EA519100C22D38 /* transformations.h */; };
@@ -169,6 +178,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF38299D186E1DF400E2C94F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF38298B186E1DF300E2C94F;
+			remoteInfo = touch;
+		};
 		CF521B5A17EA519100C22D38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFA6568B17A5ADD900148B4F /* Project object */;
@@ -277,6 +293,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CF38298A186E1DF300E2C94F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CF382992186E1DF300E2C94F /* touch.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF521B4617EA519100C22D38 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +395,14 @@
 		CF33244217D6B89900C0C2DD /* LQSSpaceCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSpaceCollection.m; sourceTree = "<group>"; };
 		CF33244717D7C5C800C0C2DD /* LQSUniformScaleTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSUniformScaleTransformation.h; sourceTree = "<group>"; };
 		CF33244817D7C5C800C0C2DD /* LQSUniformScaleTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUniformScaleTransformation.m; sourceTree = "<group>"; };
+		CF38298C186E1DF300E2C94F /* libtouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF382990186E1DF300E2C94F /* touch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "touch-Prefix.pch"; sourceTree = "<group>"; };
+		CF382991186E1DF300E2C94F /* touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = touch.h; sourceTree = "<group>"; };
+		CF382993186E1DF300E2C94F /* touch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touch.m; sourceTree = "<group>"; };
+		CF382999186E1DF300E2C94F /* touchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = touchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3829A2186E1DF400E2C94F /* touchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "touchTests-Info.plist"; sourceTree = "<group>"; };
+		CF3829A4186E1DF400E2C94F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF3829A6186E1DF400E2C94F /* touchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touchTests.m; sourceTree = "<group>"; };
 		CF4D28A117F3B18C00D6C523 /* ILQSGLShaderCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderCollection.h; sourceTree = "<group>"; };
 		CF4D28A217F3B1A200D6C523 /* ILQSGLShaderArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderArray.h; sourceTree = "<group>"; };
 		CF4D28A417F3B1DF00D6C523 /* LQSGLShaderArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShaderArray.h; sourceTree = "<group>"; };
@@ -572,6 +606,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF382989186E1DF300E2C94F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF38298D186E1DF300E2C94F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF382996186E1DF300E2C94F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF38299A186E1DF300E2C94F /* XCTest.framework in Frameworks */,
+				CF38299C186E1DF400E2C94F /* UIKit.framework in Frameworks */,
+				CF38299B186E1DF400E2C94F /* Foundation.framework in Frameworks */,
+				CF38299F186E1DF400E2C94F /* libtouch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF521B4517EA519100C22D38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,6 +812,42 @@
 				B078737717AB79C000438D16 /* MatrixGrid.fsh */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CF38298E186E1DF300E2C94F /* touch */ = {
+			isa = PBXGroup;
+			children = (
+				CF382991186E1DF300E2C94F /* touch.h */,
+				CF382993186E1DF300E2C94F /* touch.m */,
+				CF38298F186E1DF300E2C94F /* Supporting Files */,
+			);
+			path = touch;
+			sourceTree = "<group>";
+		};
+		CF38298F186E1DF300E2C94F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF382990186E1DF300E2C94F /* touch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF3829A0186E1DF400E2C94F /* touchTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF3829A6186E1DF400E2C94F /* touchTests.m */,
+				CF3829A1186E1DF400E2C94F /* Supporting Files */,
+			);
+			path = touchTests;
+			sourceTree = "<group>";
+		};
+		CF3829A1186E1DF400E2C94F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF3829A2186E1DF400E2C94F /* touchTests-Info.plist */,
+				CF3829A3186E1DF400E2C94F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CF521B4A17EA519100C22D38 /* transformations */ = {
@@ -1163,6 +1252,8 @@
 				CF98B7EC17F661030009AD0D /* foundationTests */,
 				CF8459FB17FCC6640013603A /* snakeSpecific */,
 				CF845A0E17FCC6650013603A /* snakeSpecificTests */,
+				CF38298E186E1DF300E2C94F /* touch */,
+				CF3829A0186E1DF400E2C94F /* touchTests */,
 				CFA6569517A5ADDA00148B4F /* Frameworks */,
 				CFA6569417A5ADDA00148B4F /* Products */,
 			);
@@ -1188,6 +1279,8 @@
 				CF98B7E817F661030009AD0D /* foundationTests.octest */,
 				CF8459F917FCC6640013603A /* libsnakeSpecific.a */,
 				CF845A0617FCC6650013603A /* snakeSpecificTests.xctest */,
+				CF38298C186E1DF300E2C94F /* libtouch.a */,
+				CF382999186E1DF300E2C94F /* touchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1282,6 +1375,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF38298B186E1DF300E2C94F /* touch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3829AC186E1DF400E2C94F /* Build configuration list for PBXNativeTarget "touch" */;
+			buildPhases = (
+				CF382988186E1DF300E2C94F /* Sources */,
+				CF382989186E1DF300E2C94F /* Frameworks */,
+				CF38298A186E1DF300E2C94F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = touch;
+			productName = touch;
+			productReference = CF38298C186E1DF300E2C94F /* libtouch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF382998186E1DF300E2C94F /* touchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF3829AD186E1DF400E2C94F /* Build configuration list for PBXNativeTarget "touchTests" */;
+			buildPhases = (
+				CF382995186E1DF300E2C94F /* Sources */,
+				CF382996186E1DF300E2C94F /* Frameworks */,
+				CF382997186E1DF300E2C94F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF38299E186E1DF400E2C94F /* PBXTargetDependency */,
+			);
+			name = touchTests;
+			productName = touchTests;
+			productReference = CF382999186E1DF300E2C94F /* touchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CF521B4717EA519100C22D38 /* transformations */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF521B6A17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformations" */;
@@ -1603,6 +1731,9 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Liquid Sparks";
 				TargetAttributes = {
+					CF382998186E1DF300E2C94F = {
+						TestTargetID = CFA6569217A5ADD900148B4F;
+					};
 					CF845A0517FCC6650013603A = {
 						TestTargetID = CFA6569217A5ADD900148B4F;
 					};
@@ -1637,11 +1768,21 @@
 				CF98B7E717F661030009AD0D /* foundationTests */,
 				CF8459F817FCC6640013603A /* snakeSpecific */,
 				CF845A0517FCC6650013603A /* snakeSpecificTests */,
+				CF38298B186E1DF300E2C94F /* touch */,
+				CF382998186E1DF300E2C94F /* touchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF382997186E1DF300E2C94F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3829A5186E1DF400E2C94F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF521B5317EA519100C22D38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1849,6 +1990,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF382988186E1DF300E2C94F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF382994186E1DF300E2C94F /* touch.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF382995186E1DF300E2C94F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3829A7186E1DF400E2C94F /* touchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF521B4417EA519100C22D38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2027,6 +2184,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF38299E186E1DF400E2C94F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF38298B186E1DF300E2C94F /* touch */;
+			targetProxy = CF38299D186E1DF400E2C94F /* PBXContainerItemProxy */;
+		};
 		CF521B5B17EA519100C22D38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF521B4717EA519100C22D38 /* transformations */;
@@ -2105,6 +2267,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CF3829A3186E1DF400E2C94F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF3829A4186E1DF400E2C94F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		CF521B6017EA519100C22D38 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2204,6 +2374,116 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF3829A8186E1DF400E2C94F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/touch.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "touch/touch-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF3829A9186E1DF400E2C94F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DSTROOT = /tmp/touch.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "touch/touch-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF3829AA186E1DF400E2C94F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snake.app/Snake";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "touch/touch-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "touchTests/touchTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CF3829AB186E1DF400E2C94F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snake.app/Snake";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "touch/touch-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "touchTests/touchTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		CF521B6617EA519100C22D38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2854,6 +3134,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF3829AC186E1DF400E2C94F /* Build configuration list for PBXNativeTarget "touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3829A8186E1DF400E2C94F /* Debug */,
+				CF3829A9186E1DF400E2C94F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF3829AD186E1DF400E2C94F /* Build configuration list for PBXNativeTarget "touchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF3829AA186E1DF400E2C94F /* Debug */,
+				CF3829AB186E1DF400E2C94F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CF521B6A17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
