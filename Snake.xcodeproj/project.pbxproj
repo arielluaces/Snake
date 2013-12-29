@@ -3141,6 +3141,7 @@
 				CF3829A9186E1DF400E2C94F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF3829AD186E1DF400E2C94F /* Build configuration list for PBXNativeTarget "touchTests" */ = {
 			isa = XCConfigurationList;
@@ -3149,6 +3150,7 @@
 				CF3829AB186E1DF400E2C94F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF521B6A17EA519100C22D38 /* Build configuration list for PBXNativeTarget "transformations" */ = {
 			isa = XCConfigurationList;
