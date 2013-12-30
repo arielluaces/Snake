@@ -90,6 +90,7 @@
 		CF7BC57E17EA55AF00637955 /* libutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521C1017EA51B600C22D38 /* libutils.a */; };
 		CF7BDF1C18702F0E00AEA656 /* LQSTouchInputState.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */; };
 		CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */; };
+		CF7BDF231871028000AEA656 /* LQSBroadcastUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
 		CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */; };
@@ -476,6 +477,8 @@
 		CF7BDF1D1870F1CE00AEA656 /* ILQSUpdatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSUpdatable.h; sourceTree = "<group>"; };
 		CF7BDF1E187101F600AEA656 /* LQSUpdatableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSUpdatableArray.h; sourceTree = "<group>"; };
 		CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUpdatableArray.m; sourceTree = "<group>"; };
+		CF7BDF211871028000AEA656 /* LQSBroadcastUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSBroadcastUpdater.h; sourceTree = "<group>"; };
+		CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSBroadcastUpdater.m; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -1197,6 +1200,8 @@
 				CF7BDF1D1870F1CE00AEA656 /* ILQSUpdatable.h */,
 				CF7BDF1E187101F600AEA656 /* LQSUpdatableArray.h */,
 				CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */,
+				CF7BDF211871028000AEA656 /* LQSBroadcastUpdater.h */,
+				CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -2157,6 +2162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */,
+				CF7BDF231871028000AEA656 /* LQSBroadcastUpdater.m in Sources */,
 				CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */,
 				CFCA11BB185FF69A00D38C84 /* LQSSnakeChunkArray.m in Sources */,
 				CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */,
