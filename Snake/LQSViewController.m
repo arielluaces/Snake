@@ -39,6 +39,8 @@
 #import "LQSUpdatableArray.h"
 #import "LQSTimeContainer.h"
 #import "LQSTouchInputState.h"
+#import "LQSTouchBroadcast.h"
+#import "LQSTouchProcessorArray.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -90,8 +92,9 @@
         _mainUpdatable = broadcastUpdater;
         LQSTimeContainer *timeContainer = [[LQSTimeContainer alloc] init];
         _mainTimeContainer = timeContainer;
-        LQSTouchInputState *touchState = [[LQSTouchInputState alloc] init];
-        _mainTouchProcessor = touchState;
+        LQSTouchBroadcast *touchBroadcast = [[LQSTouchBroadcast alloc] init];
+        touchBroadcast.touchProcessorArray = [[LQSTouchProcessorArray alloc] init];
+        _mainTouchProcessor = touchBroadcast;
         {
             // Create space information for the square being drawn
             LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
@@ -284,6 +287,8 @@
                             snakeScript.snakeChunk3 = _square3;
                             snakeScript.parent = squareGridSpace;
                             snakeScript.directionSpace = square1VelocitySpace;
+                            snakeScript.viewSpace = viewSpace;
+                            [touchBroadcast.touchProcessorArray addObject:snakeScript];
                             [broadcastUpdater.updatableArray addObject:snakeScript];
                         }
                     }
@@ -408,26 +413,6 @@
             [_mainTouchProcessor processTouch:touch];
         }
     }
-    for (UITouch *touch in touches)
-    {
-        if (touch.view == self.view)
-        {
-            CGPoint locationInView = [touch locationInView:self.view];
-            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
-            GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
-            vector = GLKMatrix4MultiplyVector4(matrix, vector);
-            NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
-            if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
-            {
-                _square1.drawData.colorB = 0;
-                NSLog(@"hit");
-            }
-            else
-            {
-                _square1.drawData.colorB = 0.95f;
-            }
-        }
-    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -437,26 +422,6 @@
         if (touch.view == self.view)
         {
             [_mainTouchProcessor processTouch:touch];
-        }
-    }
-    for (UITouch *touch in touches)
-    {
-        if (touch.view == self.view)
-        {
-            CGPoint locationInView = [touch locationInView:self.view];
-            GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
-            GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
-            vector = GLKMatrix4MultiplyVector4(matrix, vector);
-            NSLog(@"[%f,%f,%f]", vector.x, vector.y, vector.z);
-            if (vector.x >= 0.0f && vector.x <= 1.0f && vector.y >= 0.0f && vector.y <= 1.0f)
-            {
-                _square1.drawData.colorB = 0;
-                NSLog(@"hit");
-            }
-            else
-            {
-                _square1.drawData.colorB = 0.95f;
-            }
         }
     }
 }
