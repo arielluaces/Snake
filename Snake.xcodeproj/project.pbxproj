@@ -175,6 +175,8 @@
 		CFEAAF9917BC7056000F15DD /* LQSTexturedVerticesProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */; };
 		CFEAAF9B17BC7D83000F15DD /* TexturedVerticesProgram.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */; };
 		CFEAAF9D17BC7D92000F15DD /* TexturedVerticesProgram.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */; };
+		CFECCFE818716F75003AA473 /* LQSTouchProcessorArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECCFE718716F75003AA473 /* LQSTouchProcessorArray.m */; };
+		CFECCFEB18716FE0003AA473 /* LQSTouchBroadcast.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECCFEA18716FE0003AA473 /* LQSTouchBroadcast.m */; };
 		CFF1092617EB667400E9707C /* LQSChildSpaceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1092517EB667400E9707C /* LQSChildSpaceTest.m */; };
 		CFF1092717EB6BDD00E9707C /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
 		CFF1092817EB6BE800E9707C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569C17A5ADDA00148B4F /* GLKit.framework */; };
@@ -613,6 +615,10 @@
 		CFEAAF9817BC7056000F15DD /* LQSTexturedVerticesProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTexturedVerticesProgram.m; sourceTree = "<group>"; };
 		CFEAAF9A17BC7D83000F15DD /* TexturedVerticesProgram.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.vsh; sourceTree = "<group>"; };
 		CFEAAF9C17BC7D92000F15DD /* TexturedVerticesProgram.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = TexturedVerticesProgram.fsh; sourceTree = "<group>"; };
+		CFECCFE618716F75003AA473 /* LQSTouchProcessorArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchProcessorArray.h; sourceTree = "<group>"; };
+		CFECCFE718716F75003AA473 /* LQSTouchProcessorArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchProcessorArray.m; sourceTree = "<group>"; };
+		CFECCFE918716FE0003AA473 /* LQSTouchBroadcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchBroadcast.h; sourceTree = "<group>"; };
+		CFECCFEA18716FE0003AA473 /* LQSTouchBroadcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchBroadcast.m; sourceTree = "<group>"; };
 		CFF1092417EB667400E9707C /* LQSChildSpaceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSChildSpaceTest.h; sourceTree = "<group>"; };
 		CFF1092517EB667400E9707C /* LQSChildSpaceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSChildSpaceTest.m; sourceTree = "<group>"; };
 		CFFBAFD517E7D2D700A190BD /* ILQSGLTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLTexture.h; sourceTree = "<group>"; };
@@ -844,6 +850,10 @@
 				CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */,
 				CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */,
 				CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */,
+				CFECCFE618716F75003AA473 /* LQSTouchProcessorArray.h */,
+				CFECCFE718716F75003AA473 /* LQSTouchProcessorArray.m */,
+				CFECCFE918716FE0003AA473 /* LQSTouchBroadcast.h */,
+				CFECCFEA18716FE0003AA473 /* LQSTouchBroadcast.m */,
 			);
 			path = touch;
 			sourceTree = "<group>";
@@ -2029,6 +2039,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFECCFEB18716FE0003AA473 /* LQSTouchBroadcast.m in Sources */,
+				CFECCFE818716F75003AA473 /* LQSTouchProcessorArray.m in Sources */,
 				CF382994186E1DF300E2C94F /* touch.m in Sources */,
 				CF7BDF1C18702F0E00AEA656 /* LQSTouchInputState.m in Sources */,
 			);
