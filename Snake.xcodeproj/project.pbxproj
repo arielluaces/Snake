@@ -468,6 +468,7 @@
 		CF741BC017FE120300E24193 /* ILQSGenericArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ILQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CF741BC117FE121500E24193 /* LQSGenericArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CF741BC217FE121500E24193 /* LQSGenericArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LQSGenericArray.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessor.h; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -820,6 +821,7 @@
 				CF382991186E1DF300E2C94F /* touch.h */,
 				CF382993186E1DF300E2C94F /* touch.m */,
 				CF38298F186E1DF300E2C94F /* Supporting Files */,
+				CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */,
 			);
 			path = touch;
 			sourceTree = "<group>";
