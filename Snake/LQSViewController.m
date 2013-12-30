@@ -389,6 +389,16 @@
     [_mainUpdatable update];
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
+    _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches)
@@ -402,8 +412,6 @@
     {
         if (touch.view == self.view)
         {
-            _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
-            _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
             CGPoint locationInView = [touch locationInView:self.view];
             GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
             GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
@@ -435,8 +443,6 @@
     {
         if (touch.view == self.view)
         {
-            _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
-            _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
             CGPoint locationInView = [touch locationInView:self.view];
             GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_viewSpace toSpace:_square1.space];
             GLKVector4 vector = GLKVector4Make(locationInView.x, locationInView.y, 0, 1);
