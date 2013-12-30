@@ -473,7 +473,7 @@
 		CF741BBF17FE11F600E24193 /* ILQSGenericCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ILQSGenericCollection.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CF741BC017FE120300E24193 /* ILQSGenericArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ILQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CF741BC117FE121500E24193 /* LQSGenericArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		CF741BC217FE121500E24193 /* LQSGenericArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LQSGenericArray.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CF741BC217FE121500E24193 /* LQSGenericArray.m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LQSGenericArray.m.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessor.h; sourceTree = "<group>"; };
 		CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchInputState.h; sourceTree = "<group>"; };
 		CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchInputState.m; sourceTree = "<group>"; };
@@ -1161,6 +1161,10 @@
 				CFA923EB17D65ED30067835F /* ILQSCollection.h */,
 				CFA923EC17D65FDE0067835F /* LQSCollection.h */,
 				CFA923ED17D65FDE0067835F /* LQSCollection.m */,
+				CF741BBF17FE11F600E24193 /* ILQSGenericCollection.h */,
+				CF741BC017FE120300E24193 /* ILQSGenericArray.h */,
+				CF741BC117FE121500E24193 /* LQSGenericArray.h */,
+				CF741BC217FE121500E24193 /* LQSGenericArray.m.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1198,10 +1202,6 @@
 				CF8459FE17FCC6640013603A /* snakeSpecific.h */,
 				CF845A0017FCC6640013603A /* snakeSpecific.m */,
 				CF8459FC17FCC6640013603A /* Supporting Files */,
-				CF741BBF17FE11F600E24193 /* ILQSGenericCollection.h */,
-				CF741BC017FE120300E24193 /* ILQSGenericArray.h */,
-				CF741BC117FE121500E24193 /* LQSGenericArray.h */,
-				CF741BC217FE121500E24193 /* LQSGenericArray.m */,
 				CFCA11B5185FF62D00D38C84 /* ILQSSnakeChunk.h */,
 				CFCA11B9185FF69A00D38C84 /* LQSSnakeChunkArray.h */,
 				CFCA11BA185FF69A00D38C84 /* LQSSnakeChunkArray.m */,

@@ -7,5 +7,5 @@
 //
 
 #define __LQS_GENERIC_NAME__ SnakeChunk
-#import "LQSGenericArray.m"
+#import "LQSGenericArray.m.h"
 #undef __LQS_GENERIC_NAME__
