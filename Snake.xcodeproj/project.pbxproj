@@ -91,6 +91,9 @@
 		CF7BDF1C18702F0E00AEA656 /* LQSTouchInputState.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */; };
 		CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */; };
 		CF7BDF231871028000AEA656 /* LQSBroadcastUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */; };
+		CF7BDF261871159B00AEA656 /* LQSSnakeScript.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF251871159B00AEA656 /* LQSSnakeScript.m */; };
+		CF7BDF2C1871216D00AEA656 /* libtouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF38298C186E1DF300E2C94F /* libtouch.a */; };
+		CF7BDF30187121F500AEA656 /* LQSTimeContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF2F187121F500AEA656 /* LQSTimeContainer.m */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
 		CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */; };
@@ -479,6 +482,12 @@
 		CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSUpdatableArray.m; sourceTree = "<group>"; };
 		CF7BDF211871028000AEA656 /* LQSBroadcastUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSBroadcastUpdater.h; sourceTree = "<group>"; };
 		CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSBroadcastUpdater.m; sourceTree = "<group>"; };
+		CF7BDF241871159B00AEA656 /* LQSSnakeScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSSnakeScript.h; sourceTree = "<group>"; };
+		CF7BDF251871159B00AEA656 /* LQSSnakeScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSnakeScript.m; sourceTree = "<group>"; };
+		CF7BDF2718711A6C00AEA656 /* ILQSTimeKeeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTimeKeeper.h; sourceTree = "<group>"; };
+		CF7BDF2D187121BC00AEA656 /* ILQSTimeContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTimeContainer.h; sourceTree = "<group>"; };
+		CF7BDF2E187121F500AEA656 /* LQSTimeContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTimeContainer.h; sourceTree = "<group>"; };
+		CF7BDF2F187121F500AEA656 /* LQSTimeContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTimeContainer.m; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -786,6 +795,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7BDF2C1871216D00AEA656 /* libtouch.a in Frameworks */,
 				CF741BB417FE0C6200E24193 /* libsnakeSpecific.a in Frameworks */,
 				CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */,
 				CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */,
@@ -1202,6 +1212,12 @@
 				CF7BDF1F187101F600AEA656 /* LQSUpdatableArray.m */,
 				CF7BDF211871028000AEA656 /* LQSBroadcastUpdater.h */,
 				CF7BDF221871028000AEA656 /* LQSBroadcastUpdater.m */,
+				CF7BDF241871159B00AEA656 /* LQSSnakeScript.h */,
+				CF7BDF251871159B00AEA656 /* LQSSnakeScript.m */,
+				CF7BDF2718711A6C00AEA656 /* ILQSTimeKeeper.h */,
+				CF7BDF2D187121BC00AEA656 /* ILQSTimeContainer.h */,
+				CF7BDF2E187121F500AEA656 /* LQSTimeContainer.h */,
+				CF7BDF2F187121F500AEA656 /* LQSTimeContainer.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -2163,6 +2179,8 @@
 			files = (
 				CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */,
 				CF7BDF231871028000AEA656 /* LQSBroadcastUpdater.m in Sources */,
+				CF7BDF261871159B00AEA656 /* LQSSnakeScript.m in Sources */,
+				CF7BDF30187121F500AEA656 /* LQSTimeContainer.m in Sources */,
 				CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */,
 				CFCA11BB185FF69A00D38C84 /* LQSSnakeChunkArray.m in Sources */,
 				CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */,
