@@ -88,6 +88,7 @@
 		CF7BC57C17EA55AF00637955 /* libtexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B9817EA519F00C22D38 /* libtexture.a */; };
 		CF7BC57D17EA55AF00637955 /* libtransformations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B4817EA519100C22D38 /* libtransformations.a */; };
 		CF7BC57E17EA55AF00637955 /* libutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521C1017EA51B600C22D38 /* libutils.a */; };
+		CF7BDF1C18702F0E00AEA656 /* LQSTouchInputState.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */; };
 		CF7C30D717B9403F00366C11 /* LQSGLFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */; };
 		CF7C487D17DEA34000FCE549 /* LQSDrawableParent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C487C17DEA34000FCE549 /* LQSDrawableParent.m */; };
 		CF7C488217DEA4A100FCE549 /* LQSDrawableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */; };
@@ -469,6 +470,8 @@
 		CF741BC117FE121500E24193 /* LQSGenericArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LQSGenericArray.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CF741BC217FE121500E24193 /* LQSGenericArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LQSGenericArray.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessor.h; sourceTree = "<group>"; };
+		CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchInputState.h; sourceTree = "<group>"; };
+		CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchInputState.m; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -822,6 +825,8 @@
 				CF382993186E1DF300E2C94F /* touch.m */,
 				CF38298F186E1DF300E2C94F /* Supporting Files */,
 				CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */,
+				CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */,
+				CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */,
 			);
 			path = touch;
 			sourceTree = "<group>";
@@ -1997,6 +2002,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF382994186E1DF300E2C94F /* touch.m in Sources */,
+				CF7BDF1C18702F0E00AEA656 /* LQSTouchInputState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
