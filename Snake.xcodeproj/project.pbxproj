@@ -472,6 +472,7 @@
 		CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessor.h; sourceTree = "<group>"; };
 		CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchInputState.h; sourceTree = "<group>"; };
 		CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchInputState.m; sourceTree = "<group>"; };
+		CF7BDF1D1870F1CE00AEA656 /* ILQSUpdatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSUpdatable.h; sourceTree = "<group>"; };
 		CF7C30D517B9403F00366C11 /* LQSGLFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLFileUtils.h; sourceTree = "<group>"; };
 		CF7C30D617B9403F00366C11 /* LQSGLFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSGLFileUtils.m; sourceTree = "<group>"; };
 		CF7C487B17DEA34000FCE549 /* LQSDrawableParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableParent.h; sourceTree = "<group>"; };
@@ -1190,6 +1191,7 @@
 				CFCA11BA185FF69A00D38C84 /* LQSSnakeChunkArray.m */,
 				CFCA11BC185FF80D00D38C84 /* LQSSnakeChunk.h */,
 				CFCA11BD185FF80D00D38C84 /* LQSSnakeChunk.m */,
+				CF7BDF1D1870F1CE00AEA656 /* ILQSUpdatable.h */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
