@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #define INVOKE(macro, ...) macro(__VA_ARGS__)
 #define CollectionInterface(name) ILQS##name##Collection
 #define NameInterface(name) ILQS##name

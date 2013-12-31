@@ -497,6 +497,12 @@
 		CF7C487F17DEA47B00FCE549 /* ILQSDrawableCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableCollection.h; sourceTree = "<group>"; };
 		CF7C488017DEA4A100FCE549 /* LQSDrawableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableArray.h; sourceTree = "<group>"; };
 		CF7C488117DEA4A100FCE549 /* LQSDrawableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableArray.m; sourceTree = "<group>"; };
+		CF82182B1872943100B5F1D2 /* ILQSUpdatableArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSUpdatableArray.h; sourceTree = "<group>"; };
+		CF82182C1872948A00B5F1D2 /* ILQSUpdatableCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSUpdatableCollection.h; sourceTree = "<group>"; };
+		CF82182D1872A2A000B5F1D2 /* ILQSSnakeChunkArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSSnakeChunkArray.h; sourceTree = "<group>"; };
+		CF82182E1872A2B400B5F1D2 /* ILQSSnakeChunkCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSSnakeChunkCollection.h; sourceTree = "<group>"; };
+		CF82182F1872A41300B5F1D2 /* ILQSTouchProcessorArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessorArray.h; sourceTree = "<group>"; };
+		CF8218301872A48000B5F1D2 /* ILQSTouchProcessorCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessorCollection.h; sourceTree = "<group>"; };
 		CF8459F917FCC6640013603A /* libsnakeSpecific.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsnakeSpecific.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8459FD17FCC6640013603A /* snakeSpecific-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "snakeSpecific-Prefix.pch"; sourceTree = "<group>"; };
 		CF8459FE17FCC6640013603A /* snakeSpecific.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snakeSpecific.h; sourceTree = "<group>"; };
@@ -850,6 +856,8 @@
 				CFECCFE718716F75003AA473 /* LQSTouchProcessorArray.m */,
 				CFECCFE918716FE0003AA473 /* LQSTouchBroadcast.h */,
 				CFECCFEA18716FE0003AA473 /* LQSTouchBroadcast.m */,
+				CF82182F1872A41300B5F1D2 /* ILQSTouchProcessorArray.h */,
+				CF8218301872A48000B5F1D2 /* ILQSTouchProcessorCollection.h */,
 			);
 			path = touch;
 			sourceTree = "<group>";
@@ -1221,6 +1229,10 @@
 				CF7BDF2D187121BC00AEA656 /* ILQSTimeContainer.h */,
 				CF7BDF2E187121F500AEA656 /* LQSTimeContainer.h */,
 				CF7BDF2F187121F500AEA656 /* LQSTimeContainer.m */,
+				CF82182B1872943100B5F1D2 /* ILQSUpdatableArray.h */,
+				CF82182C1872948A00B5F1D2 /* ILQSUpdatableCollection.h */,
+				CF82182D1872A2A000B5F1D2 /* ILQSSnakeChunkArray.h */,
+				CF82182E1872A2B400B5F1D2 /* ILQSSnakeChunkCollection.h */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";

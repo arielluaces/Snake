@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
+#import "LQSUpdatableArray.h"
+
 #define __LQS_GENERIC_NAME__ Updatable
-#import "LQSGenericArray.m.h"
+#include "LQSGenericArray.m.h"
 #undef __LQS_GENERIC_NAME__

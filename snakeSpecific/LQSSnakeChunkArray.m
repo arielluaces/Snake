@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
+#import "LQSSnakeChunkArray.h"
+
 #define __LQS_GENERIC_NAME__ SnakeChunk
-#import "LQSGenericArray.m.h"
+#include "LQSGenericArray.m.h"
 #undef __LQS_GENERIC_NAME__

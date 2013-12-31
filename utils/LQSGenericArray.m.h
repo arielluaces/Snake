@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Liquid Sparks. All rights reserved.
 //
 
-#import "LQSGenericArray.h"
-
 #define INVOKE(macro, ...) macro(__VA_ARGS__)
 #define ClassName(name) LQS##name##Array
 #define CollectionInterface(name) ILQS##name##Collection
