@@ -41,6 +41,7 @@
 #import "LQSTouchInputState.h"
 #import "LQSTouchBroadcast.h"
 #import "LQSTouchProcessorArray.h"
+#import "LQSMatrixGridProgram.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -56,13 +57,8 @@
     NSObject<ILQSTransformationResolver> *_transformationResolver;
     
     NSObject<ILQSAdjacentSpace> *_gridSpace;
-    NSObject<ILQSGLProgram> *_program;
+    NSObject<ILQSMatrixGridProgram> *_matrixGridProgram;
     EAGLContext *_context;
-    GLuint _aPosition;
-    GLuint _aTexCoord;
-    GLint _uMVPMatrix;
-    GLint _uColor;
-    GLint _uExponent;
     
     float _exponent;
     
@@ -300,34 +296,9 @@
                     gridSpaceParent.parent = rootSpace;
                     gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
                     gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
-                    {
-                        // Create program
-                        {
-                            const GLchar *vertexShaderSourceC = [LQSGLFileUtils loadVertexShaderSource:@"MatrixGrid"];
-                            const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
-                            NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:context];
-                            NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:context];
-                            LQSProgram *program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
-                            {
-                                int aPosition = glGetAttribLocation(program.name, "aPosition");
-                                NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
-                                int aTexCoord = glGetAttribLocation(program.name, "aTexCoord");
-                                NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
-                                int uMVPMatrix = glGetUniformLocation(program.name, "uMVPMatrix");
-                                NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
-                                int uColor = glGetUniformLocation(program.name, "uColor");
-                                NSAssert(uColor >= 0, @"%@ unifrom not found", @"uColor");
-                                int uExponent = glGetUniformLocation(program.name, "uExponent");
-                                NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
-                                _aPosition = (GLuint)aPosition;
-                                _aTexCoord = (GLuint)aTexCoord;
-                                _uMVPMatrix = (GLint)uMVPMatrix;
-                                _uColor = (GLint)uColor;
-                                _uExponent = (GLint)uExponent;
-                            }
-                            _program = program;
-                        }
-                    }
+                    // Create program
+                    LQSMatrixGridProgram *matrixGridProgram = [[LQSMatrixGridProgram alloc] initWithContext:context];
+                    _matrixGridProgram = matrixGridProgram;
                 }
             }
             _context = context;
@@ -416,32 +387,32 @@
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     {
-//        glUseProgram(_program.name);
-//        glEnableVertexAttribArray(_aPosition);
-//        glEnableVertexAttribArray(_aTexCoord);
-//        float positions[] = {
-//            0.0f, 0.0f,
-//            0.0f, 1.0f,
-//            1.0f, 0.0f,
-//            1.0f, 1.0f,
-//        };
-//        float texCoords[] = {
-//            0.0f, 0.0f,
-//            0.0f, 32.0f,
-//            32.0f, 0.0f,
-//            32.0f, 32.0f,
-//        };
-//        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
-//        glUniformMatrix4fv(_uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-//        glUniform4f(_uColor, 0.0f, 0.8f, 0.0f, 1.0f);
-//        glUniform1f(_uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
-//        glVertexAttribPointer(_aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
-//        glVertexAttribPointer(_aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
-//        glEnable(GL_BLEND);
-//        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//        glDisable(GL_BLEND);
-//        glUseProgram(0);
+        glUseProgram(_matrixGridProgram.name);
+        glEnableVertexAttribArray(_matrixGridProgram.aPosition);
+        glEnableVertexAttribArray(_matrixGridProgram.aTexCoord);
+        float positions[] = {
+            0.0f, 0.0f,
+            0.0f, 1.0f,
+            1.0f, 0.0f,
+            1.0f, 1.0f,
+        };
+        float texCoords[] = {
+            0.0f, 0.0f,
+            0.0f, 32.0f,
+            32.0f, 0.0f,
+            32.0f, 32.0f,
+        };
+        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
+        glUniformMatrix4fv(_matrixGridProgram.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
+        glUniform4f(_matrixGridProgram.uColor, 0.0f, 0.8f, 0.0f, 1.0f);
+        glUniform1f(_matrixGridProgram.uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
+        glVertexAttribPointer(_matrixGridProgram.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
+        glVertexAttribPointer(_matrixGridProgram.aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+        glDisable(GL_BLEND);
+        glUseProgram(0);
     }
     {
         [_mainDrawable draw];
