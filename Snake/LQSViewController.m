@@ -156,9 +156,11 @@
                     _squareGridSpace = squareGridSpace;
                     squareGridSpace.parent = rootSpace;
                     squareGridSpace.transformToParent = scaleTransformation;
+                    LQSSnakeChunk *snakeChunk1 = [[LQSSnakeChunk alloc] init];
+                    LQSSnakeChunk *snakeChunk2 = [[LQSSnakeChunk alloc] init];
+                    LQSSnakeChunk *snakeChunk3 = [[LQSSnakeChunk alloc] init];
                     {
                         // Set up purple square 1
-                        LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                         // Allocate components
                         LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                         LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -187,16 +189,15 @@
                             [drawableParent.drawableArray addDrawableObject:drawableSquare];
                         }
                         // Save component access
-                        snakeChunk.space = childSpace;
-                        snakeChunk.subSpace = childSubSpace;
-                        snakeChunk.rotationTransformation = rotationTransformation;
-                        snakeChunk.translationTransformation = translationTransformation;
-                        snakeChunk.drawData = drawableSquareData;
-                        _square1 = snakeChunk;
+                        snakeChunk1.space = childSpace;
+                        snakeChunk1.subSpace = childSubSpace;
+                        snakeChunk1.rotationTransformation = rotationTransformation;
+                        snakeChunk1.translationTransformation = translationTransformation;
+                        snakeChunk1.drawData = drawableSquareData;
+                        _square1 = snakeChunk1;
                     }
                     {
                         // Set up purple square 2
-                        LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                         // Allocate components
                         LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                         LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -225,16 +226,15 @@
                             [drawableParent.drawableArray addDrawableObject:drawableSquare];
                         }
                         // Save component access
-                        snakeChunk.space = childSpace;
-                        snakeChunk.subSpace = childSubSpace;
-                        snakeChunk.rotationTransformation = rotationTransformation;
-                        snakeChunk.translationTransformation = translationTransformation;
-                        snakeChunk.drawData = drawableSquareData;
-                        _square2 = snakeChunk;
+                        snakeChunk2.space = childSpace;
+                        snakeChunk2.subSpace = childSubSpace;
+                        snakeChunk2.rotationTransformation = rotationTransformation;
+                        snakeChunk2.translationTransformation = translationTransformation;
+                        snakeChunk2.drawData = drawableSquareData;
+                        _square2 = snakeChunk2;
                     }
                     {
                         // Set up purple square 3
-                        LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                         // Allocate components
                         LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                         LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
@@ -263,28 +263,28 @@
                             [drawableParent.drawableArray addDrawableObject:drawableSquare];
                         }
                         // Save component access
-                        snakeChunk.space = childSpace;
-                        snakeChunk.subSpace = childSubSpace;
-                        snakeChunk.rotationTransformation = rotationTransformation;
-                        snakeChunk.translationTransformation = translationTransformation;
-                        snakeChunk.drawData = drawableSquareData;
-                        _square3 = snakeChunk;
+                        snakeChunk3.space = childSpace;
+                        snakeChunk3.subSpace = childSubSpace;
+                        snakeChunk3.rotationTransformation = rotationTransformation;
+                        snakeChunk3.translationTransformation = translationTransformation;
+                        snakeChunk3.drawData = drawableSquareData;
+                        _square3 = snakeChunk3;
                     }
                     {
                         // Set up space 1 direction
                         LQSChildSpace *square1VelocitySpace = [[LQSChildSpace alloc] init];
                         LQSTranslationTransformation *square1VelocityTransformation = [LQSTransformationFactory translationTransformationWithX:-1 y:0 z:0];
                         square1VelocitySpace.transformToParent = square1VelocityTransformation;
-                        square1VelocitySpace.parent = _square1.subSpace;
+                        square1VelocitySpace.parent = snakeChunk1.subSpace;
                         _square1VelocitySpace = square1VelocitySpace;
                         _square1VelocityTransformation = square1VelocityTransformation;
                         {
                             LQSSnakeScript *snakeScript = [[LQSSnakeScript alloc] init];
                             snakeScript.timeKeeper = timeContainer;
                             snakeScript.transformationResolver = transformationResolver;
-                            snakeScript.snakeChunk1 = _square1;
-                            snakeScript.snakeChunk2 = _square2;
-                            snakeScript.snakeChunk3 = _square3;
+                            snakeScript.snakeChunk1 = snakeChunk1;
+                            snakeScript.snakeChunk2 = snakeChunk2;
+                            snakeScript.snakeChunk3 = snakeChunk3;
                             snakeScript.parent = squareGridSpace;
                             snakeScript.directionSpace = square1VelocitySpace;
                             snakeScript.directionTransformation = square1VelocityTransformation;
@@ -308,23 +308,26 @@
                             const GLchar *fragmentShaderSourceC = [LQSGLFileUtils loadFragmentShaderSource:@"MatrixGrid"];
                             NSObject<ILQSGLShader> *vertexShader = [[LQSVertexShader alloc] initWithSource:vertexShaderSourceC context:context];
                             NSObject<ILQSGLShader> *fragmentShader = [[LQSFragmentShader alloc] initWithSource:fragmentShaderSourceC context:context];
-                            _program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
+                            LQSProgram *program = [[LQSProgram alloc] initWithVertexShader:vertexShader fragmentShader:fragmentShader context:context];
+                            {
+                                int aPosition = glGetAttribLocation(program.name, "aPosition");
+                                NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
+                                int aTexCoord = glGetAttribLocation(program.name, "aTexCoord");
+                                NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
+                                int uMVPMatrix = glGetUniformLocation(program.name, "uMVPMatrix");
+                                NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
+                                int uColor = glGetUniformLocation(program.name, "uColor");
+                                NSAssert(uColor >= 0, @"%@ unifrom not found", @"uColor");
+                                int uExponent = glGetUniformLocation(program.name, "uExponent");
+                                NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
+                                _aPosition = (GLuint)aPosition;
+                                _aTexCoord = (GLuint)aTexCoord;
+                                _uMVPMatrix = (GLint)uMVPMatrix;
+                                _uColor = (GLint)uColor;
+                                _uExponent = (GLint)uExponent;
+                            }
+                            _program = program;
                         }
-                        int aPosition = glGetAttribLocation(_program.name, "aPosition");
-                        NSAssert(aPosition >= 0, @"%@ attribute not found", @"aPosition");
-                        int aTexCoord = glGetAttribLocation(_program.name, "aTexCoord");
-                        NSAssert(aTexCoord >= 0, @"%@ attribute not found", @"aTexCoord");
-                        int uMVPMatrix = glGetUniformLocation(_program.name, "uMVPMatrix");
-                        NSAssert(uMVPMatrix >= 0, @"%@ unifrom not found", @"uMVPMatrix");
-                        int uColor = glGetUniformLocation(_program.name, "uColor");
-                        NSAssert(uColor >= 0, @"%@ unifrom not found", @"uColor");
-                        int uExponent = glGetUniformLocation(_program.name, "uExponent");
-                        NSAssert(uExponent >= 0, @"%@ uniform not found", @"uExponent");
-                        _aPosition = (GLuint)aPosition;
-                        _aTexCoord = (GLuint)aTexCoord;
-                        _uMVPMatrix = (GLint)uMVPMatrix;
-                        _uColor = (GLint)uColor;
-                        _uExponent = (GLint)uExponent;
                     }
                 }
             }
