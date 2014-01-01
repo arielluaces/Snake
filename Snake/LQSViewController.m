@@ -48,6 +48,7 @@
     NSObject<ILQSUpdatable> *_mainUpdatable;
     NSObject<ILQSTimeContainer> *_mainTimeContainer;
     NSObject<ILQSTouchProcessor> *_mainTouchProcessor;
+    NSObject<ILQSDrawable> *_mainDrawable;
     
     LQSScaleTransformation *_viewScaleTransformation;
     NSObject<ILQSAdjacentSpace> *_viewSpace;
@@ -64,8 +65,6 @@
     GLint _uExponent;
     
     float _exponent;
-    
-    NSObject<ILQSDrawable> *_drawable;
     
     NSObject<ILQSSnakeChunk> *_square1;
     NSObject<ILQSSnakeChunk> *_square2;
@@ -332,7 +331,7 @@
                 }
             }
             _context = context;
-            _drawable = drawableParent;
+            _mainDrawable = drawableParent;
             _viewSpace = viewSpace;
             _cameraSpace = cameraSpace;
             _gridSpace = gridSpace;
@@ -445,7 +444,7 @@
 //        glUseProgram(0);
     }
     {
-        [_drawable draw];
+        [_mainDrawable draw];
     }
 }
 
