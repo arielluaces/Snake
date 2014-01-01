@@ -85,6 +85,7 @@
 		CF771F331873A1670024192D /* LQSMatrixGridProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CF771F321873A1670024192D /* LQSMatrixGridProgram.m */; };
 		CF771F371873A6C70024192D /* LQSDrawableMatrixGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = CF771F361873A6C70024192D /* LQSDrawableMatrixGrid.m */; };
 		CF771F3B1873A6EA0024192D /* LQSDrawableMatrixGridData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF771F3A1873A6EA0024192D /* LQSDrawableMatrixGridData.m */; };
+		CF771F3E1873AD220024192D /* LQSMatrixGridScript.m in Sources */ = {isa = PBXBuildFile; fileRef = CF771F3D1873AD220024192D /* LQSMatrixGridScript.m */; };
 		CF7BC57917EA55AF00637955 /* libdraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BC017EA51A900C22D38 /* libdraw.a */; };
 		CF7BC57A17EA55AF00637955 /* libshading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521BE817EA51B200C22D38 /* libshading.a */; };
 		CF7BC57B17EA55AF00637955 /* libspace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF521B7017EA519800C22D38 /* libspace.a */; };
@@ -486,6 +487,8 @@
 		CF771F381873A6DA0024192D /* ILQSDrawableMatrixGridData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSDrawableMatrixGridData.h; sourceTree = "<group>"; };
 		CF771F391873A6EA0024192D /* LQSDrawableMatrixGridData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSDrawableMatrixGridData.h; sourceTree = "<group>"; };
 		CF771F3A1873A6EA0024192D /* LQSDrawableMatrixGridData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSDrawableMatrixGridData.m; sourceTree = "<group>"; };
+		CF771F3C1873AD220024192D /* LQSMatrixGridScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSMatrixGridScript.h; sourceTree = "<group>"; };
+		CF771F3D1873AD220024192D /* LQSMatrixGridScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSMatrixGridScript.m; sourceTree = "<group>"; };
 		CF7BDF19187019C900AEA656 /* ILQSTouchProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTouchProcessor.h; sourceTree = "<group>"; };
 		CF7BDF1A18702F0E00AEA656 /* LQSTouchInputState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSTouchInputState.h; sourceTree = "<group>"; };
 		CF7BDF1B18702F0E00AEA656 /* LQSTouchInputState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSTouchInputState.m; sourceTree = "<group>"; };
@@ -1252,6 +1255,8 @@
 				CF771F381873A6DA0024192D /* ILQSDrawableMatrixGridData.h */,
 				CF771F391873A6EA0024192D /* LQSDrawableMatrixGridData.h */,
 				CF771F3A1873A6EA0024192D /* LQSDrawableMatrixGridData.m */,
+				CF771F3C1873AD220024192D /* LQSMatrixGridScript.h */,
+				CF771F3D1873AD220024192D /* LQSMatrixGridScript.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -2220,6 +2225,7 @@
 				CF771F371873A6C70024192D /* LQSDrawableMatrixGrid.m in Sources */,
 				CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */,
 				CFCA11BB185FF69A00D38C84 /* LQSSnakeChunkArray.m in Sources */,
+				CF771F3E1873AD220024192D /* LQSMatrixGridScript.m in Sources */,
 				CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */,
 				CF771F3B1873A6EA0024192D /* LQSDrawableMatrixGridData.m in Sources */,
 			);

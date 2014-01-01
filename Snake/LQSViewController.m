@@ -44,6 +44,7 @@
 #import "LQSMatrixGridProgram.h"
 #import "LQSDrawableMatrixGrid.h"
 #import "LQSDrawableMatrixGridData.h"
+#import "LQSMatrixGridScript.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -133,7 +134,10 @@
                     matrixGridData.transformationResolver = transformationResolver;
                     LQSDrawableMatrixGrid *matrixGrid = [[LQSDrawableMatrixGrid alloc] init];
                     matrixGrid.matrixGridData = matrixGridData;
+                    LQSMatrixGridScript *matrixGridScript = [[LQSMatrixGridScript alloc] init];
+                    matrixGridScript.matrixGridData = matrixGridData;
                     [drawableParent.drawableArray addDrawableObject:matrixGrid];
+                    [broadcastUpdater.updatableArray addObject:matrixGridScript];
                     _matrixGridData = matrixGridData;
                 }
                 {
@@ -335,7 +339,6 @@
 
 - (void)update
 {
-    _matrixGridData.exponent = _matrixGridData.exponent + 1.0f;
     _mainTimeContainer.timeSinceFirstResume = self.timeSinceFirstResume;
     _mainTimeContainer.timeSinceLastUpdate = self.timeSinceLastUpdate;
     [_mainUpdatable update];
