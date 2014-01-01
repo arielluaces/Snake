@@ -13,6 +13,7 @@
 @protocol ILQSTransformationResolver;
 @protocol ILQSSnakeChunk;
 @protocol ILQSAdjacentSpace;
+@class LQSTranslationTransformation;
 
 @interface LQSSnakeScript : NSObject<ILQSUpdatable,ILQSTouchProcessor>
 
@@ -23,6 +24,7 @@
 @property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk3;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *parent;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *directionSpace;
+@property (nonatomic) LQSTranslationTransformation *directionTransformation;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *viewSpace;
 
 @end

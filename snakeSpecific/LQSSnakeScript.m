@@ -24,6 +24,39 @@
     {
         if (floor(_timeKeeper.timeSinceFirstResume)!=floor(_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate))
         {
+            if (rand()%4==0)
+            {
+                int change = rand()%2;
+                switch (change)
+                {
+                    case 0:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(6.283185307f/4, 0, 0, 1), oldVelocity);
+                        _directionTransformation.x = newVelocity.x;
+                        _directionTransformation.y = newVelocity.y;
+                        break;
+                    }
+                    case 1:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(-6.283185307f/4, 0, 0, 1), oldVelocity);
+                        _directionTransformation.x = newVelocity.x;
+                        _directionTransformation.y = newVelocity.y;
+                        break;
+                    }
+                    case 2:
+                    {
+                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
+                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(0, 0, 0, 1), oldVelocity);
+                        _directionTransformation.x = newVelocity.x;
+                        _directionTransformation.y = newVelocity.y;
+                        break;
+                    }
+                    default:
+                        break;
+                };
+            }
             {
                 GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_snakeChunk2.subSpace toSpace:_parent];
                 GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
@@ -84,6 +117,14 @@
         {
             _snakeChunk1.drawData.colorB = 0.95f;
         }
+    }
+    else if (touch.phase == UITouchPhaseEnded)
+    {
+        _snakeChunk1.drawData.colorB = 0.95f;
+    }
+    else if (touch.phase == UITouchPhaseCancelled)
+    {
+        _snakeChunk1.drawData.colorB = 0.95f;
     }
 }
 

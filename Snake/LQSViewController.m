@@ -287,6 +287,7 @@
                             snakeScript.snakeChunk3 = _square3;
                             snakeScript.parent = squareGridSpace;
                             snakeScript.directionSpace = square1VelocitySpace;
+                            snakeScript.directionTransformation = square1VelocityTransformation;
                             snakeScript.viewSpace = viewSpace;
                             [touchBroadcast.touchProcessorArray addObject:snakeScript];
                             [broadcastUpdater.updatableArray addObject:snakeScript];
@@ -350,45 +351,6 @@
 - (void)update
 {
     _exponent = _exponent+1.0f;
-    if (self.timeSinceFirstResume>5)
-    {
-        if (floor(self.timeSinceFirstResume)!=floor(self.timeSinceFirstResume-self.timeSinceLastUpdate))
-        {
-            if (rand()%4==0)
-            {
-                int change = rand()%2;
-                switch (change)
-                {
-                    case 0:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _square1VelocityTransformation.x = newVelocity.x;
-                        _square1VelocityTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    case 1:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(-6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _square1VelocityTransformation.x = newVelocity.x;
-                        _square1VelocityTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    case 2:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_square1VelocityTransformation.x, _square1VelocityTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(0, 0, 0, 1), oldVelocity);
-                        _square1VelocityTransformation.x = newVelocity.x;
-                        _square1VelocityTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    default:
-                        break;
-                };
-            }
-        }
-    }
     _mainTimeContainer.timeSinceFirstResume = self.timeSinceFirstResume;
     _mainTimeContainer.timeSinceLastUpdate = self.timeSinceLastUpdate;
     [_mainUpdatable update];
@@ -435,7 +397,6 @@
             [_mainTouchProcessor processTouch:touch];
         }
     }
-//    _square1Data.colorB = 0.95f;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -447,7 +408,6 @@
             [_mainTouchProcessor processTouch:touch];
         }
     }
-//    _square1Data.colorB = 0.95f;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
