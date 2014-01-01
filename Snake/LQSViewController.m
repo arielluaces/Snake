@@ -42,6 +42,8 @@
 #import "LQSTouchBroadcast.h"
 #import "LQSTouchProcessorArray.h"
 #import "LQSMatrixGridProgram.h"
+#import "LQSDrawableMatrixGrid.h"
+#import "LQSDrawableMatrixGridData.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -61,6 +63,7 @@
     EAGLContext *_context;
     
     float _exponent;
+    LQSDrawableMatrixGridData *_matrixGridData;
     
     NSObject<ILQSSnakeChunk> *_square1;
     NSObject<ILQSSnakeChunk> *_square2;
@@ -113,6 +116,26 @@
                 LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
                 cameraSpace.parent = rootSpace;
                 cameraSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:0 y:0 z:0];
+                {
+                    // Set up grid shader program
+                    LQSChildSpace *gridSpaceParent = [[LQSChildSpace alloc] init];
+                    gridSpace.parent = gridSpaceParent;
+                    gridSpaceParent.parent = rootSpace;
+                    gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
+                    gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
+                    // Create program
+                    LQSMatrixGridProgram *matrixGridProgram = [[LQSMatrixGridProgram alloc] initWithContext:context];
+                    _matrixGridProgram = matrixGridProgram;
+                    LQSDrawableMatrixGridData *matrixGridData = [[LQSDrawableMatrixGridData alloc] init];
+                    matrixGridData.matrixGridProgram = matrixGridProgram;
+                    matrixGridData.gridSpace = gridSpace;
+                    matrixGridData.cameraSpace = cameraSpace;
+                    matrixGridData.transformationResolver = transformationResolver;
+                    LQSDrawableMatrixGrid *matrixGrid = [[LQSDrawableMatrixGrid alloc] init];
+                    matrixGrid.matrixGridData = matrixGridData;
+                    [drawableParent.drawableArray addDrawableObject:matrixGrid];
+                    _matrixGridData = matrixGridData;
+                }
                 {
                     // Set up textured square
                     LQSChildSpace *textureSpace = [[LQSChildSpace alloc] init];
@@ -289,17 +312,6 @@
                         }
                     }
                 }
-                {
-                    // Set up grid shader program
-                    LQSChildSpace *gridSpaceParent = [[LQSChildSpace alloc] init];
-                    gridSpace.parent = gridSpaceParent;
-                    gridSpaceParent.parent = rootSpace;
-                    gridSpace.transformToParent = [LQSTransformationFactory translationTransformationWithX:-0.5 y:-0.5 z:0];
-                    gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
-                    // Create program
-                    LQSMatrixGridProgram *matrixGridProgram = [[LQSMatrixGridProgram alloc] initWithContext:context];
-                    _matrixGridProgram = matrixGridProgram;
-                }
             }
             _context = context;
             _mainDrawable = drawableParent;
@@ -323,7 +335,7 @@
 
 - (void)update
 {
-    _exponent = _exponent+1.0f;
+    _matrixGridData.exponent = _matrixGridData.exponent + 1.0f;
     _mainTimeContainer.timeSinceFirstResume = self.timeSinceFirstResume;
     _mainTimeContainer.timeSinceLastUpdate = self.timeSinceLastUpdate;
     [_mainUpdatable update];
@@ -386,37 +398,7 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    {
-        glUseProgram(_matrixGridProgram.name);
-        glEnableVertexAttribArray(_matrixGridProgram.aPosition);
-        glEnableVertexAttribArray(_matrixGridProgram.aTexCoord);
-        float positions[] = {
-            0.0f, 0.0f,
-            0.0f, 1.0f,
-            1.0f, 0.0f,
-            1.0f, 1.0f,
-        };
-        float texCoords[] = {
-            0.0f, 0.0f,
-            0.0f, 32.0f,
-            32.0f, 0.0f,
-            32.0f, 32.0f,
-        };
-        GLKMatrix4 MVPMatrix = [_transformationResolver transformationMatrixFromSpace:_gridSpace toSpace:_cameraSpace];
-        glUniformMatrix4fv(_matrixGridProgram.uMVPMatrix, 1, GL_FALSE, MVPMatrix.m);
-        glUniform4f(_matrixGridProgram.uColor, 0.0f, 0.8f, 0.0f, 1.0f);
-        glUniform1f(_matrixGridProgram.uExponent, 1.0f/((sinf(_exponent)+1.0f)*2.0f*0.3f+20.0f));
-        glVertexAttribPointer(_matrixGridProgram.aPosition, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, positions);
-        glVertexAttribPointer(_matrixGridProgram.aTexCoord, 2, GL_FLOAT, GL_FALSE, sizeof(float)*2, texCoords);
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        glDisable(GL_BLEND);
-        glUseProgram(0);
-    }
-    {
-        [_mainDrawable draw];
-    }
+    [_mainDrawable draw];
 }
 
 @end
