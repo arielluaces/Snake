@@ -11,6 +11,8 @@
 @protocol ILQSTimeKeeper <NSObject>
 
 - (double)timeSinceFirstResume;
+- (double)timeSinceLastResume;
 - (double)timeSinceLastUpdate;
+- (double)timeSinceLastDraw;
 
 @end

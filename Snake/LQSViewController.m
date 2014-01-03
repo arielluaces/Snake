@@ -340,7 +340,9 @@
 - (void)update
 {
     _mainTimeContainer.timeSinceFirstResume = self.timeSinceFirstResume;
+    _mainTimeContainer.timeSinceLastResume = self.timeSinceLastResume;
     _mainTimeContainer.timeSinceLastUpdate = self.timeSinceLastUpdate;
+    _mainTimeContainer.timeSinceLastDraw = self.timeSinceLastDraw;
     [_mainUpdatable update];
 }
 

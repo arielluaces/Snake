@@ -12,6 +12,8 @@
 @interface LQSTimeContainer : NSObject<ILQSTimeKeeper,ILQSTimeContainer>
 
 @property (nonatomic) double timeSinceFirstResume;
+@property (nonatomic) double timeSinceLastResume;
 @property (nonatomic) double timeSinceLastUpdate;
+@property (nonatomic) double timeSinceLastDraw;
 
 @end

@@ -11,6 +11,8 @@
 @protocol ILQSTimeContainer <NSObject>
 
 - (void)setTimeSinceFirstResume:(double)timeSinceFirstResume;
+- (void)setTimeSinceLastResume:(double)timeSinceLastResume;
 - (void)setTimeSinceLastUpdate:(double)timeSinceLastUpdate;
+- (void)setTimeSinceLastDraw:(double)timeSinceLastDraw;
 
 @end
