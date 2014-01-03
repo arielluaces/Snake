@@ -53,26 +53,7 @@
     NSObject<ILQSTimeContainer> *_mainTimeContainer;
     NSObject<ILQSTouchProcessor> *_mainTouchProcessor;
     NSObject<ILQSDrawable> *_mainDrawable;
-    
     LQSScaleTransformation *_viewScaleTransformation;
-    NSObject<ILQSAdjacentSpace> *_viewSpace;
-    NSObject<ILQSAdjacentSpace> *_cameraSpace;
-    NSObject<ILQSTransformationResolver> *_transformationResolver;
-    
-    NSObject<ILQSAdjacentSpace> *_gridSpace;
-    NSObject<ILQSMatrixGridProgram> *_matrixGridProgram;
-    EAGLContext *_context;
-    
-    float _exponent;
-    LQSDrawableMatrixGridData *_matrixGridData;
-    
-    NSObject<ILQSSnakeChunk> *_square1;
-    NSObject<ILQSSnakeChunk> *_square2;
-    NSObject<ILQSSnakeChunk> *_square3;
-    
-    NSObject<ILQSAdjacentSpace> *_squareGridSpace;
-    NSObject<ILQSAdjacentSpace> *_square1VelocitySpace;
-    LQSTranslationTransformation *_square1VelocityTransformation;
 }
 
 - (void)viewDidLoad
@@ -88,16 +69,13 @@
     {
         LQSBroadcastUpdater *broadcastUpdater = [[LQSBroadcastUpdater alloc] init];
         broadcastUpdater.updatableArray = [[LQSUpdatableArray alloc] init];
-        _mainUpdatable = broadcastUpdater;
         LQSTimeContainer *timeContainer = [[LQSTimeContainer alloc] init];
-        _mainTimeContainer = timeContainer;
         LQSTouchBroadcast *touchBroadcast = [[LQSTouchBroadcast alloc] init];
         touchBroadcast.touchProcessorArray = [[LQSTouchProcessorArray alloc] init];
-        _mainTouchProcessor = touchBroadcast;
+        LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
         {
             // Create space information for the square being drawn
             LQSTransformationResolver *transformationResolver = [[LQSTransformationResolver alloc] init];
-            LQSDrawableParent *drawableParent = [[LQSDrawableParent alloc] init];
             LQSChildSpace *viewSpace = [[LQSChildSpace alloc] init];
             LQSChildSpace *cameraSpace = [[LQSChildSpace alloc] init];
             LQSChildSpace *gridSpace = [[LQSChildSpace alloc] init];
@@ -126,7 +104,6 @@
                     gridSpaceParent.transformToParent = [LQSTransformationFactory uniformScaleTransformationWithScale:2];
                     // Create program
                     LQSMatrixGridProgram *matrixGridProgram = [[LQSMatrixGridProgram alloc] initWithContext:context];
-                    _matrixGridProgram = matrixGridProgram;
                     LQSDrawableMatrixGridData *matrixGridData = [[LQSDrawableMatrixGridData alloc] init];
                     matrixGridData.matrixGridProgram = matrixGridProgram;
                     matrixGridData.gridSpace = gridSpace;
@@ -138,7 +115,6 @@
                     matrixGridScript.matrixGridData = matrixGridData;
                     [drawableParent.drawableArray addDrawableObject:matrixGrid];
                     [broadcastUpdater.updatableArray addObject:matrixGridScript];
-                    _matrixGridData = matrixGridData;
                 }
                 {
                     // Set up textured square
@@ -175,7 +151,6 @@
                     NSObject<ILQSTransformation> *scale2Transformation = [LQSTransformationFactory uniformScaleTransformationWithScale:0.9f];
                     NSObject<ILQSColoredVerticesProgram> *program = [[LQSColoredVerticesProgram alloc] initWithContext:context];
                     LQSChildSpace *squareGridSpace = [[LQSChildSpace alloc] init];
-                    _squareGridSpace = squareGridSpace;
                     squareGridSpace.parent = rootSpace;
                     squareGridSpace.transformToParent = scaleTransformation;
                     LQSSnakeChunk *snakeChunk1 = [[LQSSnakeChunk alloc] init];
@@ -216,7 +191,6 @@
                         snakeChunk1.rotationTransformation = rotationTransformation;
                         snakeChunk1.translationTransformation = translationTransformation;
                         snakeChunk1.drawData = drawableSquareData;
-                        _square1 = snakeChunk1;
                     }
                     {
                         // Set up purple square 2
@@ -253,7 +227,6 @@
                         snakeChunk2.rotationTransformation = rotationTransformation;
                         snakeChunk2.translationTransformation = translationTransformation;
                         snakeChunk2.drawData = drawableSquareData;
-                        _square2 = snakeChunk2;
                     }
                     {
                         // Set up purple square 3
@@ -290,7 +263,6 @@
                         snakeChunk3.rotationTransformation = rotationTransformation;
                         snakeChunk3.translationTransformation = translationTransformation;
                         snakeChunk3.drawData = drawableSquareData;
-                        _square3 = snakeChunk3;
                     }
                     {
                         // Set up space 1 direction
@@ -298,8 +270,6 @@
                         LQSTranslationTransformation *square1VelocityTransformation = [LQSTransformationFactory translationTransformationWithX:-1 y:0 z:0];
                         square1VelocitySpace.transformToParent = square1VelocityTransformation;
                         square1VelocitySpace.parent = snakeChunk1.subSpace;
-                        _square1VelocitySpace = square1VelocitySpace;
-                        _square1VelocityTransformation = square1VelocityTransformation;
                         {
                             LQSSnakeScript *snakeScript = [[LQSSnakeScript alloc] init];
                             snakeScript.timeKeeper = timeContainer;
@@ -317,13 +287,11 @@
                     }
                 }
             }
-            _context = context;
-            _mainDrawable = drawableParent;
-            _viewSpace = viewSpace;
-            _cameraSpace = cameraSpace;
-            _gridSpace = gridSpace;
-            _transformationResolver = transformationResolver;
         }
+        _mainUpdatable = broadcastUpdater;
+        _mainTimeContainer = timeContainer;
+        _mainTouchProcessor = touchBroadcast;
+        _mainDrawable = drawableParent;
     }
     [EAGLContext setCurrentContext:savedContext];
 }
