@@ -296,6 +296,28 @@
     [EAGLContext setCurrentContext:savedContext];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
+    _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
