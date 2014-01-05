@@ -158,6 +158,7 @@
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
 		CFADCB9B17F401A300585C14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569E17A5ADDA00148B4F /* OpenGLES.framework */; };
 		CFB7EB431878D6DF00F90456 /* LQSJoystickScript.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7EB421878D6DF00F90456 /* LQSJoystickScript.m */; };
+		CFB7EB46187A11A700F90456 /* LQSRotationTransformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7EB45187A11A700F90456 /* LQSRotationTransformationTests.m */; };
 		CFB7EB49187A187A00F90456 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569C17A5ADDA00148B4F /* GLKit.framework */; };
 		CFB8584317F3B90C00159915 /* LQSMultiShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */; };
 		CFC915E717E7DAC9005E6379 /* LQSTransformationResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC915E617E7DAC8005E6379 /* LQSTransformationResolver.m */; };
@@ -590,6 +591,7 @@
 		CFA923E817D65DAD0067835F /* LQSChildSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSChildSpace.m; sourceTree = "<group>"; };
 		CFB7EB411878D6DF00F90456 /* LQSJoystickScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSJoystickScript.h; sourceTree = "<group>"; };
 		CFB7EB421878D6DF00F90456 /* LQSJoystickScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSJoystickScript.m; sourceTree = "<group>"; };
+		CFB7EB45187A11A700F90456 /* LQSRotationTransformationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSRotationTransformationTests.m; sourceTree = "<group>"; };
 		CFB8584117F3B90C00159915 /* LQSMultiShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSMultiShaderProgram.h; sourceTree = "<group>"; };
 		CFB8584217F3B90C00159915 /* LQSMultiShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSMultiShaderProgram.m; sourceTree = "<group>"; };
 		CFC915E417E7DAA5005E6379 /* ILQSTransformationResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSTransformationResolver.h; sourceTree = "<group>"; };
@@ -950,6 +952,7 @@
 				CF521B6317EA519100C22D38 /* transformationsTests.h */,
 				CF521B6417EA519100C22D38 /* transformationsTests.m */,
 				CF521B5E17EA519100C22D38 /* Supporting Files */,
+				CFB7EB45187A11A700F90456 /* LQSRotationTransformationTests.m */,
 			);
 			path = transformationsTests;
 			sourceTree = "<group>";
@@ -2110,6 +2113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB7EB46187A11A700F90456 /* LQSRotationTransformationTests.m in Sources */,
 				CF521B6517EA519100C22D38 /* transformationsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
