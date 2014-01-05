@@ -24,39 +24,6 @@
     {
         if (floor(_timeKeeper.timeSinceFirstResume)!=floor(_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate))
         {
-            if (rand()%4==0)
-            {
-                int change = rand()%2;
-                switch (change)
-                {
-                    case 0:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _directionTransformation.x = newVelocity.x;
-                        _directionTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    case 1:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(-6.283185307f/4, 0, 0, 1), oldVelocity);
-                        _directionTransformation.x = newVelocity.x;
-                        _directionTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    case 2:
-                    {
-                        GLKVector3 oldVelocity = GLKVector3Make(_directionTransformation.x, _directionTransformation.y, 0);
-                        GLKVector3 newVelocity = GLKMatrix3MultiplyVector3(GLKMatrix3MakeRotation(0, 0, 0, 1), oldVelocity);
-                        _directionTransformation.x = newVelocity.x;
-                        _directionTransformation.y = newVelocity.y;
-                        break;
-                    }
-                    default:
-                        break;
-                };
-            }
             {
                 _snakeChunk3.translationTransformation.x = _snakeChunk2.translationTransformation.x;
                 _snakeChunk3.translationTransformation.y = _snakeChunk2.translationTransformation.y;

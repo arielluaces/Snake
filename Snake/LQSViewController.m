@@ -45,6 +45,7 @@
 #import "LQSDrawableMatrixGrid.h"
 #import "LQSDrawableMatrixGridData.h"
 #import "LQSMatrixGridScript.h"
+#import "LQSJoystickScript.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -92,6 +93,12 @@
                 [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
                 viewSpace.transformToParent = transformationSet;
                 _viewScaleTransformation = viewScaleTransformation;
+            }
+            LQSJoystickScript *joystickScript = [[LQSJoystickScript alloc] init];
+            {
+                joystickScript.transformationResolver = transformationResolver;
+                joystickScript.viewSpace = viewSpace;
+                [touchBroadcast.touchProcessorArray addObject:joystickScript];
             }
             {
                 LQSRootSpace *rootSpace = [[LQSRootSpace alloc] init];
@@ -185,6 +192,7 @@
                             drawableSquareData.colorB = 0;//0.95f;
                             drawableSquare.squareData = drawableSquareData;
                             [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                            joystickScript.firstChunkPosition = translationTransformation;
                         }
                         // Save component access
                         snakeChunk1.space = childSpace;
@@ -221,6 +229,7 @@
                             drawableSquareData.colorB = 0.95f;
                             drawableSquare.squareData = drawableSquareData;
                             [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                            joystickScript.secondChunkPosition = translationTransformation;
                         }
                         // Save component access
                         snakeChunk2.space = childSpace;
@@ -284,6 +293,7 @@
                             snakeScript.viewSpace = viewSpace;
                             [touchBroadcast.touchProcessorArray addObject:snakeScript];
                             [broadcastUpdater.updatableArray addObject:snakeScript];
+                            joystickScript.nextFirstChunkPosition = square1VelocityTransformation;
                         }
                     }
                 }
@@ -343,6 +353,7 @@
                         drawData.colorG = 1;
                         drawData.colorB = 1;
                         [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.rightButtonSpace = space;
                     }
                 }
                 {
@@ -389,6 +400,7 @@
                         drawData.colorG = 1;
                         drawData.colorB = 1;
                         [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.downButtonSpace = space;
                     }
                 }
                 {
@@ -435,6 +447,7 @@
                         drawData.colorG = 1;
                         drawData.colorB = 1;
                         [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.leftButtonSpace = space;
                     }
                 }
                 {
@@ -481,6 +494,7 @@
                         drawData.colorG = 1;
                         drawData.colorB = 1;
                         [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.upButtonSpace = space;
                     }
                 }
                 _joystickPosition = joystickPosition;
