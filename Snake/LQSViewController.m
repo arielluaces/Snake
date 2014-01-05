@@ -326,7 +326,7 @@
                         scale1.scale = 1;
                         scale2.scaleX = 50;
                         scale2.scaleY = 50;
-                        scale2.scaleZ = 0;
+                        scale2.scaleZ = 1;
                         rotation.radians = 0;
                         rotation.x = 0;
                         rotation.y = 0;
@@ -372,7 +372,7 @@
                         scale1.scale = 1;
                         scale2.scaleX = 50;
                         scale2.scaleY = 50;
-                        scale2.scaleZ = 0;
+                        scale2.scaleZ = 1;
                         rotation.radians = 0;
                         rotation.x = 0;
                         rotation.y = 0;
@@ -418,7 +418,7 @@
                         scale1.scale = 1;
                         scale2.scaleX = 50;
                         scale2.scaleY = 50;
-                        scale2.scaleZ = 0;
+                        scale2.scaleZ = 1;
                         rotation.radians = 0;
                         rotation.x = 0;
                         rotation.y = 0;
@@ -464,7 +464,7 @@
                         scale1.scale = 1;
                         scale2.scaleX = 50;
                         scale2.scaleY = 50;
-                        scale2.scaleZ = 0;
+                        scale2.scaleZ = 1;
                         rotation.radians = 0;
                         rotation.x = 0;
                         rotation.y = 0;
