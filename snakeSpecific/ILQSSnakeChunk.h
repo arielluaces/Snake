@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol ILQSAdjacentSpace;
+@class LQSDrawableSquare;
 @class LQSDrawableSquareData;
 @class LQSTranslationTransformation;
 @class LQSRotationTransformation;
@@ -17,6 +18,7 @@
 
 - (NSObject<ILQSAdjacentSpace> *)space;
 - (NSObject<ILQSAdjacentSpace> *)subSpace;
+- (LQSDrawableSquare *)draw;
 - (LQSDrawableSquareData *)drawData;
 - (LQSTranslationTransformation *)translationTransformation;
 - (LQSRotationTransformation *)rotationTransformation;

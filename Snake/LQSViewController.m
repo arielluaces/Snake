@@ -199,6 +199,7 @@
                         snakeChunk1.subSpace = childSubSpace;
                         snakeChunk1.rotationTransformation = rotationTransformation;
                         snakeChunk1.translationTransformation = translationTransformation;
+                        snakeChunk1.draw = drawableSquare;
                         snakeChunk1.drawData = drawableSquareData;
                     }
                     {
@@ -236,6 +237,7 @@
                         snakeChunk2.subSpace = childSubSpace;
                         snakeChunk2.rotationTransformation = rotationTransformation;
                         snakeChunk2.translationTransformation = translationTransformation;
+                        snakeChunk2.draw = drawableSquare;
                         snakeChunk2.drawData = drawableSquareData;
                     }
                     {
@@ -272,6 +274,7 @@
                         snakeChunk3.subSpace = childSubSpace;
                         snakeChunk3.rotationTransformation = rotationTransformation;
                         snakeChunk3.translationTransformation = translationTransformation;
+                        snakeChunk3.draw = drawableSquare;
                         snakeChunk3.drawData = drawableSquareData;
                     }
                     {

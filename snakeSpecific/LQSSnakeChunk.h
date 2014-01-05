@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *space;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *subSpace;
+@property (nonatomic) LQSDrawableSquare *draw;
 @property (nonatomic) LQSDrawableSquareData *drawData;
 @property (nonatomic) LQSTranslationTransformation *translationTransformation;
 @property (nonatomic) LQSRotationTransformation *rotationTransformation;
