@@ -39,6 +39,14 @@
         rotationTransformation.radians = 0;
         rotationTransformation.x = 0;
         rotationTransformation.y = 0;
+        rotationTransformation.z = 1;
+        STAssertNoThrow(rotationTransformation.transformationMatrix, @"The rotation transformation should be producing transformation matrices under normal circumstances");
+        STAssertNoThrow(rotationTransformation.transformationMatrixInverse, @"The rotation transformation should be producing inverse transformation matrices under normal circumstances");
+    }
+    {
+        rotationTransformation.radians = 0;
+        rotationTransformation.x = 0;
+        rotationTransformation.y = 0;
         rotationTransformation.z = 0;
         STAssertThrows(rotationTransformation.transformationMatrix, @"The rotation transformation shouldn't be producing transformation matrices when the x,y,z components are all zero");
         STAssertThrows(rotationTransformation.transformationMatrixInverse, @"The rotation transformation shouldn't be producing transformation matrices when the x,y,z components are all zero");
