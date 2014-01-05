@@ -18,6 +18,7 @@
 
 - (GLKMatrix4)transformationMatrixInverse
 {
+    NSAssert(_scaleX!=0 && _scaleY!=0 && _scaleZ!=0, @"None of the x,y, and z components should be zero");
     return GLKMatrix4MakeScale(1.0f/_scaleX, 1.0f/_scaleY, 1.0f/_scaleZ);
 }
 
