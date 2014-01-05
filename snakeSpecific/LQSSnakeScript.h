@@ -7,7 +7,6 @@
 //
 
 #import "ILQSUpdatable.h"
-#import "ILQSTouchProcessor.h"
 
 @protocol ILQSTimeKeeper;
 @protocol ILQSTransformationResolver;
@@ -15,7 +14,7 @@
 @protocol ILQSAdjacentSpace;
 @class LQSTranslationTransformation;
 
-@interface LQSSnakeScript : NSObject<ILQSUpdatable,ILQSTouchProcessor>
+@interface LQSSnakeScript : NSObject<ILQSUpdatable>
 
 @property (nonatomic) NSObject<ILQSTimeKeeper> *timeKeeper;
 @property (nonatomic) NSObject<ILQSTransformationResolver> *transformationResolver;

@@ -291,7 +291,6 @@
                             snakeScript.directionSpace = square1VelocitySpace;
                             snakeScript.directionTransformation = square1VelocityTransformation;
                             snakeScript.viewSpace = viewSpace;
-                            [touchBroadcast.touchProcessorArray addObject:snakeScript];
                             [broadcastUpdater.updatableArray addObject:snakeScript];
                             joystickScript.nextFirstChunkPosition = square1VelocityTransformation;
                         }
