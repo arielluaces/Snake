@@ -58,18 +58,12 @@
                 };
             }
             {
-                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_snakeChunk2.subSpace toSpace:_parent];
-                GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
-                GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _snakeChunk3.translationTransformation.x = point2.x;
-                _snakeChunk3.translationTransformation.y = point2.y;
+                _snakeChunk3.translationTransformation.x = _snakeChunk2.translationTransformation.x;
+                _snakeChunk3.translationTransformation.y = _snakeChunk2.translationTransformation.y;
             }
             {
-                GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_snakeChunk1.subSpace toSpace:_parent];
-                GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
-                GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _snakeChunk2.translationTransformation.x = point2.x;
-                _snakeChunk2.translationTransformation.y = point2.y;
+                _snakeChunk2.translationTransformation.x = _snakeChunk1.translationTransformation.x;
+                _snakeChunk2.translationTransformation.y = _snakeChunk1.translationTransformation.y;
             }
             {
                 GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_directionSpace toSpace:_parent];
