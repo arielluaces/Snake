@@ -13,6 +13,7 @@
 #import "ILQSAdjacentSpace.h"
 #import "LQSTranslationTransformation.h"
 #import "LQSDrawableSquareData.h"
+#import "ILQSSnakeChunkArray.h"
 #import <GLKit/GLKMath.h>
 #import <UIKit/UITouch.h>
 
@@ -24,28 +25,17 @@
     {
         if (floor(_timeKeeper.timeSinceFirstResume)!=floor(_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate))
         {
+            for (uint i=([_snakeChunkArray size]-1); i>=1; i--)
             {
-                _snakeChunk5.translationTransformation.x = _snakeChunk4.translationTransformation.x;
-                _snakeChunk5.translationTransformation.y = _snakeChunk4.translationTransformation.y;
-            }
-            {
-                _snakeChunk4.translationTransformation.x = _snakeChunk3.translationTransformation.x;
-                _snakeChunk4.translationTransformation.y = _snakeChunk3.translationTransformation.y;
-            }
-            {
-                _snakeChunk3.translationTransformation.x = _snakeChunk2.translationTransformation.x;
-                _snakeChunk3.translationTransformation.y = _snakeChunk2.translationTransformation.y;
-            }
-            {
-                _snakeChunk2.translationTransformation.x = _snakeChunk1.translationTransformation.x;
-                _snakeChunk2.translationTransformation.y = _snakeChunk1.translationTransformation.y;
+                [_snakeChunkArray objectAtIndex:i].translationTransformation.x = [_snakeChunkArray objectAtIndex:i-1].translationTransformation.x;
+                [_snakeChunkArray objectAtIndex:i].translationTransformation.y = [_snakeChunkArray objectAtIndex:i-1].translationTransformation.y;
             }
             {
                 GLKMatrix4 matrix = [_transformationResolver transformationMatrixFromSpace:_directionSpace toSpace:_parent];
                 GLKVector4 point1 = GLKVector4Make(0, 0, 0, 1);
                 GLKVector4 point2 = GLKMatrix4MultiplyVector4(matrix, point1);
-                _snakeChunk1.translationTransformation.x = point2.x;
-                _snakeChunk1.translationTransformation.y = point2.y;
+                [_snakeChunkArray objectAtIndex:0].translationTransformation.x = point2.x;
+                [_snakeChunkArray objectAtIndex:0].translationTransformation.y = point2.y;
             }
         }
     }

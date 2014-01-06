@@ -46,6 +46,7 @@
 #import "LQSDrawableMatrixGridData.h"
 #import "LQSMatrixGridScript.h"
 #import "LQSJoystickScript.h"
+#import "LQSSnakeChunkArray.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -164,6 +165,11 @@
                     {
                         // Set up snake script
                         LQSSnakeScript *snakeScript = [[LQSSnakeScript alloc] init];
+                        LQSSnakeChunkArray *snakeChunkArray = [[LQSSnakeChunkArray alloc] init];
+                        {
+                            // Configure components
+                            snakeScript.snakeChunkArray = snakeChunkArray;
+                        }
                         {
                             // Outside inputs
                             snakeScript.timeKeeper = timeContainer;
@@ -226,7 +232,7 @@
                                 // Externals
                                 [drawableParent.drawableArray addDrawableObject:drawableSquare];
                                 joystickScript.firstChunkPosition = translationTransformation;
-                                snakeScript.snakeChunk1 = snakeChunk;
+                                [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                             {
                                 // Create snake direction space
@@ -303,7 +309,7 @@
                                 // Externals
                                 [drawableParent.drawableArray addDrawableObject:drawableSquare];
                                 joystickScript.secondChunkPosition = translationTransformation;
-                                snakeScript.snakeChunk2 = snakeChunk;
+                                [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
                         {
@@ -355,7 +361,7 @@
                             {
                                 // Externals
                                 [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                snakeScript.snakeChunk3 = snakeChunk;
+                                [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
                         {
@@ -407,7 +413,7 @@
                             {
                                 // Externals
                                 [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                snakeScript.snakeChunk4 = snakeChunk;
+                                [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
                         {
@@ -459,7 +465,7 @@
                             {
                                 // Externals
                                 [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                snakeScript.snakeChunk5 = snakeChunk;
+                                [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
                     }

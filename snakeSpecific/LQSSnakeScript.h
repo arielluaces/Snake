@@ -11,6 +11,7 @@
 @protocol ILQSTimeKeeper;
 @protocol ILQSTransformationResolver;
 @protocol ILQSSnakeChunk;
+@protocol ILQSSnakeChunkArray;
 @protocol ILQSAdjacentSpace;
 @class LQSTranslationTransformation;
 
@@ -18,11 +19,7 @@
 
 @property (nonatomic) NSObject<ILQSTimeKeeper> *timeKeeper;
 @property (nonatomic) NSObject<ILQSTransformationResolver> *transformationResolver;
-@property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk1;
-@property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk2;
-@property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk3;
-@property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk4;
-@property (nonatomic) NSObject<ILQSSnakeChunk> *snakeChunk5;
+@property (nonatomic) NSObject<ILQSSnakeChunkArray> *snakeChunkArray;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *parent;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *directionSpace;
 @property (nonatomic) LQSTranslationTransformation *directionTransformation;
