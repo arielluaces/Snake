@@ -87,10 +87,10 @@
                 viewSpace.parent = cameraSpace;
                 LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                 LQSScaleTransformation *viewScaleTransformation = [LQSTransformationFactory scaleTransformationWithScaleX:1.0f/self.view.bounds.size.width scaleY:1.0f/self.view.bounds.size.height scaleZ:1];
-                [transformationSet.transformationArray addTransformation:viewScaleTransformation];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory uniformScaleTransformationWithScale:2]];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory translationTransformationWithX:-1 y:-1 z:0]];
-                [transformationSet.transformationArray addTransformation:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
+                [transformationSet.transformationArray addObject:viewScaleTransformation];
+                [transformationSet.transformationArray addObject:[LQSTransformationFactory uniformScaleTransformationWithScale:2]];
+                [transformationSet.transformationArray addObject:[LQSTransformationFactory translationTransformationWithX:-1 y:-1 z:0]];
+                [transformationSet.transformationArray addObject:[LQSTransformationFactory scaleTransformationWithScaleX:1 scaleY:-1 scaleZ:1]];
                 viewSpace.transformToParent = transformationSet;
                 _viewScaleTransformation = viewScaleTransformation;
             }
@@ -211,9 +211,9 @@
                                 translationTransformation.x = 0;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
-                                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                                [transformationSet.transformationArray addTransformation:scale2Transformation];
-                                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                                [transformationSet.transformationArray addObject:pivotTransformation];
+                                [transformationSet.transformationArray addObject:scale2Transformation];
+                                [transformationSet.transformationArray addObject:rotationTransformation];
                                 childSubSpace.parent = squareGridSpace;
                                 drawableSquareData.program = program;
                                 drawableSquareData.rootSpace = cameraSpace;
@@ -288,9 +288,9 @@
                                 translationTransformation.x = 1;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
-                                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                                [transformationSet.transformationArray addTransformation:scale2Transformation];
-                                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                                [transformationSet.transformationArray addObject:pivotTransformation];
+                                [transformationSet.transformationArray addObject:scale2Transformation];
+                                [transformationSet.transformationArray addObject:rotationTransformation];
                                 childSubSpace.parent = squareGridSpace;
                                 drawableSquareData.program = program;
                                 drawableSquareData.rootSpace = cameraSpace;
@@ -341,9 +341,9 @@
                                 translationTransformation.x = 2;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
-                                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                                [transformationSet.transformationArray addTransformation:scale2Transformation];
-                                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                                [transformationSet.transformationArray addObject:pivotTransformation];
+                                [transformationSet.transformationArray addObject:scale2Transformation];
+                                [transformationSet.transformationArray addObject:rotationTransformation];
                                 childSubSpace.parent = squareGridSpace;
                                 drawableSquareData.program = program;
                                 drawableSquareData.rootSpace = cameraSpace;
@@ -393,9 +393,9 @@
                                 translationTransformation.x = 3;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
-                                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                                [transformationSet.transformationArray addTransformation:scale2Transformation];
-                                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                                [transformationSet.transformationArray addObject:pivotTransformation];
+                                [transformationSet.transformationArray addObject:scale2Transformation];
+                                [transformationSet.transformationArray addObject:rotationTransformation];
                                 childSubSpace.parent = squareGridSpace;
                                 drawableSquareData.program = program;
                                 drawableSquareData.rootSpace = cameraSpace;
@@ -445,9 +445,9 @@
                                 translationTransformation.x = 4;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
-                                [transformationSet.transformationArray addTransformation:pivotTransformation];
-                                [transformationSet.transformationArray addTransformation:scale2Transformation];
-                                [transformationSet.transformationArray addTransformation:rotationTransformation];
+                                [transformationSet.transformationArray addObject:pivotTransformation];
+                                [transformationSet.transformationArray addObject:scale2Transformation];
+                                [transformationSet.transformationArray addObject:rotationTransformation];
                                 childSubSpace.parent = squareGridSpace;
                                 drawableSquareData.program = program;
                                 drawableSquareData.rootSpace = cameraSpace;
@@ -492,11 +492,11 @@
                         // Link the components
                         space.parent = joystickSpace;
                         space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addTransformation:pivot];
-                        [transformationSet.transformationArray addTransformation:scale1];
-                        [transformationSet.transformationArray addTransformation:scale2];
-                        [transformationSet.transformationArray addTransformation:rotation];
-                        [transformationSet.transformationArray addTransformation:translation];
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
                         pivot.x = -0.5;
                         pivot.y = -0.5;
                         pivot.z = 0;
@@ -539,11 +539,11 @@
                         // Link the components
                         space.parent = joystickSpace;
                         space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addTransformation:pivot];
-                        [transformationSet.transformationArray addTransformation:scale1];
-                        [transformationSet.transformationArray addTransformation:scale2];
-                        [transformationSet.transformationArray addTransformation:rotation];
-                        [transformationSet.transformationArray addTransformation:translation];
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
                         pivot.x = -0.5;
                         pivot.y = -0.5;
                         pivot.z = 0;
@@ -586,11 +586,11 @@
                         // Link the components
                         space.parent = joystickSpace;
                         space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addTransformation:pivot];
-                        [transformationSet.transformationArray addTransformation:scale1];
-                        [transformationSet.transformationArray addTransformation:scale2];
-                        [transformationSet.transformationArray addTransformation:rotation];
-                        [transformationSet.transformationArray addTransformation:translation];
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
                         pivot.x = -0.5;
                         pivot.y = -0.5;
                         pivot.z = 0;
@@ -633,11 +633,11 @@
                         // Link the components
                         space.parent = joystickSpace;
                         space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addTransformation:pivot];
-                        [transformationSet.transformationArray addTransformation:scale1];
-                        [transformationSet.transformationArray addTransformation:scale2];
-                        [transformationSet.transformationArray addTransformation:rotation];
-                        [transformationSet.transformationArray addTransformation:translation];
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
                         pivot.x = -0.5;
                         pivot.y = -0.5;
                         pivot.z = 0;

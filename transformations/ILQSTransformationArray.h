@@ -8,8 +8,6 @@
 
 #import "ILQSTransformationCollection.h"
 
-@protocol ILQSTransformationArray <ILQSTransformationCollection>
-
-- (void)insertTransformation:(NSObject<ILQSTransformation> *)transformation atIndex:(uint)index;
-
-@end
+#define __LQS_GENERIC_NAME__ Transformation
+#include "ILQSGenericArray.h"
+#undef __LQS_GENERIC_NAME__
