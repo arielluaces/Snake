@@ -18,6 +18,7 @@
 
 - (GLKMatrix4)transformationMatrixInverse
 {
+    NSAssert(_scale!=0, @"The scale property should not be zero");
     float scaleInv = 1.0f/_scale;
     return GLKMatrix4MakeScale(scaleInv, scaleInv, scaleInv);
 }
