@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Liquid Sparks. All rights reserved.
 //
 
+#import "LQSUniformScaleTransformation.h"
 #import <SenTestingKit/SenTestingKit.h>
 
 @interface LQSUniformScaleTransformationTests : SenTestCase
@@ -29,6 +30,20 @@
 - (void)testExample
 {
     STFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+- (void)testZeroUniformScaleTransformation
+{
+    {
+        LQSUniformScaleTransformation *uniformScaleTransformation = [[LQSUniformScaleTransformation alloc] init];
+        uniformScaleTransformation.scale = 1;
+        STAssertNoThrow(uniformScaleTransformation.transformationMatrixInverse, @"The uniform scale transformation should be producing inverse transformation matrices under normal circumstances");
+    }
+    {
+        LQSUniformScaleTransformation *uniformScaleTransformation = [[LQSUniformScaleTransformation alloc] init];
+        uniformScaleTransformation.scale = 0;
+        STAssertThrows(uniformScaleTransformation.transformationMatrixInverse, @"The uniform scale transformation shouldn't be producing inverse transformation matrices when the scale property is zero");
+    }
 }
 
 @end
