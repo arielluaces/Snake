@@ -25,6 +25,14 @@
         if (floor(_timeKeeper.timeSinceFirstResume)!=floor(_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate))
         {
             {
+                _snakeChunk5.translationTransformation.x = _snakeChunk4.translationTransformation.x;
+                _snakeChunk5.translationTransformation.y = _snakeChunk4.translationTransformation.y;
+            }
+            {
+                _snakeChunk4.translationTransformation.x = _snakeChunk3.translationTransformation.x;
+                _snakeChunk4.translationTransformation.y = _snakeChunk3.translationTransformation.y;
+            }
+            {
                 _snakeChunk3.translationTransformation.x = _snakeChunk2.translationTransformation.x;
                 _snakeChunk3.translationTransformation.y = _snakeChunk2.translationTransformation.y;
             }
