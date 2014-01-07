@@ -316,19 +316,19 @@
                         {
                             // Set up purple squares
                             // Allocate components
-                            LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
-                            LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                            LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
-                            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
                             LQSRotationTransformation *rotationTransformation = [[LQSRotationTransformation alloc] init];
                             LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-                            LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                            LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
+                            LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
                             LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
+                            LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
+                            LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                             {
                                 // Configure components
+                                childSubSpace.transformToParent = translationTransformation;
                                 childSpace.transformToParent = transformationSet;
                                 childSpace.parent = childSubSpace;
-                                childSubSpace.transformToParent = translationTransformation;
                                 drawableSquareData.space = childSpace;
                                 drawableSquare.squareData = drawableSquareData;
                                 // Save component access
