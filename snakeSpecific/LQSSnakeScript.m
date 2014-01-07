@@ -23,7 +23,7 @@
 {
     if (_timeKeeper.timeSinceFirstResume>5)
     {
-        if (floor(_timeKeeper.timeSinceFirstResume)!=floor(_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate))
+        if (floor((_timeKeeper.timeSinceFirstResume)*4)!=floor((_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate)*4))
         {
             for (uint i=([_snakeChunkArray size]-1); i>=1; i--)
             {
