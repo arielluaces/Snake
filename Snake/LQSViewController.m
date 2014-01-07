@@ -312,8 +312,9 @@
                                 [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
+                        for (uint i=0; i<50; i++)
                         {
-                            // Set up purple square 3
+                            // Set up purple squares
                             // Allocate components
                             LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
                             LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
@@ -345,110 +346,6 @@
                                 rotationTransformation.y = 0;
                                 rotationTransformation.z = 1;
                                 translationTransformation.x = 2;
-                                translationTransformation.y = 0;
-                                translationTransformation.z = 0;
-                                [transformationSet.transformationArray addObject:pivotTransformation];
-                                [transformationSet.transformationArray addObject:scale2Transformation];
-                                [transformationSet.transformationArray addObject:rotationTransformation];
-                                childSubSpace.parent = squareGridSpace;
-                                drawableSquareData.program = program;
-                                drawableSquareData.rootSpace = cameraSpace;
-                                drawableSquareData.transformationResolver = transformationResolver;
-                                drawableSquareData.colorR = 0.6f;
-                                drawableSquareData.colorG = 0.2f;
-                                drawableSquareData.colorB = 0.95f;
-                            }
-                            {
-                                // Externals
-                                [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                [snakeScript.snakeChunkArray addObject:snakeChunk];
-                            }
-                        }
-                        {
-                            // Set up purple square 4
-                            // Allocate components
-                            LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
-                            LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                            LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
-                            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                            LQSRotationTransformation *rotationTransformation = [[LQSRotationTransformation alloc] init];
-                            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-                            LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                            LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                            {
-                                // Configure components
-                                childSpace.transformToParent = transformationSet;
-                                childSpace.parent = childSubSpace;
-                                childSubSpace.transformToParent = translationTransformation;
-                                drawableSquareData.space = childSpace;
-                                drawableSquare.squareData = drawableSquareData;
-                                // Save component access
-                                snakeChunk.space = childSpace;
-                                snakeChunk.subSpace = childSubSpace;
-                                snakeChunk.rotationTransformation = rotationTransformation;
-                                snakeChunk.translationTransformation = translationTransformation;
-                                snakeChunk.draw = drawableSquare;
-                                snakeChunk.drawData = drawableSquareData;
-                            }
-                            {
-                                // Outside inputs
-                                rotationTransformation.radians = 0*6.283185307f/8;
-                                rotationTransformation.x = 0;
-                                rotationTransformation.y = 0;
-                                rotationTransformation.z = 1;
-                                translationTransformation.x = 3;
-                                translationTransformation.y = 0;
-                                translationTransformation.z = 0;
-                                [transformationSet.transformationArray addObject:pivotTransformation];
-                                [transformationSet.transformationArray addObject:scale2Transformation];
-                                [transformationSet.transformationArray addObject:rotationTransformation];
-                                childSubSpace.parent = squareGridSpace;
-                                drawableSquareData.program = program;
-                                drawableSquareData.rootSpace = cameraSpace;
-                                drawableSquareData.transformationResolver = transformationResolver;
-                                drawableSquareData.colorR = 0.6f;
-                                drawableSquareData.colorG = 0.2f;
-                                drawableSquareData.colorB = 0.95f;
-                            }
-                            {
-                                // Externals
-                                [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                [snakeScript.snakeChunkArray addObject:snakeChunk];
-                            }
-                        }
-                        {
-                            // Set up purple square 5
-                            // Allocate components
-                            LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
-                            LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                            LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
-                            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                            LQSRotationTransformation *rotationTransformation = [[LQSRotationTransformation alloc] init];
-                            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-                            LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                            LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                            {
-                                // Configure components
-                                childSpace.transformToParent = transformationSet;
-                                childSpace.parent = childSubSpace;
-                                childSubSpace.transformToParent = translationTransformation;
-                                drawableSquareData.space = childSpace;
-                                drawableSquare.squareData = drawableSquareData;
-                                // Save component access
-                                snakeChunk.space = childSpace;
-                                snakeChunk.subSpace = childSubSpace;
-                                snakeChunk.rotationTransformation = rotationTransformation;
-                                snakeChunk.translationTransformation = translationTransformation;
-                                snakeChunk.draw = drawableSquare;
-                                snakeChunk.drawData = drawableSquareData;
-                            }
-                            {
-                                // Outside inputs
-                                rotationTransformation.radians = 0*6.283185307f/8;
-                                rotationTransformation.x = 0;
-                                rotationTransformation.y = 0;
-                                rotationTransformation.z = 1;
-                                translationTransformation.x = 4;
                                 translationTransformation.y = 0;
                                 translationTransformation.z = 0;
                                 [transformationSet.transformationArray addObject:pivotTransformation];
