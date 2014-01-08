@@ -25,6 +25,7 @@
 		CF38299F186E1DF400E2C94F /* libtouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF38298C186E1DF300E2C94F /* libtouch.a */; };
 		CF3829A5186E1DF400E2C94F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF3829A3186E1DF400E2C94F /* InfoPlist.strings */; };
 		CF3829A7186E1DF400E2C94F /* touchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3829A6186E1DF400E2C94F /* touchTests.m */; };
+		CF3D983E187C6D1700D9B726 /* LQSSnakeChunkSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3D983D187C6D1700D9B726 /* LQSSnakeChunkSpawner.m */; };
 		CF4D28A617F3B1DF00D6C523 /* LQSGLShaderArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4D28A517F3B1DF00D6C523 /* LQSGLShaderArray.m */; };
 		CF521B4917EA519100C22D38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569817A5ADDA00148B4F /* Foundation.framework */; };
 		CF521B4E17EA519100C22D38 /* transformations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF521B4D17EA519100C22D38 /* transformations.h */; };
@@ -419,6 +420,9 @@
 		CF3829A2186E1DF400E2C94F /* touchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "touchTests-Info.plist"; sourceTree = "<group>"; };
 		CF3829A4186E1DF400E2C94F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF3829A6186E1DF400E2C94F /* touchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touchTests.m; sourceTree = "<group>"; };
+		CF3D983B187C6D0100D9B726 /* ILQSSnakeChunkSpawner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSSnakeChunkSpawner.h; sourceTree = "<group>"; };
+		CF3D983C187C6D1700D9B726 /* LQSSnakeChunkSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSSnakeChunkSpawner.h; sourceTree = "<group>"; };
+		CF3D983D187C6D1700D9B726 /* LQSSnakeChunkSpawner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSSnakeChunkSpawner.m; sourceTree = "<group>"; };
 		CF4D28A117F3B18C00D6C523 /* ILQSGLShaderCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderCollection.h; sourceTree = "<group>"; };
 		CF4D28A217F3B1A200D6C523 /* ILQSGLShaderArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSGLShaderArray.h; sourceTree = "<group>"; };
 		CF4D28A417F3B1DF00D6C523 /* LQSGLShaderArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSGLShaderArray.h; sourceTree = "<group>"; };
@@ -1273,6 +1277,9 @@
 				CF771F3D1873AD220024192D /* LQSMatrixGridScript.m */,
 				CFB7EB411878D6DF00F90456 /* LQSJoystickScript.h */,
 				CFB7EB421878D6DF00F90456 /* LQSJoystickScript.m */,
+				CF3D983B187C6D0100D9B726 /* ILQSSnakeChunkSpawner.h */,
+				CF3D983C187C6D1700D9B726 /* LQSSnakeChunkSpawner.h */,
+				CF3D983D187C6D1700D9B726 /* LQSSnakeChunkSpawner.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -2241,6 +2248,7 @@
 				CF7BDF261871159B00AEA656 /* LQSSnakeScript.m in Sources */,
 				CF7BDF30187121F500AEA656 /* LQSTimeContainer.m in Sources */,
 				CF771F331873A1670024192D /* LQSMatrixGridProgram.m in Sources */,
+				CF3D983E187C6D1700D9B726 /* LQSSnakeChunkSpawner.m in Sources */,
 				CF771F371873A6C70024192D /* LQSDrawableMatrixGrid.m in Sources */,
 				CFCA11BE185FF80D00D38C84 /* LQSSnakeChunk.m in Sources */,
 				CFB7EB431878D6DF00F90456 /* LQSJoystickScript.m in Sources */,
