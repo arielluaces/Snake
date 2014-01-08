@@ -164,6 +164,11 @@
                     squareGridSpace.parent = rootSpace;
                     squareGridSpace.transformToParent = scaleTransformation;
                     {
+                        LQSDrawableParent *snakeDrawableParent = [[LQSDrawableParent alloc] init];
+                        {
+                            // Externals
+                            [drawableParent.drawableArray addDrawableObject:snakeDrawableParent];
+                        }
                         {
                             // Set up snake script
                             LQSSnakeScript *snakeScript = [[LQSSnakeScript alloc] init];
@@ -178,7 +183,7 @@
                                 snakeScript.transformationResolver = transformationResolver;
                                 snakeScript.parent = squareGridSpace;
                                 snakeScript.viewSpace = viewSpace;
-                                snakeScript.drawableParent = drawableParent;
+                                snakeScript.drawableParent = snakeDrawableParent;
                             }
                             {
                                 // Externals
@@ -233,7 +238,7 @@
                                 }
                                 {
                                     // Externals
-                                    [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                                    [snakeDrawableParent.drawableArray addDrawableObject:drawableSquare];
                                     joystickScript.firstChunkPosition = translationTransformation;
                                     [snakeScript.snakeChunkArray addObject:snakeChunk];
                                 }
@@ -310,7 +315,7 @@
                                 }
                                 {
                                     // Externals
-                                    [drawableParent.drawableArray addDrawableObject:drawableSquare];
+                                    [snakeDrawableParent.drawableArray addDrawableObject:drawableSquare];
                                     joystickScript.secondChunkPosition = translationTransformation;
                                     [snakeScript.snakeChunkArray addObject:snakeChunk];
                                 }
