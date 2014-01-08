@@ -14,6 +14,11 @@
 #import "LQSTranslationTransformation.h"
 #import "LQSDrawableSquareData.h"
 #import "ILQSSnakeChunkArray.h"
+#import "ILQSSnakeChunkSpawner.h"
+#import "LQSSnakeChunk.h"
+#import "LQSDrawableParent.h"
+#import "LQSDrawableArray.h"
+#import "LQSDrawableSquare.h"
 #import <GLKit/GLKMath.h>
 #import <UIKit/UITouch.h>
 
@@ -25,6 +30,12 @@
     {
         if (floor((_timeKeeper.timeSinceFirstResume)*4)!=floor((_timeKeeper.timeSinceFirstResume-_timeKeeper.timeSinceLastUpdate)*4))
         {
+            if (rand()%5 < 2)
+            {
+                NSObject<ILQSSnakeChunk> *snakeChunk = [_snakeChunkSpawner spawnSnakeChunk];
+                [_drawableParent.drawableArray addDrawableObject:snakeChunk.draw];
+                [_snakeChunkArray addObject:snakeChunk];
+            }
             for (uint i=([_snakeChunkArray size]-1); i>=1; i--)
             {
                 [_snakeChunkArray objectAtIndex:i].translationTransformation.x = [_snakeChunkArray objectAtIndex:i-1].translationTransformation.x;

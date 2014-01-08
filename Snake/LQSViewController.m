@@ -47,6 +47,7 @@
 #import "LQSMatrixGridScript.h"
 #import "LQSJoystickScript.h"
 #import "LQSSnakeChunkArray.h"
+#import "LQSSnakeChunkSpawner.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -176,6 +177,7 @@
                             snakeScript.transformationResolver = transformationResolver;
                             snakeScript.parent = squareGridSpace;
                             snakeScript.viewSpace = viewSpace;
+                            snakeScript.drawableParent = drawableParent;
                         }
                         {
                             // Externals
@@ -312,57 +314,20 @@
                                 [snakeScript.snakeChunkArray addObject:snakeChunk];
                             }
                         }
-                        for (uint i=0; i<50; i++)
                         {
-                            // Set up purple squares
-                            // Allocate components
-                            LQSRotationTransformation *rotationTransformation = [[LQSRotationTransformation alloc] init];
-                            LQSTranslationTransformation *translationTransformation = [[LQSTranslationTransformation alloc] init];
-                            LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                            LQSChildSpace *childSubSpace = [[LQSChildSpace alloc] init];
-                            LQSChildSpace *childSpace = [[LQSChildSpace alloc] init];
-                            LQSDrawableSquareData *drawableSquareData = [[LQSDrawableSquareData alloc] init];
-                            LQSDrawableSquare *drawableSquare = [[LQSDrawableSquare alloc] init];
-                            LQSSnakeChunk *snakeChunk = [[LQSSnakeChunk alloc] init];
-                            {
-                                // Configure components
-                                childSubSpace.transformToParent = translationTransformation;
-                                childSpace.transformToParent = transformationSet;
-                                childSpace.parent = childSubSpace;
-                                drawableSquareData.space = childSpace;
-                                drawableSquare.squareData = drawableSquareData;
-                                // Save component access
-                                snakeChunk.space = childSpace;
-                                snakeChunk.subSpace = childSubSpace;
-                                snakeChunk.rotationTransformation = rotationTransformation;
-                                snakeChunk.translationTransformation = translationTransformation;
-                                snakeChunk.draw = drawableSquare;
-                                snakeChunk.drawData = drawableSquareData;
-                            }
+                            LQSSnakeChunkSpawner *snakeChunkSpawner = [[LQSSnakeChunkSpawner alloc] init];
                             {
                                 // Outside inputs
-                                rotationTransformation.radians = 0*6.283185307f/8;
-                                rotationTransformation.x = 0;
-                                rotationTransformation.y = 0;
-                                rotationTransformation.z = 1;
-                                translationTransformation.x = 2;
-                                translationTransformation.y = 0;
-                                translationTransformation.z = 0;
-                                [transformationSet.transformationArray addObject:pivotTransformation];
-                                [transformationSet.transformationArray addObject:scale2Transformation];
-                                [transformationSet.transformationArray addObject:rotationTransformation];
-                                childSubSpace.parent = squareGridSpace;
-                                drawableSquareData.program = program;
-                                drawableSquareData.rootSpace = cameraSpace;
-                                drawableSquareData.transformationResolver = transformationResolver;
-                                drawableSquareData.colorR = 0.6f;
-                                drawableSquareData.colorG = 0.2f;
-                                drawableSquareData.colorB = 0.95f;
+                                snakeChunkSpawner.pivotTransformation = pivotTransformation;
+                                snakeChunkSpawner.scaleTransformation = scale2Transformation;
+                                snakeChunkSpawner.parentSpace = squareGridSpace;
+                                snakeChunkSpawner.program = program;
+                                snakeChunkSpawner.cameraSpace = cameraSpace;
+                                snakeChunkSpawner.transformationResolver = transformationResolver;
                             }
                             {
                                 // Externals
-                                [drawableParent.drawableArray addDrawableObject:drawableSquare];
-                                [snakeScript.snakeChunkArray addObject:snakeChunk];
+                                snakeScript.snakeChunkSpawner = snakeChunkSpawner;
                             }
                         }
                     }

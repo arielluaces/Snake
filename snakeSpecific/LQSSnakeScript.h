@@ -14,6 +14,8 @@
 @protocol ILQSSnakeChunkArray;
 @protocol ILQSAdjacentSpace;
 @class LQSTranslationTransformation;
+@protocol ILQSSnakeChunkSpawner;
+@class LQSDrawableParent;
 
 @interface LQSSnakeScript : NSObject<ILQSUpdatable>
 
@@ -24,5 +26,7 @@
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *directionSpace;
 @property (nonatomic) LQSTranslationTransformation *directionTransformation;
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *viewSpace;
+@property (nonatomic) NSObject<ILQSSnakeChunkSpawner> *snakeChunkSpawner;
+@property (nonatomic) LQSDrawableParent *drawableParent;
 
 @end
