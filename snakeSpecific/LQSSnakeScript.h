@@ -28,5 +28,6 @@
 @property (nonatomic) NSObject<ILQSAdjacentSpace> *viewSpace;
 @property (nonatomic) NSObject<ILQSSnakeChunkSpawner> *snakeChunkSpawner;
 @property (nonatomic) LQSDrawableParent *drawableParent;
+@property (nonatomic, readonly) bool paused;
 
 @end
