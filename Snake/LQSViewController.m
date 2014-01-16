@@ -48,6 +48,7 @@
 #import "LQSJoystickScript.h"
 #import "LQSSnakeChunkArray.h"
 #import "LQSSnakeChunkSpawner.h"
+#import "LQSFoodSpawner.h"
 #import <Foundation/NSBundle.h>
 
 @implementation LQSViewController
@@ -334,6 +335,22 @@
                                 {
                                     // Externals
                                     snakeScript.snakeChunkSpawner = snakeChunkSpawner;
+                                }
+                            }
+                            {
+                                LQSFoodSpawner *foodSpawner = [[LQSFoodSpawner alloc] init];
+                                {
+                                    // Outside inputs
+                                    foodSpawner.pivotTransformation = pivotTransformation;
+                                    foodSpawner.scaleTransformation = scale2Transformation;
+                                    foodSpawner.parentSpace = squareGridSpace;
+                                    foodSpawner.program = program;
+                                    foodSpawner.cameraSpace = cameraSpace;
+                                    foodSpawner.transformationResolver = transformationResolver;
+                                }
+                                {
+                                    // Externals
+                                    snakeScript.foodSpawner = foodSpawner;
                                 }
                             }
                         }

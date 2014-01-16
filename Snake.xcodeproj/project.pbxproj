@@ -157,6 +157,8 @@
 		CFA7C79C17E3A27A0089B371 /* fff7dce8bab7b1f11abd79c84ad9247e.png in Resources */ = {isa = PBXBuildFile; fileRef = CFA7C78B17E3A27A0089B371 /* fff7dce8bab7b1f11abd79c84ad9247e.png */; };
 		CFA923E417D659660067835F /* LQSRootSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E317D659660067835F /* LQSRootSpace.m */; };
 		CFA923E917D65DAD0067835F /* LQSChildSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA923E817D65DAD0067835F /* LQSChildSpace.m */; };
+		CFAA46C9188776B80012C40B /* LQSFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAA46C8188776B80012C40B /* LQSFood.m */; };
+		CFAA46CC1887773C0012C40B /* LQSFoodSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAA46CB1887773C0012C40B /* LQSFoodSpawner.m */; };
 		CFADCB9B17F401A300585C14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6569E17A5ADDA00148B4F /* OpenGLES.framework */; };
 		CFB7EB431878D6DF00F90456 /* LQSJoystickScript.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7EB421878D6DF00F90456 /* LQSJoystickScript.m */; };
 		CFB7EB46187A11A700F90456 /* LQSRotationTransformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7EB45187A11A700F90456 /* LQSRotationTransformationTests.m */; };
@@ -595,6 +597,12 @@
 		CFA923E317D659660067835F /* LQSRootSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSRootSpace.m; sourceTree = "<group>"; };
 		CFA923E717D65DAD0067835F /* LQSChildSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSChildSpace.h; sourceTree = "<group>"; };
 		CFA923E817D65DAD0067835F /* LQSChildSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSChildSpace.m; sourceTree = "<group>"; };
+		CFAA46C2188776080012C40B /* ILQSFoodSpawner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSFoodSpawner.h; sourceTree = "<group>"; };
+		CFAA46C61887768A0012C40B /* ILQSFood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILQSFood.h; sourceTree = "<group>"; };
+		CFAA46C7188776B80012C40B /* LQSFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFood.h; sourceTree = "<group>"; };
+		CFAA46C8188776B80012C40B /* LQSFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFood.m; sourceTree = "<group>"; };
+		CFAA46CA1887773C0012C40B /* LQSFoodSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSFoodSpawner.h; sourceTree = "<group>"; };
+		CFAA46CB1887773C0012C40B /* LQSFoodSpawner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSFoodSpawner.m; sourceTree = "<group>"; };
 		CFB7EB411878D6DF00F90456 /* LQSJoystickScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSJoystickScript.h; sourceTree = "<group>"; };
 		CFB7EB421878D6DF00F90456 /* LQSJoystickScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSJoystickScript.m; sourceTree = "<group>"; };
 		CFB7EB45187A11A700F90456 /* LQSRotationTransformationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSRotationTransformationTests.m; sourceTree = "<group>"; };
@@ -1280,6 +1288,12 @@
 				CF3D983B187C6D0100D9B726 /* ILQSSnakeChunkSpawner.h */,
 				CF3D983C187C6D1700D9B726 /* LQSSnakeChunkSpawner.h */,
 				CF3D983D187C6D1700D9B726 /* LQSSnakeChunkSpawner.m */,
+				CFAA46C2188776080012C40B /* ILQSFoodSpawner.h */,
+				CFAA46C61887768A0012C40B /* ILQSFood.h */,
+				CFAA46C7188776B80012C40B /* LQSFood.h */,
+				CFAA46C8188776B80012C40B /* LQSFood.m */,
+				CFAA46CA1887773C0012C40B /* LQSFoodSpawner.h */,
+				CFAA46CB1887773C0012C40B /* LQSFoodSpawner.m */,
 			);
 			path = snakeSpecific;
 			sourceTree = "<group>";
@@ -2245,6 +2259,7 @@
 			files = (
 				CF845A0117FCC6640013603A /* snakeSpecific.m in Sources */,
 				CF7BDF231871028000AEA656 /* LQSBroadcastUpdater.m in Sources */,
+				CFAA46CC1887773C0012C40B /* LQSFoodSpawner.m in Sources */,
 				CF7BDF261871159B00AEA656 /* LQSSnakeScript.m in Sources */,
 				CF7BDF30187121F500AEA656 /* LQSTimeContainer.m in Sources */,
 				CF771F331873A1670024192D /* LQSMatrixGridProgram.m in Sources */,
@@ -2255,6 +2270,7 @@
 				CFCA11BB185FF69A00D38C84 /* LQSSnakeChunkArray.m in Sources */,
 				CF771F3E1873AD220024192D /* LQSMatrixGridScript.m in Sources */,
 				CF7BDF20187101F600AEA656 /* LQSUpdatableArray.m in Sources */,
+				CFAA46C9188776B80012C40B /* LQSFood.m in Sources */,
 				CF771F3B1873A6EA0024192D /* LQSDrawableMatrixGridData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
