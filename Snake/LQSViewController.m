@@ -58,7 +58,8 @@
     NSObject<ILQSTouchProcessor> *_mainTouchProcessor;
     NSObject<ILQSDrawable> *_mainDrawable;
     LQSScaleTransformation *_viewScaleTransformation;
-    LQSTranslationTransformation *_joystickPosition;
+    LQSTranslationTransformation *_rightJoystickPosition;
+    LQSTranslationTransformation *_leftJoystickPosition;
 }
 
 - (void)viewDidLoad
@@ -358,15 +359,15 @@
                 }
             }
             {
-                LQSChildSpace *joystickSpace = [[LQSChildSpace alloc] init];
-                LQSTranslationTransformation *joystickPosition = [[LQSTranslationTransformation alloc] init];
+                LQSChildSpace *rightJoystickSpace = [[LQSChildSpace alloc] init];
+                LQSTranslationTransformation *rightJoystickPosition = [[LQSTranslationTransformation alloc] init];
                 {
                     // Link joystick components
-                    joystickSpace.parent = viewSpace;
-                    joystickSpace.transformToParent = joystickPosition;
-                    joystickPosition.x = self.view.bounds.size.width-100;
-                    joystickPosition.y = self.view.bounds.size.height-100;
-                    joystickPosition.z = 0;
+                    rightJoystickSpace.parent = viewSpace;
+                    rightJoystickSpace.transformToParent = rightJoystickPosition;
+                    rightJoystickPosition.x = self.view.bounds.size.width-100;
+                    rightJoystickPosition.y = self.view.bounds.size.height-100;
+                    rightJoystickPosition.z = 0;
                 }
                 {
                     // Create the GUI
@@ -382,54 +383,7 @@
                     LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
                     {
                         // Link the components
-                        space.parent = joystickSpace;
-                        space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addObject:pivot];
-                        [transformationSet.transformationArray addObject:scale1];
-                        [transformationSet.transformationArray addObject:scale2];
-                        [transformationSet.transformationArray addObject:rotation];
-                        [transformationSet.transformationArray addObject:translation];
-                        pivot.x = -0.5;
-                        pivot.y = -0.5;
-                        pivot.z = 0;
-                        scale1.scale = 1;
-                        scale2.scaleX = 50;
-                        scale2.scaleY = 50;
-                        scale2.scaleZ = 1;
-                        rotation.radians = 0;
-                        rotation.x = 0;
-                        rotation.y = 0;
-                        rotation.z = 1;
-                        translation.x = 50;
-                        translation.y = 0;
-                        translation.z = 0;
-                        draw.squareData = drawData;
-                        drawData.program = program;
-                        drawData.space = space;
-                        drawData.rootSpace = cameraSpace;
-                        drawData.transformationResolver = transformationResolver;
-                        drawData.colorR = 1;
-                        drawData.colorG = 1;
-                        drawData.colorB = 1;
-                        [drawableParent.drawableArray addDrawableObject:draw];
-                        joystickScript.rightButtonSpace = space;
-                    }
-                }
-                {
-                    // Create the GUI
-                    // Allocate the components
-                    LQSChildSpace *space = [[LQSChildSpace alloc] init];
-                    LQSDrawableSquare *draw = [[LQSDrawableSquare alloc] init];
-                    LQSDrawableSquareData *drawData = [[LQSDrawableSquareData alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    LQSTranslationTransformation *pivot = [[LQSTranslationTransformation alloc] init];
-                    LQSUniformScaleTransformation *scale1 = [[LQSUniformScaleTransformation alloc] init];
-                    LQSScaleTransformation *scale2 = [[LQSScaleTransformation alloc] init];
-                    LQSRotationTransformation *rotation = [[LQSRotationTransformation alloc] init];
-                    LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
-                    {
-                        // Link the components
-                        space.parent = joystickSpace;
+                        space.parent = rightJoystickSpace;
                         space.transformToParent = transformationSet;
                         [transformationSet.transformationArray addObject:pivot];
                         [transformationSet.transformationArray addObject:scale1];
@@ -476,54 +430,7 @@
                     LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
                     {
                         // Link the components
-                        space.parent = joystickSpace;
-                        space.transformToParent = transformationSet;
-                        [transformationSet.transformationArray addObject:pivot];
-                        [transformationSet.transformationArray addObject:scale1];
-                        [transformationSet.transformationArray addObject:scale2];
-                        [transformationSet.transformationArray addObject:rotation];
-                        [transformationSet.transformationArray addObject:translation];
-                        pivot.x = -0.5;
-                        pivot.y = -0.5;
-                        pivot.z = 0;
-                        scale1.scale = 1;
-                        scale2.scaleX = 50;
-                        scale2.scaleY = 50;
-                        scale2.scaleZ = 1;
-                        rotation.radians = 0;
-                        rotation.x = 0;
-                        rotation.y = 0;
-                        rotation.z = 1;
-                        translation.x = -50;
-                        translation.y = 0;
-                        translation.z = 0;
-                        draw.squareData = drawData;
-                        drawData.program = program;
-                        drawData.space = space;
-                        drawData.rootSpace = cameraSpace;
-                        drawData.transformationResolver = transformationResolver;
-                        drawData.colorR = 1;
-                        drawData.colorG = 1;
-                        drawData.colorB = 1;
-                        [drawableParent.drawableArray addDrawableObject:draw];
-                        joystickScript.leftButtonSpace = space;
-                    }
-                }
-                {
-                    // Create the GUI
-                    // Allocate the components
-                    LQSChildSpace *space = [[LQSChildSpace alloc] init];
-                    LQSDrawableSquare *draw = [[LQSDrawableSquare alloc] init];
-                    LQSDrawableSquareData *drawData = [[LQSDrawableSquareData alloc] init];
-                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
-                    LQSTranslationTransformation *pivot = [[LQSTranslationTransformation alloc] init];
-                    LQSUniformScaleTransformation *scale1 = [[LQSUniformScaleTransformation alloc] init];
-                    LQSScaleTransformation *scale2 = [[LQSScaleTransformation alloc] init];
-                    LQSRotationTransformation *rotation = [[LQSRotationTransformation alloc] init];
-                    LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
-                    {
-                        // Link the components
-                        space.parent = joystickSpace;
+                        space.parent = rightJoystickSpace;
                         space.transformToParent = transformationSet;
                         [transformationSet.transformationArray addObject:pivot];
                         [transformationSet.transformationArray addObject:scale1];
@@ -556,7 +463,114 @@
                         joystickScript.upButtonSpace = space;
                     }
                 }
-                _joystickPosition = joystickPosition;
+                _rightJoystickPosition = rightJoystickPosition;
+            }
+            {
+                LQSChildSpace *leftJoystickSpace = [[LQSChildSpace alloc] init];
+                LQSTranslationTransformation *leftJoystickPosition = [[LQSTranslationTransformation alloc] init];
+                {
+                    // Link joystick components
+                    leftJoystickSpace.parent = viewSpace;
+                    leftJoystickSpace.transformToParent = leftJoystickPosition;
+                    leftJoystickPosition.x = self.view.bounds.size.width-100;
+                    leftJoystickPosition.y = self.view.bounds.size.height-100;
+                    leftJoystickPosition.z = 0;
+                }
+                {
+                    // Create the GUI
+                    // Allocate the components
+                    LQSChildSpace *space = [[LQSChildSpace alloc] init];
+                    LQSDrawableSquare *draw = [[LQSDrawableSquare alloc] init];
+                    LQSDrawableSquareData *drawData = [[LQSDrawableSquareData alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    LQSTranslationTransformation *pivot = [[LQSTranslationTransformation alloc] init];
+                    LQSUniformScaleTransformation *scale1 = [[LQSUniformScaleTransformation alloc] init];
+                    LQSScaleTransformation *scale2 = [[LQSScaleTransformation alloc] init];
+                    LQSRotationTransformation *rotation = [[LQSRotationTransformation alloc] init];
+                    LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
+                    {
+                        // Link the components
+                        space.parent = leftJoystickSpace;
+                        space.transformToParent = transformationSet;
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
+                        pivot.x = -0.5;
+                        pivot.y = -0.5;
+                        pivot.z = 0;
+                        scale1.scale = 1;
+                        scale2.scaleX = 50;
+                        scale2.scaleY = 50;
+                        scale2.scaleZ = 1;
+                        rotation.radians = 0;
+                        rotation.x = 0;
+                        rotation.y = 0;
+                        rotation.z = 1;
+                        translation.x = 50;
+                        translation.y = 0;
+                        translation.z = 0;
+                        draw.squareData = drawData;
+                        drawData.program = program;
+                        drawData.space = space;
+                        drawData.rootSpace = cameraSpace;
+                        drawData.transformationResolver = transformationResolver;
+                        drawData.colorR = 1;
+                        drawData.colorG = 1;
+                        drawData.colorB = 1;
+                        [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.rightButtonSpace = space;
+                    }
+                }
+                {
+                    // Create the GUI
+                    // Allocate the components
+                    LQSChildSpace *space = [[LQSChildSpace alloc] init];
+                    LQSDrawableSquare *draw = [[LQSDrawableSquare alloc] init];
+                    LQSDrawableSquareData *drawData = [[LQSDrawableSquareData alloc] init];
+                    LQSTransformationSet *transformationSet = [[LQSTransformationSet alloc] init];
+                    LQSTranslationTransformation *pivot = [[LQSTranslationTransformation alloc] init];
+                    LQSUniformScaleTransformation *scale1 = [[LQSUniformScaleTransformation alloc] init];
+                    LQSScaleTransformation *scale2 = [[LQSScaleTransformation alloc] init];
+                    LQSRotationTransformation *rotation = [[LQSRotationTransformation alloc] init];
+                    LQSTranslationTransformation *translation = [[LQSTranslationTransformation alloc] init];
+                    {
+                        // Link the components
+                        space.parent = leftJoystickSpace;
+                        space.transformToParent = transformationSet;
+                        [transformationSet.transformationArray addObject:pivot];
+                        [transformationSet.transformationArray addObject:scale1];
+                        [transformationSet.transformationArray addObject:scale2];
+                        [transformationSet.transformationArray addObject:rotation];
+                        [transformationSet.transformationArray addObject:translation];
+                        pivot.x = -0.5;
+                        pivot.y = -0.5;
+                        pivot.z = 0;
+                        scale1.scale = 1;
+                        scale2.scaleX = 50;
+                        scale2.scaleY = 50;
+                        scale2.scaleZ = 1;
+                        rotation.radians = 0;
+                        rotation.x = 0;
+                        rotation.y = 0;
+                        rotation.z = 1;
+                        translation.x = -50;
+                        translation.y = 0;
+                        translation.z = 0;
+                        draw.squareData = drawData;
+                        drawData.program = program;
+                        drawData.space = space;
+                        drawData.rootSpace = cameraSpace;
+                        drawData.transformationResolver = transformationResolver;
+                        drawData.colorR = 1;
+                        drawData.colorG = 1;
+                        drawData.colorB = 1;
+                        [drawableParent.drawableArray addDrawableObject:draw];
+                        joystickScript.leftButtonSpace = space;
+                    }
+                }
+                _leftJoystickPosition = leftJoystickPosition;
             }
         }
         _mainUpdatable = broadcastUpdater;
@@ -577,8 +591,10 @@
     [super viewWillLayoutSubviews];
     _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
     _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
-    _joystickPosition.x = self.view.bounds.size.width-100;
-    _joystickPosition.y = self.view.bounds.size.height-100;
+    _rightJoystickPosition.x = self.view.bounds.size.width-100;
+    _rightJoystickPosition.y = self.view.bounds.size.height-100;
+    _leftJoystickPosition.x = 100;
+    _leftJoystickPosition.y = self.view.bounds.size.height-100;
 }
 
 - (void)viewDidLayoutSubviews
@@ -617,8 +633,10 @@
 {
     _viewScaleTransformation.scaleX = 1.0f/self.view.bounds.size.width;
     _viewScaleTransformation.scaleY = 1.0f/self.view.bounds.size.height;
-    _joystickPosition.x = self.view.bounds.size.width-100;
-    _joystickPosition.y = self.view.bounds.size.height-100;
+    _rightJoystickPosition.x = self.view.bounds.size.width-100;
+    _rightJoystickPosition.y = self.view.bounds.size.height-100;
+    _leftJoystickPosition.x = 100;
+    _leftJoystickPosition.y = self.view.bounds.size.height-100;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
